@@ -1,4 +1,5 @@
-﻿
+﻿using System.IO;
+
 namespace Database.SouthAfricanCensus.CSVs
 {
     public abstract class CSVRow
@@ -13,14 +14,9 @@ namespace Database.SouthAfricanCensus.CSVs
         public int LineNumber { get; set; }
         public string[] LineSplit { get; set; }
 
-        public CSVRow Process(StreamWriter logger) 
+        public static bool ProcessInt(string? value, StreamWriter logger, string? loggerkey, out int? processed) 
         {
-            return this;
-        }
-
-        public int? ProcessInt(string? value, StreamWriter logger, string? loggerkey) 
-        {
-            int? processed = int.TryParse(value, out int _processed) ? _processed : new int?();
+            processed = int.TryParse(value, out int _processed) ? _processed : new int?();
 
             if (processed is null)
             {
@@ -28,11 +24,11 @@ namespace Database.SouthAfricanCensus.CSVs
 				else logger.Write("{0}: {1} ", loggerkey, value);
 			}
 
-			return processed;
+			return processed is not null;
 		}
-        public decimal? ProcessDecimal(string? value, StreamWriter logger, string? loggerkey) 
+        public static bool ProcessDouble(string? value, StreamWriter logger, string? loggerkey, out double? processed) 
         {
-			decimal? processed = decimal.TryParse(value, out decimal _processed) ? _processed : new decimal?();
+			processed = double.TryParse(value?.Replace('.', ','), out double _processed) ? _processed : new double?();
 
 			if (processed is null)
 			{
@@ -40,11 +36,32 @@ namespace Database.SouthAfricanCensus.CSVs
 				else logger.Write("{0}: {1} ", loggerkey, value);
 			}
 
-			return processed;
+			return processed is not null;
         }
-        public string? ProcessString(string? value, StreamWriter logger, string? loggerkey)
+        public static bool ProcessDecimal(string? value, StreamWriter logger, string? loggerkey, out decimal? processed) 
         {
-			return value;
+			processed = decimal.TryParse(value?.Replace('.', ','), out decimal _processed) ? _processed : new decimal?();
+
+			if (processed is null)
+			{
+				if (loggerkey is null) logger.Write(" {0} ", value);
+				else logger.Write("{0}: {1} ", loggerkey, value);
+			}
+
+			return processed is not null;
+        }
+        public static bool ProcessString(string? value, StreamWriter logger, string? loggerkey, out string? processed)
+        {
+			processed = value;
+
+			if (value is null)
+			{
+				if (loggerkey is null) logger.Write(" {0} ", value);
+				else logger.Write("{0}: {1} ", loggerkey, value);
+
+			}
+
+			return value is not null;
 		}
 	}
 }

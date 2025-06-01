@@ -1,4 +1,6 @@
-﻿
+﻿using System.Collections.Generic;
+using System.Linq;
+
 namespace System.IO
 {
 	public class StreamWriters : Dictionary<string, StreamWriter>, IDisposable

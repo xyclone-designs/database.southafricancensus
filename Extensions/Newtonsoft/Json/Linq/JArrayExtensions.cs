@@ -1,5 +1,8 @@
 ﻿using Database.SouthAfricanCensus.Enums;
 
+using System;
+using System.Linq;
+
 namespace Newtonsoft.Json.Linq
 {
 	public static class JArrayExtensions
