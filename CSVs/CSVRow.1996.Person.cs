@@ -15,7 +15,7 @@ namespace Database.SouthAfricanCensus.CSVs
 				ProcessInt(LineSplit[03], logger, nameof(newla), out newla),
 				ProcessInt(LineSplit[04], logger, nameof(hhnumber), out hhnumber),
 				ProcessInt(LineSplit[05], logger, nameof(personno), out personno),
-				ProcessInt(LineSplit[06], logger, nameof(hhrecord), out hhrecord),
+				ProcessString(LineSplit[06], logger, nameof(hhrecord), out hhrecord),
 				ProcessInt(LineSplit[07], logger, nameof(urban), out urban),
 				ProcessInt(LineSplit[08], logger, nameof(insttype), out insttype),
 				ProcessInt(LineSplit[09], logger, nameof(sex), out sex),
@@ -59,61 +59,61 @@ namespace Database.SouthAfricanCensus.CSVs
 				ProcessInt(LineSplit[47], logger, nameof(industr), out industr),
 				ProcessInt(LineSplit[48], logger, nameof(workingd), out workingd),
 				ProcessInt(LineSplit[49], logger, nameof(income), out income),
-				ProcessInt(LineSplit[50], logger, nameof(pespweig), out pespweig),
+				ProcessDouble(LineSplit[50], logger, nameof(pespweig), out pespweig),
 				
 			}.Any(_ => _ == false)) logger.WriteLine();
 		}
 
-		public int? province;
-		public int? district;
-		public int? dccode;
-		public int? newla;
-		public int? hhnumber;
-		public int? personno;
-		public int? hhrecord;
-		public int? urban;
-		public int? insttype;
-		public int? sex;
-		public int? age;
-		public int? relship;
-		public int? marstau;
-		public int? race;
-		public int? languag1;
-		public int? languag2;
-		public int? religion;
-		public int? birthcou;
-		public int? citizenc;
-		public int? citizeno;
-		public int? citizenr;
-		public int? migworke;
-		public int? tempresi;
-		public int? usualdis;
-		public int? movedy2;
-		public int? moveddis;
-		public int? disablec;
-		public int? sight;
-		public int? hearing;
-		public int? mental;
-		public int? motheral;
-		public int? fatheral;
-		public int? chilborn;
-		public int? childliv;
-		public int? agefrstb;
-		public int? bornlast;
-		public int? school;
-		public int? qualfld;
-		public int? study;
-		public int? quallev;
-		public int? deducode;
-		public int? econactt;
-		public int? worktime;
-		public int? wmployme;
-		public int? occupat;
-		public int? lstwrk1;
-		public int? industr;
-		public int? workingd;
-		public int? income;
-		public int? pespweig;
-		public int? physical;
+		public uint? province;
+		public uint? district;
+		public uint? dccode;
+		public uint? newla;
+		public uint? hhnumber;
+		public uint? personno;
+		public string? hhrecord;
+		public uint? urban;
+		public uint? insttype;
+		public uint? sex;
+		public uint? age;
+		public uint? relship;
+		public uint? marstau;
+		public uint? race;
+		public uint? languag1;
+		public uint? languag2;
+		public uint? religion;
+		public uint? birthcou;
+		public uint? citizenc;
+		public uint? citizeno;
+		public uint? citizenr;
+		public uint? migworke;
+		public uint? tempresi;
+		public uint? usualdis;
+		public uint? movedy2;
+		public uint? moveddis;
+		public uint? disablec;
+		public uint? sight;
+		public uint? hearing;
+		public uint? physical;
+		public uint? mental;
+		public uint? motheral;
+		public uint? fatheral;
+		public uint? chilborn;
+		public uint? childliv;
+		public uint? agefrstb;
+		public uint? bornlast;
+		public uint? school;
+		public uint? qualfld;
+		public uint? study;
+		public uint? quallev;
+		public uint? deducode;
+		public uint? econactt;
+		public uint? worktime;
+		public uint? wmployme;
+		public uint? occupat;
+		public uint? lstwrk1;
+		public uint? industr;
+		public uint? workingd;
+		public uint? income;
+		public double? pespweig;
 	}
 }

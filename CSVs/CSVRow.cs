@@ -26,6 +26,30 @@ namespace Database.SouthAfricanCensus.CSVs
 
 			return processed is not null;
 		}
+		public static bool ProcessInt(string? value, StreamWriter logger, string? loggerkey, out uint? processed)
+		{
+			processed = uint.TryParse(value, out uint _processed) ? _processed : new uint?();
+
+			if (processed is null)
+			{
+				if (loggerkey is null) logger.Write(" {0} ", value);
+				else logger.Write("{0}: {1} ", loggerkey, value);
+			}
+
+			return processed is not null;
+		}
+		public static bool ProcessLong(string? value, StreamWriter logger, string? loggerkey, out long? processed) 
+        {
+			processed = long.TryParse(value?.Replace('.', ','), out long _processed) ? _processed : new long?();
+
+			if (processed is null)
+			{
+				if (loggerkey is null) logger.Write(" {0} ", value);
+				else logger.Write("{0}: {1} ", loggerkey, value);
+			}
+
+			return processed is not null;
+        }
         public static bool ProcessDouble(string? value, StreamWriter logger, string? loggerkey, out double? processed) 
         {
 			processed = double.TryParse(value?.Replace('.', ','), out double _processed) ? _processed : new double?();

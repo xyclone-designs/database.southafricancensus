@@ -31,9 +31,9 @@ namespace Database.SouthAfricanCensus.CSVs
 				ProcessInt(LineSplit[19], logger, nameof(P15A_RESMONTHMOVED), out P15A_RESMONTHMOVED),
 				ProcessInt(LineSplit[20], logger, nameof(P15B_RESYEARMOVED), out P15B_RESYEARMOVED),
 				ProcessInt(LineSplit[21], logger, nameof(DERP_PREVRESPROV), out DERP_PREVRESPROV),
-				ProcessInt(LineSplit[22], logger, nameof(DERP_PREV_MUNIC), out DERP_PREV_MUNIC),
+				ProcessString(LineSplit[22], logger, nameof(DERP_PREV_MUNIC), out DERP_PREV_MUNIC),
 				ProcessInt(LineSplit[23], logger, nameof(DERP_USUALRESPROV), out DERP_USUALRESPROV),
-				ProcessInt(LineSplit[24], logger, nameof(DERP_USUALRES_MUNIC), out DERP_USUALRES_MUNIC),
+				ProcessString(LineSplit[24], logger, nameof(DERP_USUALRES_MUNIC), out DERP_USUALRES_MUNIC),
 				ProcessInt(LineSplit[25], logger, nameof(P16_MAIN_REASON), out P16_MAIN_REASON),
 				ProcessInt(LineSplit[26], logger, nameof(P17A_SEEING), out P17A_SEEING),
 				ProcessInt(LineSplit[27], logger, nameof(P17B_HEARING), out P17B_HEARING),
@@ -54,56 +54,56 @@ namespace Database.SouthAfricanCensus.CSVs
 				ProcessInt(LineSplit[42], logger, nameof(P20_EDUINST), out P20_EDUINST),
 				ProcessInt(LineSplit[43], logger, nameof(P21_EDULEVEL), out P21_EDULEVEL),
 				ProcessInt(LineSplit[44], logger, nameof(P22_EDUFIELD), out P22_EDUFIELD),
-				ProcessInt(LineSplit[45], logger, nameof(PERS_WGT), out PERS_WGT),
+				ProcessDouble(LineSplit[45], logger, nameof(PERS_WGT), out PERS_WGT),
 
 			}.Any(_ => _ == false)) logger.WriteLine();
 		}
 		
-		public int? QID;
-		public int? PID;
-		public int? P02_SEX;
-		public int? P03_YEAR;
-		public int? P03_MONTH;
-		public int? AGE_GROUP;
-		public int? P04_AGE;
-		public int? P05_RELATION;
-		public int? P06_MARITAL_ST;
-		public int? P07A_POP_GROUP;
-		public int? P08_LANGUAGE;
-		public int? P09_RELIGIOUS_AFFILIATION;
-		public int? P10_CITIZENSHIP;
-		public int? P11_PROV_POB;
-		public int? P12A_COUNTRYOFBIRTH;
-		public int? DERP_BIRTH_REGION;
-		public int? P12B_YEARMOVED;
-		public int? P13A_USUALRES;
-		public int? P14_SINCE2011;
-		public int? P15A_RESMONTHMOVED;
-		public int? P15B_RESYEARMOVED;
-		public int? DERP_PREVRESPROV;
-		public int? DERP_PREV_MUNIC;
-		public int? DERP_USUALRESPROV;
-		public int? DERP_USUALRES_MUNIC;
-		public int? P16_MAIN_REASON;
-		public int? P17A_SEEING;
-		public int? P17B_HEARING;
-		public int? P17C_COMMUNICATION;
-		public int? P17D_WALKING;
-		public int? P17E_REMEMBERING;
-		public int? P17F_SELF_CARE;
-		public int? P17A_DEVMEDEYEGLAS;
-		public int? P17B_DEVMEDHEARINGAID;
-		public int? P17C_DEVMEWALKINGSTICK;
-		public int? P17E_PROSTHESIS;
-		public int? P17D_DEVMEDWHEELCHAIR;
-		public int? P17F_DEVMED_OTHER;
-		public int? DISABILITY_STATUS;
-		public int? P18A_MOTHERALIVE;
-		public int? P18B_FATHERALIVE;
-		public int? P19_ECD_ATTENDANCE;
-		public int? P20_EDUINST;
-		public int? P21_EDULEVEL;
-		public int? P22_EDUFIELD;
-		public int? PERS_WGT;
+		public uint? QID;
+		public uint? PID;
+		public uint? P02_SEX;
+		public uint? P03_YEAR;
+		public uint? P03_MONTH;
+		public uint? AGE_GROUP;
+		public uint? P04_AGE;
+		public uint? P05_RELATION;
+		public uint? P06_MARITAL_ST;
+		public uint? P07A_POP_GROUP;
+		public uint? P08_LANGUAGE;
+		public uint? P09_RELIGIOUS_AFFILIATION;
+		public uint? P10_CITIZENSHIP;
+		public uint? P11_PROV_POB;
+		public uint? P12A_COUNTRYOFBIRTH;
+		public uint? DERP_BIRTH_REGION;
+		public uint? P12B_YEARMOVED;
+		public uint? P13A_USUALRES;
+		public uint? P14_SINCE2011;
+		public uint? P15A_RESMONTHMOVED;
+		public uint? P15B_RESYEARMOVED;
+		public uint? DERP_PREVRESPROV;
+		public string? DERP_PREV_MUNIC;
+		public uint? DERP_USUALRESPROV;
+		public string? DERP_USUALRES_MUNIC;
+		public uint? P16_MAIN_REASON;
+		public uint? P17A_SEEING;
+		public uint? P17B_HEARING;
+		public uint? P17C_COMMUNICATION;
+		public uint? P17D_WALKING;
+		public uint? P17E_REMEMBERING;
+		public uint? P17F_SELF_CARE;
+		public uint? P17A_DEVMEDEYEGLAS;
+		public uint? P17B_DEVMEDHEARINGAID;
+		public uint? P17C_DEVMEWALKINGSTICK;
+		public uint? P17E_PROSTHESIS;
+		public uint? P17D_DEVMEDWHEELCHAIR;
+		public uint? P17F_DEVMED_OTHER;
+		public uint? DISABILITY_STATUS;
+		public uint? P18A_MOTHERALIVE;
+		public uint? P18B_FATHERALIVE;
+		public uint? P19_ECD_ATTENDANCE;
+		public uint? P20_EDUINST;
+		public uint? P21_EDULEVEL;
+		public uint? P22_EDUFIELD;
+		public double? PERS_WGT;
 	}
 }

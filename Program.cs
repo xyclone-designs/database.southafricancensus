@@ -16,9 +16,8 @@ namespace Database.SouthAfricanCensus
 {
 	internal class Program
 	{
-		static readonly string DirectoryCurrent =
-			//Directory.GetCurrentDirectory();
-			Directory.GetParent(Directory.GetCurrentDirectory())?.Parent?.Parent?.FullName!;
+		//static readonly string DirectoryCurrent = Directory.GetCurrentDirectory();
+		static readonly string DirectoryCurrent = Directory.GetParent(Directory.GetCurrentDirectory())?.Parent?.Parent?.FullName!;
 
 		static readonly string DirectoryOutput = Path.Combine(DirectoryCurrent, ".output");
 		static readonly string DirectoryTemp = Path.Combine(DirectoryCurrent, ".temp");

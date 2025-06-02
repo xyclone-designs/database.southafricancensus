@@ -45,151 +45,151 @@ namespace Database.SouthAfricanCensus.CSVs
 				ProcessInt(LineSplit[03], logger, nameof(p12b_prp), out p12b_prp),
 				ProcessInt(LineSplit[04], logger, nameof(p12a_ppr), out p12a_ppr),
 				ProcessInt(LineSplit[05], logger, nameof(p13b_sg), out p13b_sg),
-				ProcessInt(LineSplit[06], logger, nameof(p13d_co), out p13d_co),
-				ProcessInt(LineSplit[07], logger, nameof(p13e_ph), out p13e_ph),
-				ProcessInt(LineSplit[08], logger, nameof(p13f_in), out p13f_in),
-				ProcessInt(LineSplit[09], logger, nameof(p13g_em), out p13g_em),
-				ProcessInt(LineSplit[10], logger, nameof(der5_dis), out der5_dis),
-				ProcessInt(LineSplit[12], logger, nameof(p14_ma), out p14_ma),
-				ProcessInt(LineSplit[13], logger, nameof(p14a_mno), out p14a_mno),
-				ProcessInt(LineSplit[14], logger, nameof(p15_fa), out p15_fa),
-				ProcessInt(LineSplit[15], logger, nameof(p15a_fno), out p15a_fno),
-				ProcessInt(LineSplit[16], logger, nameof(p16_stud), out p16_stud),
-				ProcessInt(LineSplit[17], logger, nameof(p16a_stt), out p16a_stt),
-				ProcessInt(LineSplit[18], logger, nameof(p17_educ), out p17_educ),
-				ProcessInt(LineSplit[19], logger, nameof(der27_ed), out der27_ed),
-				ProcessInt(LineSplit[20], logger, nameof(p17a_edf), out p17a_edf),
-				ProcessInt(LineSplit[21], logger, nameof(p18_work), out p18_work),
-				ProcessInt(LineSplit[22], logger, nameof(p18a_wno), out p18a_wno),
-				ProcessInt(LineSplit[23], logger, nameof(p18b_wst), out p18b_wst),
-				ProcessInt(LineSplit[24], logger, nameof(p18c_wav), out p18c_wav),
-				ProcessInt(LineSplit[25], logger, nameof(der10_em), out der10_em),
-				ProcessInt(LineSplit[26], logger, nameof(der11_em), out der11_em),
-				ProcessInt(LineSplit[27], logger, nameof(der57_em), out der57_em),
-				ProcessInt(LineSplit[28], logger, nameof(p19_wsta), out p19_wsta),
-				ProcessInt(LineSplit[29], logger, nameof(p19b_ind), out p19b_ind),
-				ProcessInt(LineSplit[00], logger, nameof(p19c_occ), out p19c_occ),
-				ProcessInt(LineSplit[01], logger, nameof(p19d_hrs), out p19d_hrs),
-				ProcessInt(LineSplit[02], logger, nameof(p19e_wp), out p19e_wp),
-				ProcessInt(LineSplit[03], logger, nameof(p19f4_wp), out p19f4_wp),
-				ProcessInt(LineSplit[04], logger, nameof(p19f_wpl), out p19f_wpl),
-				ProcessInt(LineSplit[05], logger, nameof(p20_tceb), out p20_tceb),
-				ProcessInt(LineSplit[06], logger, nameof(p20_mceb), out p20_mceb),
-				ProcessInt(LineSplit[07], logger, nameof(p20_fceb), out p20_fceb),
-				ProcessInt(LineSplit[08], logger, nameof(p20a_tcs), out p20a_tcs),
-				ProcessInt(LineSplit[09], logger, nameof(p20a_mcs), out p20a_mcs),
-				ProcessInt(LineSplit[10], logger, nameof(p20a_fcs), out p20a_fcs),
-				ProcessInt(LineSplit[11], logger, nameof(p20b_lda), out p20b_lda),
-				ProcessInt(LineSplit[12], logger, nameof(p20b_lmt), out p20b_lmt),
-				ProcessInt(LineSplit[13], logger, nameof(p20b_lye), out p20b_lye),
-				ProcessInt(LineSplit[14], logger, nameof(der24_ti), out der24_ti),
-				ProcessInt(LineSplit[15], logger, nameof(der23_ag), out der23_ag),
-				ProcessInt(LineSplit[16], logger, nameof(p20b_lse), out p20b_lse),
-				ProcessInt(LineSplit[17], logger, nameof(p20b_la), out p20b_la),
-				ProcessInt(LineSplit[18], logger, nameof(p21_wtra), out p21_wtra),
-				ProcessInt(LineSplit[19], logger, nameof(p22_incm), out p22_incm),
-				ProcessInt(LineSplit[20], logger, nameof(der60_mg), out der60_mg),
-				ProcessInt(LineSplit[21], logger, nameof(der61_mg), out der61_mg),
-				ProcessInt(LineSplit[22], logger, nameof(der62_mg), out der62_mg),
-				ProcessInt(LineSplit[23], logger, nameof(der63_mg), out der63_mg),
-				ProcessInt(LineSplit[24], logger, nameof(der64_mg), out der64_mg),
-				ProcessInt(LineSplit[25], logger, nameof(der65_mg), out der65_mg),
-				ProcessInt(LineSplit[26], logger, nameof(der66_mg), out der66_mg),
-				ProcessInt(LineSplit[27], logger, nameof(der67_mg), out der67_mg),
-				ProcessInt(LineSplit[28], logger, nameof(weight), out weight),
-				ProcessInt(LineSplit[29], logger, nameof(p13c_hr), out p13c_hr),
+				ProcessInt(LineSplit[06], logger, nameof(p13c_hr), out p13c_hr),
+				ProcessInt(LineSplit[07], logger, nameof(p13d_co), out p13d_co),
+				ProcessInt(LineSplit[08], logger, nameof(p13e_ph), out p13e_ph),
+				ProcessInt(LineSplit[09], logger, nameof(p13f_in), out p13f_in),
+				ProcessInt(LineSplit[10], logger, nameof(p13g_em), out p13g_em),
+				ProcessInt(LineSplit[12], logger, nameof(der5_dis), out der5_dis),
+				ProcessInt(LineSplit[13], logger, nameof(p14_ma), out p14_ma),
+				ProcessInt(LineSplit[14], logger, nameof(p14a_mno), out p14a_mno),
+				ProcessInt(LineSplit[15], logger, nameof(p15_fa), out p15_fa),
+				ProcessInt(LineSplit[16], logger, nameof(p15a_fno), out p15a_fno),
+				ProcessInt(LineSplit[17], logger, nameof(p16_stud), out p16_stud),
+				ProcessInt(LineSplit[18], logger, nameof(p16a_stt), out p16a_stt),
+				ProcessInt(LineSplit[19], logger, nameof(p17_educ), out p17_educ),
+				ProcessInt(LineSplit[20], logger, nameof(der27_ed), out der27_ed),
+				ProcessInt(LineSplit[21], logger, nameof(p17a_edf), out p17a_edf),
+				ProcessInt(LineSplit[22], logger, nameof(p18_work), out p18_work),
+				ProcessInt(LineSplit[23], logger, nameof(p18a_wno), out p18a_wno),
+				ProcessInt(LineSplit[24], logger, nameof(p18b_wst), out p18b_wst),
+				ProcessInt(LineSplit[25], logger, nameof(p18c_wav), out p18c_wav),
+				ProcessInt(LineSplit[26], logger, nameof(der10_em), out der10_em),
+				ProcessInt(LineSplit[27], logger, nameof(der11_em), out der11_em),
+				ProcessInt(LineSplit[28], logger, nameof(der57_em), out der57_em),
+				ProcessInt(LineSplit[29], logger, nameof(p19_wsta), out p19_wsta),
+				ProcessInt(LineSplit[00], logger, nameof(p19b_ind), out p19b_ind),
+				ProcessInt(LineSplit[01], logger, nameof(p19c_occ), out p19c_occ),
+				ProcessInt(LineSplit[02], logger, nameof(p19d_hrs), out p19d_hrs),
+				ProcessInt(LineSplit[03], logger, nameof(p19e_wp), out p19e_wp),
+				ProcessInt(LineSplit[04], logger, nameof(p19f4_wp), out p19f4_wp),
+				ProcessInt(LineSplit[05], logger, nameof(p19f_wpl), out p19f_wpl),
+				ProcessInt(LineSplit[06], logger, nameof(p20_tceb), out p20_tceb),
+				ProcessInt(LineSplit[07], logger, nameof(p20_mceb), out p20_mceb),
+				ProcessInt(LineSplit[08], logger, nameof(p20_fceb), out p20_fceb),
+				ProcessInt(LineSplit[09], logger, nameof(p20a_tcs), out p20a_tcs),
+				ProcessInt(LineSplit[10], logger, nameof(p20a_mcs), out p20a_mcs),
+				ProcessInt(LineSplit[11], logger, nameof(p20a_fcs), out p20a_fcs),
+				ProcessInt(LineSplit[12], logger, nameof(p20b_lda), out p20b_lda),
+				ProcessInt(LineSplit[13], logger, nameof(p20b_lmt), out p20b_lmt),
+				ProcessInt(LineSplit[14], logger, nameof(p20b_lye), out p20b_lye),
+				ProcessInt(LineSplit[15], logger, nameof(der24_ti), out der24_ti),
+				ProcessInt(LineSplit[16], logger, nameof(der23_ag), out der23_ag),
+				ProcessInt(LineSplit[17], logger, nameof(p20b_lse), out p20b_lse),
+				ProcessInt(LineSplit[18], logger, nameof(p20b_la), out p20b_la),
+				ProcessInt(LineSplit[19], logger, nameof(p21_wtra), out p21_wtra),
+				ProcessInt(LineSplit[20], logger, nameof(p22_incm), out p22_incm),
+				ProcessInt(LineSplit[21], logger, nameof(der60_mg), out der60_mg),
+				ProcessInt(LineSplit[22], logger, nameof(der61_mg), out der61_mg),
+				ProcessInt(LineSplit[23], logger, nameof(der62_mg), out der62_mg),
+				ProcessInt(LineSplit[24], logger, nameof(der63_mg), out der63_mg),
+				ProcessInt(LineSplit[25], logger, nameof(der64_mg), out der64_mg),
+				ProcessInt(LineSplit[26], logger, nameof(der65_mg), out der65_mg),
+				ProcessInt(LineSplit[27], logger, nameof(der66_mg), out der66_mg),
+				ProcessInt(LineSplit[28], logger, nameof(der67_mg), out der67_mg),
+				ProcessDouble(LineSplit[29], logger, nameof(weight), out weight),
 
 			}.Any(_ => _ == false)) logger.WriteLine();
 		}
-		
-		public int? sn;
-		public int? munic_co;
-		public int? md_code;
-		public int? dc_munic;
-		public int? pr_code;
-		public int? ea_type;
-		public int? EATYPE96;
-		public int? DENSITY;
-		public int? h23_quar;
-		public int? p01_pno;
-		public int? p02_day;
-		public int? p02_mth;
-		public int? p02_yr;
-		public int? p02_age;
-		public int? p03_sex;
-		public int? p04_rel;
-		public int? p05_mar;
-		public int? p05a_spo;
-		public int? p06_race;
-		public int? p07_lng;
-		public int? p08_rlg;
-		public int? der25_re;
-		public int? p09_rsa;
-		public int? p09a_prv;
-		public int? p09b_cnt;
-		public int? der28_bi;
-		public int? p10a_cnt;
-		public int? der29_ci;
-		public int? p11_4ngt;
-		public int? p11c_pru;
-		public int? p11a_pur;
-		public int? p12_96;
-		public int? p12b_96y;
-		public int? p12b_prp;
-		public int? p12a_ppr;
-		public int? p13b_sg;
-		public int? p13d_co;
-		public int? p13e_ph;
-		public int? p13f_in;
-		public int? p13g_em;
-		public int? der5_dis;
-		public int? p14_ma;
-		public int? p14a_mno;
-		public int? p15_fa;
-		public int? p15a_fno;
-		public int? p16_stud;
-		public int? p16a_stt;
-		public int? p17_educ;
-		public int? der27_ed;
-		public int? p17a_edf;
-		public int? p18_work;
-		public int? p18a_wno;
-		public int? p18b_wst;
-		public int? p18c_wav;
-		public int? der10_em;
-		public int? der11_em;
-		public int? der57_em;
-		public int? p19_wsta;
-		public int? p19b_ind;
-		public int? p19c_occ;
-		public int? p19d_hrs;
-		public int? p19e_wp;
-		public int? p19f4_wp;
-		public int? p19f_wpl;
-		public int? p20_tceb;
-		public int? p20_mceb;
-		public int? p20_fceb;
-		public int? p20a_tcs;
-		public int? p20a_mcs;
-		public int? p20a_fcs;
-		public int? p20b_lda;
-		public int? p20b_lmt;
-		public int? p20b_lye;
-		public int? der24_ti;
-		public int? der23_ag;
-		public int? p20b_lse;
-		public int? p20b_la;
-		public int? p21_wtra;
-		public int? p22_incm;
-		public int? der60_mg;
-		public int? der61_mg;
-		public int? der62_mg;
-		public int? der63_mg;
-		public int? der64_mg;
-		public int? der65_mg;
-		public int? der66_mg;
-		public int? der67_mg;
-		public int? weight;
-		public int? p13c_hr;
+
+		public uint? sn;
+		public uint? munic_co;
+		public uint? md_code;
+		public uint? dc_munic;
+		public uint? pr_code;
+		public uint? ea_type;
+		public uint? EATYPE96;
+		public uint? DENSITY;
+		public uint? h23_quar;
+		public uint? p01_pno;
+		public uint? p02_day;
+		public uint? p02_mth;
+		public uint? p02_yr;
+		public uint? p02_age;
+		public uint? p03_sex;
+		public uint? p04_rel;
+		public uint? p05_mar;
+		public uint? p05a_spo;
+		public uint? p06_race;
+		public uint? p07_lng;
+		public uint? p08_rlg;
+		public uint? der25_re;
+		public uint? p09_rsa;
+		public uint? p09a_prv;
+		public uint? p09b_cnt;
+		public uint? der28_bi;
+		public uint? p10a_cnt;
+		public uint? der29_ci;
+		public uint? p11_4ngt;
+		public uint? p11c_pru;
+		public uint? p11a_pur;
+		public uint? p12_96;
+		public uint? p12b_96y;
+		public uint? p12b_prp;
+		public uint? p12a_ppr;
+		public uint? p13b_sg;
+		public uint? p13c_hr;
+		public uint? p13d_co;
+		public uint? p13e_ph;
+		public uint? p13f_in;
+		public uint? p13g_em;
+		public uint? der5_dis;
+		public uint? p14_ma;
+		public uint? p14a_mno;
+		public uint? p15_fa;
+		public uint? p15a_fno;
+		public uint? p16_stud;
+		public uint? p16a_stt;
+		public uint? p17_educ;
+		public uint? der27_ed;
+		public uint? p17a_edf;
+		public uint? p18_work;
+		public uint? p18a_wno;
+		public uint? p18b_wst;
+		public uint? p18c_wav;
+		public uint? der10_em;
+		public uint? der11_em;
+		public uint? der57_em;
+		public uint? p19_wsta;
+		public uint? p19b_ind;
+		public uint? p19c_occ;
+		public uint? p19d_hrs;
+		public uint? p19e_wp;
+		public uint? p19f4_wp;
+		public uint? p19f_wpl;
+		public uint? p20_tceb;
+		public uint? p20_mceb;
+		public uint? p20_fceb;
+		public uint? p20a_tcs;
+		public uint? p20a_mcs;
+		public uint? p20a_fcs;
+		public uint? p20b_lda;
+		public uint? p20b_lmt;
+		public uint? p20b_lye;
+		public uint? der24_ti;
+		public uint? der23_ag;
+		public uint? p20b_lse;
+		public uint? p20b_la;
+		public uint? p21_wtra;
+		public uint? p22_incm;
+		public uint? der60_mg;
+		public uint? der61_mg;
+		public uint? der62_mg;
+		public uint? der63_mg;
+		public uint? der64_mg;
+		public uint? der65_mg;
+		public uint? der66_mg;
+		public uint? der67_mg;
+		public double? weight;
 	}
 }
