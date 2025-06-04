@@ -77,7 +77,7 @@ namespace Database.SouthAfricanCensus.CSVs
 		public uint? hohecona;
 		public uint? hhsize;
 		public uint? hinchh;
-		public uint? hinchhra;
+		public uint? hinchhra; 
 		public uint? hinchhse;
 		public uint? hhinccat;
 		public double? peshhwei;
