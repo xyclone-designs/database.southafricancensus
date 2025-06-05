@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 
-namespace Database.SouthAfricanCensus.CSVs
+namespace Database.SouthAfricanCensus.Inputs.CSVs
 {
 	public static partial class Utils
 	{

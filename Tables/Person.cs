@@ -1,4 +1,4 @@
-﻿using Database.SouthAfricanCensus.CSVs;
+﻿using Database.SouthAfricanCensus.Inputs.CSVs;
 using Database.SouthAfricanCensus.Enums;
 using Database.SouthAfricanCensus.Models;
 

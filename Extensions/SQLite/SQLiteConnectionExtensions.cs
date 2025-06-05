@@ -19,6 +19,13 @@ namespace SQLite
 
 			return sqliteconnection.Table<T>().Last();
 		}
+		public static IEnumerable<T> InsertAllAndReturn<T>(this SQLiteConnection sqliteconnection, IEnumerable<T> objs) where T : new()
+		{
+			int num = sqliteconnection.InsertAll(objs);
+			sqliteconnection.Commit();
+
+			return sqliteconnection.Table<T>().TakeLast(num);
+		}
 
 		public static IEnumerable<T> TableEnumerable<T>(this SQLiteConnection sqliteconnection) where T : new()
 		{

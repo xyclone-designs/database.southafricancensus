@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using System.Linq;
 
-namespace Database.SouthAfricanCensus.CSVs
+namespace Database.SouthAfricanCensus.Inputs.CSVs
 {
 	public class CSVRow2011Person : CSVRow2011
     {

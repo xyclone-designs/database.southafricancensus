@@ -1,5 +1,5 @@
 ﻿
-namespace Database.SouthAfricanCensus.CSVs
+namespace Database.SouthAfricanCensus.Inputs.CSVs
 {
 	public class CSVRow2022 : CSVRow
 	{

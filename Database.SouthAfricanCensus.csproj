@@ -8,7 +8,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Tables\Agriculture.cs" />
+    <Compile Remove="Tables\Household.cs" />
+    <Compile Remove="Tables\Mortality.cs" />
+    <Compile Remove="Tables\Person.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="PdfPig" Version="0.1.10" />
     <PackageReference Include="SharpZipLib" Version="1.4.2" />
     <PackageReference Include="sqlite-net-pcl" Version="1.9.172" />
     <PackageReference Include="XycloneDesigns.Extensions.CSharp" Version="1.0.2" />

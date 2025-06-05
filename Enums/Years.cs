@@ -2,6 +2,7 @@
 
 namespace Database.SouthAfricanCensus.Enums
 {
+	[SQLite.StoreAsText]
 	public enum Years
 	{
 		_1996,

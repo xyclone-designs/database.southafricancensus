@@ -1,6 +1,7 @@
 ﻿using Database.SouthAfricanCensus.Enums;
-using Database.SouthAfricanCensus.CSVs;
-
+using Database.SouthAfricanCensus.Inputs.CSVs;
+using Database.SouthAfricanCensus.Inputs.TXTs;
+using Database.SouthAfricanCensus.Tables;
 using ICSharpCode.SharpZipLib.GZip;
 
 using Newtonsoft.Json.Linq;
@@ -8,40 +9,15 @@ using Newtonsoft.Json.Linq;
 using SQLite;
 
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
 
 namespace Database.SouthAfricanCensus
 {
-	internal class Program
+	internal partial class Program
 	{
-		//static readonly string DirectoryCurrent = Directory.GetCurrentDirectory();
-		static readonly string DirectoryCurrent = Directory.GetParent(Directory.GetCurrentDirectory())?.Parent?.Parent?.FullName!;
-
-		static readonly string DirectoryOutput = Path.Combine(DirectoryCurrent, ".output");
-		static readonly string DirectoryTemp = Path.Combine(DirectoryCurrent, ".temp");
-		static readonly string DirectoryInput = Path.Combine(DirectoryCurrent, ".input");
-		static readonly string DirectoryInputCensus = Path.Combine(DirectoryInput, "census");
-		static readonly string[] DirectoryInputCensusAll = new string[]
-		{
-			Path.Combine(DirectoryInputCensus, "Census1996Household.zip"),
-			Path.Combine(DirectoryInputCensus, "Census1996Person.zip"),
-
-			Path.Combine(DirectoryInputCensus, "Census2001Household.zip"),
-			Path.Combine(DirectoryInputCensus, "Census2001Mortality.zip"),
-			Path.Combine(DirectoryInputCensus, "Census2001Person.zip"),
-
-			Path.Combine(DirectoryInputCensus, "Census2011Agriculture.zip"),
-			Path.Combine(DirectoryInputCensus, "Census2011Household.zip"),
-			Path.Combine(DirectoryInputCensus, "Census2011Mortality.zip"),
-			Path.Combine(DirectoryInputCensus, "Census2011Person.zip"),
-
-			Path.Combine(DirectoryInputCensus, "Census2022sample_F18.zip"),
-			Path.Combine(DirectoryInputCensus, "Census2022sample_F19.zip"),
-			Path.Combine(DirectoryInputCensus, "Census2022sample_F21.zip"),
-		};
-
 		static void Main(string[] args)
 		{
 			_CleaningPre();
@@ -54,7 +30,47 @@ namespace Database.SouthAfricanCensus
 			StreamWriters streamwriters = [];
 			SQLiteConnection sqliteconnection = _SQLiteConnection(sqlconnectionpath, false);
 
-			foreach (string directoryinputcensusall in DirectoryInputCensusAll)
+			#region 1996
+
+			streamwriters.PathBase = Path.Combine(DirectoryOutput, "1996");
+
+			Directory.CreateDirectory(streamwriters.PathBase);
+
+			List<Code> codes = 
+			[
+				.. sqliteconnection.InsertAllAndReturn(
+					objs: DirectoryInputMetadata1996CodesDistrictCouncil
+						.SelectMany(_ => new TXTCodes(_).GetCodes<TXTCodes.CodeTriplet>())
+						.Select(_ => Code.FromTXTCodeTriplet(_, code =>
+						{
+							code.Type = CodeTypes.DistrictCouncil;
+						}))),
+				.. sqliteconnection.InsertAllAndReturn(
+					objs: DirectoryInputMetadata1996CodesDistrictMagisterial
+						.SelectMany(_ => new TXTCodes(_).GetCodes<TXTCodes.CodePair>())
+						.Select(_ => Code.FromTXTCodePair(_, code =>
+						{
+							code.Type = CodeTypes.DistrictMagisterial;
+						}))),
+				.. sqliteconnection.InsertAllAndReturn(
+					objs: DirectoryInputMetadata1996CodesIndustry
+						.SelectMany(_ => new TXTCodes(_).GetCodes<TXTCodes.CodePair>())
+						.Select(_ => Code.FromTXTCodePair(_, code =>
+						{
+							code.Type = CodeTypes.Industry;
+						}))),
+				.. sqliteconnection.InsertAllAndReturn(
+					objs: DirectoryInputMetadata1996CodesOccupation
+						.SelectMany(_ => new TXTCodes(_).GetCodes<TXTCodes.CodePair>())
+						.Select(_ => Code.FromTXTCodePair(_, code =>
+						{
+							code.Type = CodeTypes.Occupation;
+						}))),
+			];
+
+			return;
+
+			foreach (string directoryinputcensusall in DirectoryInputCensus1996All)
 			{
 				using FileStream filestream = File.OpenRead(directoryinputcensusall);
 				using ZipArchive ziparchive = new(filestream);
@@ -67,7 +83,7 @@ namespace Database.SouthAfricanCensus
 
 				Years years = default(Years).FromFilename(filename);
 				Types types = default(Types).FromFilename(filename);
-				
+
 				string directorypath = Path.Combine(DirectoryOutput, string.Format("{0}.{1}", years.AsString(), types));
 
 				Directory.CreateDirectory(directorypath);
@@ -134,6 +150,20 @@ namespace Database.SouthAfricanCensus
 
 				streamwriters.Dispose(true, filename);
 			}
+
+			#endregion
+
+			#region 2001
+
+			#endregion
+
+			#region 2011
+
+			#endregion
+
+			#region 2022
+
+			#endregion
 			
 			sqliteconnection.CommitAndClose();
 
@@ -152,19 +182,15 @@ namespace Database.SouthAfricanCensus
 		{
 			Console.WriteLine("Pre Cleaning...");
 
-			if (Directory.Exists(DirectoryTemp)) Directory.Delete(DirectoryTemp, true);
 			if (Directory.Exists(DirectoryOutput)) Directory.Delete(DirectoryOutput, true);
 
 			Console.WriteLine("Creating Directories...");
 
-			Directory.CreateDirectory(DirectoryTemp);
 			Directory.CreateDirectory(DirectoryOutput);
 		}
 		static void _CleaningPost()
 		{
 			Console.WriteLine("Cleaning Up...");
-
-			Directory.Delete(DirectoryTemp, true);
 		}
 		static string ZipFile(string filepath)
 		{
@@ -198,7 +224,22 @@ namespace Database.SouthAfricanCensus
 		{
 			SQLiteConnection sqliteconnection = new(path);
 
-			if (individual) { } else { }
+			if (individual) 
+			{
+				//sqliteconnection.CreateTable<Agriculture>();
+				sqliteconnection.CreateTable<Code>();
+				//sqliteconnection.CreateTable<Household>();
+				//sqliteconnection.CreateTable<Mortality>();
+				//sqliteconnection.CreateTable<Person>();
+			} 
+			else 
+			{
+				//sqliteconnection.CreateTable<Agriculture.Individual>();
+				sqliteconnection.CreateTable<Code.Individual>();
+				//sqliteconnection.CreateTable<Household.Individual>();
+				//sqliteconnection.CreateTable<Mortality.Individual>();
+				//sqliteconnection.CreateTable<Person.Individual>();
+			}
 
 			return sqliteconnection;
 		}
