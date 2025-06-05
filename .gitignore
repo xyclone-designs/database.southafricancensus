@@ -1,5 +1,5 @@
 bin
 obj
 .vs
-.input
+.input/census10%
 .output
