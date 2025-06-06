@@ -56,28 +56,53 @@ namespace Database.SouthAfricanCensus
 		};
 
 		static readonly string DirectoryInputMetadata = Path.Combine(DirectoryInput, "metadata10%");
+		static readonly string DirectoryInputMetadata1996 = Path.Combine(DirectoryInputMetadata, "1996");
+		static readonly string[] DirectoryInputMetadata1996CodesArea = new string[]
+		{
+			Path.Combine(DirectoryInputMetadata1996, "codes.area.txt"),
+		};
 		static readonly string[] DirectoryInputMetadata1996CodesDistrictMagisterial = new string[]
 		{
-			Path.Combine(DirectoryInputMetadata, "codes.district.magisterial.txt"),
+			Path.Combine(DirectoryInputMetadata1996, "codes.district.magisterial.txt"),
 		};
 		static readonly string[] DirectoryInputMetadata1996CodesDistrictCouncil = new string[]
 		{
-			Path.Combine(DirectoryInputMetadata, "codes.district.council.txt"),
+			Path.Combine(DirectoryInputMetadata1996, "codes.district.council.txt"),
 		};
 		static readonly string[] DirectoryInputMetadata1996CodesIndustry = new string[]
 		{
-			Path.Combine(DirectoryInputMetadata, "codes.occupation.1.txt"),
-			Path.Combine(DirectoryInputMetadata, "codes.occupation.2.txt"),
-			Path.Combine(DirectoryInputMetadata, "codes.occupation.3.txt"),
+			Path.Combine(DirectoryInputMetadata1996, "codes.occupation.1.txt"),
+			Path.Combine(DirectoryInputMetadata1996, "codes.occupation.2.txt"),
+			Path.Combine(DirectoryInputMetadata1996, "codes.occupation.3.txt"),
 		};
 		static readonly string[] DirectoryInputMetadata1996CodesOccupation = new string[]
 		{
-			Path.Combine(DirectoryInputMetadata, "codes.occupation.1.txt"),
-			Path.Combine(DirectoryInputMetadata, "codes.occupation.2.txt"),
-			Path.Combine(DirectoryInputMetadata, "codes.occupation.3.txt"),
+			Path.Combine(DirectoryInputMetadata1996, "codes.occupation.1.txt"),
+			Path.Combine(DirectoryInputMetadata1996, "codes.occupation.2.txt"),
+			Path.Combine(DirectoryInputMetadata1996, "codes.occupation.3.txt"),
 		};
 
 		static readonly string DirectoryInputMetadata2001 = Path.Combine(DirectoryInputMetadata, "2001");
+		static readonly string[] DirectoryInputMetadata2001CodesCauseOfDeath = new string[]
+		{
+			Path.Combine(DirectoryInputMetadata2001, "codes.causeofdeath.txt"),
+		};
+		static readonly string[] DirectoryInputMetadata2001CodesIndustry = new string[]
+		{
+			Path.Combine(DirectoryInputMetadata2001, "codes.occupation.1.txt"),
+			Path.Combine(DirectoryInputMetadata2001, "codes.occupation.2.txt"),
+			Path.Combine(DirectoryInputMetadata2001, "codes.occupation.3.txt"),
+		};
+		static readonly string[] DirectoryInputMetadata2001CodesOccupation = new string[]
+		{
+			Path.Combine(DirectoryInputMetadata2001, "codes.occupation.1.txt"),
+			Path.Combine(DirectoryInputMetadata2001, "codes.occupation.2.txt"),
+			Path.Combine(DirectoryInputMetadata2001, "codes.occupation.3.txt"),
+		};
+		static readonly string[] DirectoryInputMetadata2001CodesReligion = new string[]
+		{
+			Path.Combine(DirectoryInputMetadata2001, "codes.religion.txt"),
+		};
 		static readonly string DirectoryInputMetadata2011 = Path.Combine(DirectoryInputMetadata, "2011");
 		static readonly string DirectoryInputMetadata2022 = Path.Combine(DirectoryInputMetadata, "2022");
 	}

@@ -1,0 +1,67 @@
+1,101,Cape Metro (Southern Peninsula MLC)
+1,102,Cape Metro (Central Cape Town MLC)
+1,103,Cape Metro (Blaauwberg MLC)
+1,104,Cape Metro (Tygerberg MLC)
+1,105,Cape Metro (Oostenberg MLC)
+1,106,Cape Metro (Helderberg MLC)
+1,107,West Coast
+1,108,Breede River
+1,109,Winelands
+1,110,Overberg
+1,111,South Cape
+1,112,Klein Karoo
+1,113,Sentrale Karoo
+2,201,Western Region
+2,202,Amatola
+2,202,Stormberg
+2,204,Drakensberg
+2,205,Wild Coast
+2,206,Kei
+3,301,Lower Orange
+3,302,Kalahari
+3,303,Diamantveld
+3,304,Upper Karoo
+3,305,Hantam
+3,306,Namaqualand
+4,401,Northern Free State
+4,402,Eastern Free State
+4,403,Bloem Area
+4,404,Goldfields
+5,501,uThungulu
+5,502,Zululand
+5,503,Mzinyathi
+5,504,Thukela
+5,505,Indlovu
+5,506,Ugu
+5,507,iLembe
+5,508,Durban Metro (South Durban MLC)
+5,509,Durban Metro (South Central Durban MLC)
+5,510,Durban Metro (Inner West Durban MLC)
+5,511,Durban Metro (North Central Durban MLC)
+5,512,Durban Metro (Outer West Durban MLC)
+5,513,Durban Metro (Northern Durban MLC)
+6,601,Bophirima
+6,602,Southern
+6,603,Central
+6,604,Rustenburg
+6,605,Eastern
+7,701,Pretoria (Northern Pretoria MLC)
+7,702,Pretoria (City Council of Pretoria MLC)
+7,703,Pretoria (Centurion)
+7,704,Greater Johannesburg (Midrand/Rabie Ridge/Ivory Park)
+7,705,Greater Johannesburg (Northern Johannesburg MLC)
+7,706,Greater Johannesburg (Kempton Park/Tembisa MLC)
+7,707,Greater Johannesburg (Eastern Johannesburg MLC)
+7,708,Greater Johannesburg (Edenvale/Modderfontein MLC)
+7,709,Greater Johannesburg (Western Johannesburg MLC)
+7,710,Greater Johannesburg (Southern Johannesburg MLC)
+7,711,Lekoa/Vaal (Vereeniging-Kopanong MLC)
+7,712,Lekoa/Vaal (Western Vaal MLC)
+7,713,Western Council
+7,714,Eastern Council
+8,801,Lowveld Escarpment
+8,802,Highveld
+8,802,Highveld
+8,803,Eastvaal
+9,901,Bushveld
+9,902,Northern

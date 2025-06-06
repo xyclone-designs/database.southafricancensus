@@ -1,0 +1,154 @@
+111,Legislators
+112,Senior Government Officers
+113,Traditional Chiefs and Heads of Villages
+114,Senior Officers of Special-Interest Organisations
+119,Legislators and Senior Officers not elsewhere classified
+121,Directors and Chief Executives
+122,Production and Operations Managers/Department Managers
+123,Other Managers/Department Managers
+129,Corporate Managers not elsewhere classified
+131,General Managers
+139,General Managers not elsewhere classified
+211,Physicists; Chemists and Related Professionals
+212,Mathematicians; Statisticians and Related Professionals
+213,Computing Professionals
+214,Architects; Engineers and Related Professionals
+215,Physical Sciences Technologists
+219,Physical; Mathematical and Engineering Science Professionals not elsewhere classified
+221,Life Science Professionals
+222,Health Professionals (except Nursing)
+223,Nursing and Midwifery Professionals
+229,Life Science and Health Professionals not elsewhere classified
+231,College; University and Higher Education Institutions Teaching Professionals
+232,Secondary Education Institutions Teaching Professionals
+233,Primary and Pre-Primary Education Institutions Teaching Professionals
+234,Special Education Institutions Teaching Professionals
+235,Other Teaching Institutions Professionals
+239,Other Education Professionals not elsewhere classified
+241,Business Professionals
+242,Legal Professionals
+243,Archivists; Librarians and Related Information Professionals
+244,Social Science and Related Professionals
+245,Writers and Creative or Performing Artists
+246,Religious Professionals
+249,Other Professionals not elsewhere classified
+311,Natural and Engineering Science Technicians
+312,Computer Associate Professionals
+313,Optical and Electronic Equipment Operators
+314,Ship and Aircraft Controllers and Technicians
+315,Safety and Quality Inspectors
+319,Physical and Engineering Science Associate Professionals not elsewhere classified
+321,Life Science Technicians and Related Associate Professionals
+322,Modern Health Associate Professionals (except Nursing)
+323,Nursing and Midwifery Associate Professionals
+324,Traditional Medicine Practitioners and Faith Healers
+329,Life Science and Health Associate Professionals not elsewhere classified
+331,Primary Education Teaching Associate Professionals
+332,Pre-Primary Education Teaching Associate Professionals
+333,Special Education Teaching Associate Professionals
+334,Other Teaching Associate Professionals
+339,Teaching Associate Professionals not elsewhere classified
+341,Finance and Sales Associate Professionals
+342,Business Services Agents and Trade Brokers
+343,Administrative Associate Professionals
+344,Customs; Tax and Related Government Associate Professionals
+345,Police Inspectors and Detectives
+346,Social Work Associate Professionals
+347,Artistic; Entertainment and Sports Associate Professionals
+348,Religious Associate Professionals
+349,Other Associate Professionals not elsewhere classified
+411,Secretaries and Keyboard-Operating Clerks
+412,Numerical Clerks
+413,Material-Recording and Transport Clerks
+414,Library; Mail and Related Clerks
+419,Other Office Clerks and Clerks not elsewhere classified (except Customer Services Clerks)
+421,Cashiers; Tellers and Related Clerks
+422,Client Information Clerks
+429,Customer Services Clerks not elsewhere classified
+511,Travel Attendants and Related Workers
+512,Housekeeping and Restaurant Services Workers
+513,Personal Care and Related Workers
+514,Other Personal Services Workers
+515,Astrologers; Fortune-Tellers and Related Workers
+516,Protective Services Workers
+519,Personal and Protective Services Workers not elsewhere classified
+521,Fashion and Other Models
+522,Shop Salespersons and Demonstrators
+523,Stall and Market Salespersons
+529,Models; Salespersons and Demonstrators not elsewhere classified
+611,Market Gardeners and Crop Growers
+612,Market-Oriented Animal Producers and Related Workers
+613,Market-Oriented Crop and Animal Producers
+614,Forestry and Related Workers
+615,Fishery Workers; Hunters and Trappers
+619,Market-Oriented Skilled Agricultural and Fishery Workers not elsewhere classified
+621,Subsistence Agricultural and Fishery Workers
+711,Miners; Shot-Firers; Stone Cutters and Carvers
+712,Building Frame and Related Trades Workers
+713,Building Finishers and Related Trades Workers
+714,Painters; Building Structure Cleaners and Related Trades Workers
+719,Extraction and Building Trades Workers not elsewhere classified
+721,Metal Moulders; Welders; Sheet-Metal Workers; Structural Metal Preparers and Related Trades Work
+722,Blacksmiths; Tool-Makers and Related Trades Workers (excluding Apprentices/Trainees)
+723,Machinery Mechanics and Fitters
+724,Electrical and Electronic Equipment Mechanics and Fitters
+729,Metal; Machinery and Related Trades Workers not elsewhere classified
+731,Precision Workers in Metal and Related Materials
+732,Potters; Glass-Makers and Related Trades Workers
+733,Handicraft Workers in Wood; Textile; Leather and Related Materials
+734,Printing and Related Trades Workers
+739,Precision; Handicraft; Printing and Related Trades Workers not elsewhere classified
+741,Food Processing and Related Trades Workers
+742,Wood Treaters; Cabinetmakers and Related Trades Workers
+743,Textile; Garment and Related Trades Workers
+744,Pelt; Leather and Shoemaking Trades Workers
+749,Other Craft and Related Trades Workers not elsewhere classified
+811,Mining and Mineral Processing Plant Operators
+812,Metal-Processing Plant Operators
+813,Glass; Ceramics and Related Plant Operators
+814,Wood-Processing and Papermaking Plant Operators
+815,Chemical-Processing Plant Operators
+816,Power-Production and Related Plant Operators
+817,Automated Assembly-Line and Industrial-Robot Operators
+819,Stationary-Plant and Related Operators not elsewhere classified
+821,Metal and Mineral-Products Machine Operators
+822,Chemical-Products Machine Operators
+823,Rubber and Plastic Products Machine Operators
+824,Wood Products Machine Operators
+825,Printing; Binding and Paper Products Machine Operators
+826,Textile; Fur and Leather Products Machine Operators
+827,Food and Related Products Machine Operators
+828,Assemblers
+829,Other Machine Operators and Assemblers not elsewhere classified
+831,Locomotive-Engine Drivers and Related Workers
+832,Motor Vehicle Drivers and Related Workers
+833,Agricultural and Other Mobile Plant Operators
+834,Ships' Deck Crews and Related Workers
+839,Drivers and Mobile Plant Operators not elsewhere classified
+911,Street Vendors and Related Workers
+912,Shoe-Cleaning and Other Elementary Street Services Occupations
+913,Domestic and Related Helpers; Cleaners and Launderers
+914,Building Caretakers and Window and Related Cleaners
+915,Messengers; Porters; Doorkeepers and Related Workers
+916,Garbage Collectors and Related Labourers
+919,Elementary Sales and Services Occupations not elsewhere classified
+921,Agricultural; Fishery and Related Labourers
+929,Agricultural; Fishery and Related Labourers not elsewhere classified
+931,Mining and Construction Labourers
+932,Manufacturing Labourers
+933,Transport Labourers and Freight Handlers
+939,Labourers in Mining; Construction; Manufacturing and Transport not elsewhere classified
+999,Beggar
+081,Occupations Unspecified
+082,Unemployed; Occupation Unspecified
+083,Occupations in the Informal Sector not elsewhere classified
+084,Occupations not elsewhere classified
+085,Occupations not adequately defined
+091,Homemakers (Housewives/Househusbands)
+092,Children; not Scholars or Students (Younger Than 15 Years)
+093,Scholars; Students
+094,Pensioners and other not economically active (65 Years and older) and Labour-Disabled (15 To 64 Y)
+095,Labour-Disabled (15 To 65 Years Old) Persons
+096,Not economically active persons not elsewhere classified
+097,Foreign visitors
+998,Undetermined

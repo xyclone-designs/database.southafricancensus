@@ -1,0 +1,12 @@
+1,Agriculture; hunting; forestry and fishing
+2,Mining and quarrying
+3,Manufacturing
+4,Electricity; gas and water supply
+5,Construction
+6,Wholesale and retail trade
+7,Transport; storage and communication
+8,Financial; insurance; real estate and business services
+9,Community; social and personal services
+0,Other and not adequately defined
+X,Private Households
+Y,Undetermined

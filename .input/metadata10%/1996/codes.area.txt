@@ -1,0 +1,820 @@
+1,Western Cape,1001,Breede River,10121,Ceres TLC
+1,Western Cape,1001,Breede River,10166,Matroosberg TRC
+1,Western Cape,1001,Breede River,,De Doorns TLC
+1,Western Cape,1001,Breede River,,Rawsonville TLC
+1,Western Cape,1001,Breede River,,Touws River TLC
+1,Western Cape,1001,Breede River,10168,Montagu TLC
+1,Western Cape,1001,Breede River,10196,Robertson TLC
+1,Western Cape,1001,Breede River,10223,Witzenberg TRC
+1,Western Cape,1001,Breede River,,Prince Alfred Hamlet TLC
+1,Western Cape,1001,Breede River,,Saron TLC
+1,Western Cape,1001,Breede River,,Tulbagh TLC
+1,Western Cape,1001,Breede River,,Wolseley TLC
+1,Western Cape,1001,Breede River,10225,Worcester TLC
+1,Western Cape,1001,Breede River,10226,Wynland TRC
+1,Western Cape,1001,Breede River,,Ashton TLC
+1,Western Cape,1001,Breede River,,Bonnievale TLC
+1,Western Cape,1001,Breede River,,McGregor TLC
+1,Western Cape,1002,Klein Karoo,10157,Ladismith TRC
+1,Western Cape,1002,Klein Karoo,,Calitzdorp TLC
+1,Western Cape,1002,Klein Karoo,,Calitzdorp TRC
+1,Western Cape,1002,Klein Karoo,,Ladismith TLC
+1,Western Cape,1002,Klein Karoo,,Zoar TLC
+1,Western Cape,1002,Klein Karoo,10177,Oudtshoorn TLC
+1,Western Cape,1002,Klein Karoo,10178,Oudtshoorn TRC
+1,Western Cape,1002,Klein Karoo,,De Rust/Blomnek TLC
+1,Western Cape,1002,Klein Karoo,,Dysseldorp TLC
+1,Western Cape,1002,Klein Karoo,10212,Uniondale TRC
+1,Western Cape,1002,Klein Karoo,,Uniondale
+1,Western Cape,1002,Klein Karoo,,Bo-Langkloof TRC
+1,Western Cape,1002,Klein Karoo,,Haarlem TLC
+1,Western Cape,1003,Cape Metro,10109,Blaauwberg MLC
+1,Western Cape,1003,Cape Metro,10120,Central Cape Town MLC
+1,Western Cape,1003,Cape Metro,10147,Helderberg MLC
+1,Western Cape,1003,Cape Metro,10176,Oostenberg MLC
+1,Western Cape,1003,Cape Metro,10200,Southern Peninsula MLC
+1,Western Cape,1003,Cape Metro,10211,Tygerberg MLC
+1,Western Cape,1004,Overberg,10113,Bredasdorp TLC
+1,Western Cape,1004,Overberg,10114,Bredasdorp TRC
+1,Western Cape,1004,Overberg,,Napier TLC
+1,Western Cape,1004,Overberg,,Struisbaai TLC
+1,Western Cape,1004,Overberg,10116,Caledon TRC
+1,Western Cape,1004,Overberg,,Botrivier TLC
+1,Western Cape,1004,Overberg,,Genadendal TLC
+1,Western Cape,1004,Overberg,,Greyton TLC
+1,Western Cape,1004,Overberg,,Hangklip/ Kleinmond TLC
+1,Western Cape,1004,Overberg,,Riviersonderend TLC
+1,Western Cape,1004,Overberg,10117,Caledon/Myddleton TLC
+1,Western Cape,1004,Overberg,10139,Grabouw TLC
+1,Western Cape,1004,Overberg,10140,Greater Hermanus TLC
+1,Western Cape,1004,Overberg,10149,Hermanus TRC
+1,Western Cape,1004,Overberg,,Gansbaai TLC
+1,Western Cape,1004,Overberg,,Stanford TLC
+1,Western Cape,1004,Overberg,10175,Nuweberg TRC
+1,Western Cape,1004,Overberg,,Villiersdorp TLC
+1,Western Cape,1004,Overberg,10207,Swellendam TLC
+1,Western Cape,1004,Overberg,10208,Swellendam TRC
+1,Western Cape,1004,Overberg,,Barrydale TLC
+1,Western Cape,1004,Overberg,,Infanta TLC
+1,Western Cape,1004,Overberg,,Suurbraak TLC
+1,Western Cape,1005,Sentrale Karoo,10105,Beaufort West TLC
+1,Western Cape,1005,Sentrale Karoo,10173,Beaufort West TRC
+1,Western Cape,1005,Sentrale Karoo,,Murraysburg TLC
+1,Western Cape,1005,Sentrale Karoo,,Murraysburg TRC
+1,Western Cape,1005,Sentrale Karoo,10187,Prince Albert TRC
+1,Western Cape,1005,Sentrale Karoo,,Prince Albert TLC
+1,Western Cape,1005,Sentrale Karoo,,Laingsburg TLC
+1,Western Cape,1005,Sentrale Karoo,,Laingsburg TRC
+1,Western Cape,1005,Sentrale Karoo,,Leeu Gamka TLC
+1,Western Cape,1006,South Cape,10136,George TLC
+1,Western Cape,1006,South Cape,10141,Greater Plettenberg Bay TLC
+1,Western Cape,1006,South Cape,10154,Knysna TLC
+1,Western Cape,1006,South Cape,10161,Langeberg TRC
+1,Western Cape,1006,South Cape,,Albertinia TLC
+1,Western Cape,1006,South Cape,,Gouritz TLC
+1,Western Cape,1006,South Cape,,Heidelberg TLC
+1,Western Cape,1006,South Cape,,Slangrivier TLC
+1,Western Cape,1006,South Cape,,Stilbaai TLC
+1,Western Cape,1006,South Cape,,Vanwyksdorp TLC
+1,Western Cape,1006,South Cape,10170,Mosselbaai TRC
+1,Western Cape,1006,South Cape,,Friemersheim TLC
+1,Western Cape,1006,South Cape,,Groot Brakrivier TLC
+1,Western Cape,1006,South Cape,,Herbertsdale TLC
+1,Western Cape,1006,South Cape,10171,Mosselbay TLC
+1,Western Cape,1006,South Cape,10179,Outeniqua TRC
+1,Western Cape,1006,South Cape,,Belvidere Estate TLC
+1,Western Cape,1006,South Cape,,Brenton TLC
+1,Western Cape,1006,South Cape,,Knoetzie TLC
+1,Western Cape,1006,South Cape,,Rheenendal TLC
+1,Western Cape,1006,South Cape,,Sedgefield TLC
+1,Western Cape,1006,South Cape,,Wilderness TLC
+1,Western Cape,1006,South Cape,10193,Riversdale TLC
+1,Western Cape,1007,West Coast,10124,Clanwilliam TRC
+1,Western Cape,1007,West Coast,,Citrusdal TLC
+1,Western Cape,1007,West Coast,,Clanwilliam TLC
+1,Western Cape,1007,West Coast,,Graafwater TLC
+1,Western Cape,1007,West Coast,,Lamberts Bay TLC
+1,Western Cape,1007,West Coast,10164,Malmesbury TLC
+1,Western Cape,1007,West Coast,10165,Malmesbury TRC
+1,Western Cape,1007,West Coast,,Darling TLC
+1,Western Cape,1007,West Coast,,Hopefield TLC
+1,Western Cape,1007,West Coast,,Koringberg TLC
+1,Western Cape,1007,West Coast,,Langebaan TLC
+1,Western Cape,1007,West Coast,,Yzerfontein TLC
+1,Western Cape,1007,West Coast,10169,Moorreesburg TLC
+1,Western Cape,1007,West Coast,10183,Piketberg TRC
+1,Western Cape,1007,West Coast,,Aurora TLC
+1,Western Cape,1007,West Coast,,Piketberg TLC
+1,Western Cape,1007,West Coast,,Porterville TLC
+1,Western Cape,1007,West Coast,,Redelinghuys TLC
+1,Western Cape,1007,West Coast,,Velddrif TLC
+1,Western Cape,1007,West Coast,10214,Vanrhynsdorp TRC
+1,Western Cape,1007,West Coast,,Bitterfontein/ Nuwerus TLC
+1,Western Cape,1007,West Coast,,Klawer TLC
+1,Western Cape,1007,West Coast,,Rietpoort TLC
+1,Western Cape,1007,West Coast,,Vanrhynsdorp TLC
+1,Western Cape,1007,West Coast,10218,Vredendal TLC
+1,Western Cape,1007,West Coast,10219,Vredendal TRC
+1,Western Cape,1007,West Coast,,Doringbaai/Strandfontein TLC
+1,Western Cape,1007,West Coast,,Ebenhaezer TLC
+1,Western Cape,1007,West Coast,,Lutzville TLC
+1,Western Cape,1007,West Coast,,10221 West Coast Peninsula TLC
+1,Western Cape,1008,Winelands,10180,Paarl TLC
+1,Western Cape,1008,Winelands,10181,Paarl TRC
+1,Western Cape,1008,Winelands,,Franschoek TLC
+1,Western Cape,1008,Winelands,10202,Stellenbosch TLC
+1,Western Cape,1008,Winelands,10203,Stellenbosch TRC
+1,Western Cape,1008,Winelands,,Pniel TLC
+1,Western Cape,1008,Winelands,10220,Wellington TLC
+2,Eastern Cape,2001,Amatola,20103,Adelaide Rural TRC
+2,Eastern Cape,2001,Amatola,,Adelaide TLC
+2,Eastern Cape,2001,Amatola,20119,Bedford Rural TRC
+2,Eastern Cape,2001,Amatola,,Bedford TLC
+2,Eastern Cape,2001,Amatola,20127,Butterworth TLC
+2,Eastern Cape,2001,Amatola,20128,Butterworth/ Gowa TRC
+2,Eastern Cape,2001,Amatola,20133,Cathcart Rural TRC
+2,Eastern Cape,2001,Amatola,,Cathcart TLC
+2,Eastern Cape,2001,Amatola,,Hogsback LC
+2,Eastern Cape,2001,Amatola,20135,Centani TRC
+2,Eastern Cape,2001,Amatola,,Kentani TLC
+2,Eastern Cape,2001,Amatola,20145,East London Rural TRC
+2,Eastern Cape,2001,Amatola,20146,East London TLC
+2,Eastern Cape,2001,Amatola,,Amatola Coastal LC
+2,Eastern Cape,2001,Amatola,20153,Fort Beaufort Rural TRC
+2,Eastern Cape,2001,Amatola,,Fort Beaufort TLC
+2,Eastern Cape,2001,Amatola,20155,Gatyana/ Willowvale TRC
+2,Eastern Cape,2001,Amatola,,Willowvale TLC
+2,Eastern Cape,2001,Amatola,20172,Idutywa Rural TRC
+2,Eastern Cape,2001,Amatola,,Idutywa TLC
+2,Eastern Cape,2001,Amatola,20185,Keiskammahoek Rural TRC
+2,Eastern Cape,2001,Amatola,,Keiskammahoek TLC
+2,Eastern Cape,2001,Amatola,20189,King Williams Town Rural TRC
+2,Eastern Cape,2001,Amatola,,Kei Road TLC
+2,Eastern Cape,2001,Amatola,20190,King Williams Town TLC
+2,Eastern Cape,2001,Amatola,20194,Komga Rural TRC
+2,Eastern Cape,2001,Amatola,,Kei Mouth TLC
+2,Eastern Cape,2001,Amatola,,Komga TLC
+2,Eastern Cape,2001,Amatola,20210,Middeldrift Rural TRC
+2,Eastern Cape,2001,Amatola,,Middeldrift TLC
+2,Eastern Cape,2001,Amatola,20220,Mpofu/ Stockenstroom TRC
+2,Eastern Cape,2001,Amatola,,Seymore TLC
+2,Eastern Cape,2001,Amatola,20226,Nqamakwe Rural TRC
+2,Eastern Cape,2001,Amatola,,Nqamakwe TLC
+2,Eastern Cape,2001,Amatola,20235,Peddie Rural TRC
+2,Eastern Cape,2001,Amatola,,Peddie TLC
+2,Eastern Cape,2001,Amatola,,Hamburg TLC
+2,Eastern Cape,2001,Amatola,20263,Stutterheim Rural TRC
+2,Eastern Cape,2001,Amatola,20264,Stutterheim TLC
+2,Eastern Cape,2001,Amatola,20271,Tsomo Rural TRC
+2,Eastern Cape,2001,Amatola,,Tsomo TLC
+2,Eastern Cape,2001,Amatola,20283,Victoria East TRC
+2,Eastern Cape,2001,Amatola,,Alice TLC
+2,Eastern Cape,2002,Drakensberg,20106,Albert TRC
+2,Eastern Cape,2002,Drakensberg,,Burgersdorp TLC
+2,Eastern Cape,2002,Drakensberg,20111,Aliwal North Rural TRC
+2,Eastern Cape,2002,Drakensberg,,Aliwal North TLC
+2,Eastern Cape,2002,Drakensberg,,Jamestown TLC
+2,Eastern Cape,2002,Drakensberg,20115,Barkly East Rural TRC
+2,Eastern Cape,2002,Drakensberg,,Barkly-East TLC
+2,Eastern Cape,2002,Drakensberg,,Lady Grey Rural TRC
+2,Eastern Cape,2002,Drakensberg,,Lady Grey TLC
+2,Eastern Cape,2002,Drakensberg,,Rhodes TLC
+2,Eastern Cape,2002,Drakensberg,20132,Cala TLC
+2,Eastern Cape,2002,Drakensberg,20147,Elliot Rural TRC
+2,Eastern Cape,2002,Drakensberg,,Elliot TLC
+2,Eastern Cape,2002,Drakensberg,20164,Herschel TRC
+2,Eastern Cape,2002,Drakensberg,,Sterkspruit TLC
+2,Eastern Cape,2002,Drakensberg,20174,Indwe Rural TRC
+2,Eastern Cape,2002,Drakensberg,,Indwe TLC
+2,Eastern Cape,2002,Drakensberg,20204,Maclear Rural TRC
+2,Eastern Cape,2002,Drakensberg,,Maclear TLC
+2,Eastern Cape,2002,Drakensberg,,Ugie TLC
+2,Eastern Cape,2002,Drakensberg,20259,Steynsburg Rural TRC
+2,Eastern Cape,2002,Drakensberg,,Steynsburg TLC
+2,Eastern Cape,2002,Drakensberg,,Venterstad Rural TRC
+2,Eastern Cape,2002,Drakensberg,,Venterstad TLC
+2,Eastern Cape,2002,Drakensberg,20288,Wodehouse TRC
+2,Eastern Cape,2002,Drakensberg,,Dordrecht TLC
+2,Eastern Cape,2002,Drakensberg,20289,Xalanga/ Cala TRC
+2,Eastern Cape,2003,Wild Coast,20151,Engcobo Rural TRC
+2,Eastern Cape,2003,Wild Coast,,Engcobo TLC
+2,Eastern Cape,2003,Wild Coast,20200,Libode Rural TRC
+2,Eastern Cape,2003,Wild Coast,,Libode TLC
+2,Eastern Cape,2003,Wild Coast,20221,Mqanduli Rural TRC
+2,Eastern Cape,2003,Wild Coast,,Mqanduli TLC
+2,Eastern Cape,2003,Wild Coast,20223,Ngqeleni Rural TRC
+2,Eastern Cape,2003,Wild Coast,,Ngqeleni TLC
+2,Eastern Cape,2003,Wild Coast,20245,Qumbu Rural TRC
+2,Eastern Cape,2003,Wild Coast,,Qumbu TLC
+2,Eastern Cape,2003,Wild Coast,20269,Tsolo Rural TRC
+2,Eastern Cape,2003,Wild Coast,,Tsolo TLC
+2,Eastern Cape,2003,Wild Coast,20276,Umtata Rural TRC
+2,Eastern Cape,2003,Wild Coast,20277,Umtata TLC
+2,Eastern Cape,2003,Wild Coast,20280,Umzimvubu TRC
+2,Eastern Cape,2003,Wild Coast,,Port St Johns TLC
+2,Eastern Cape,2003,Wild Coast,20290,Xhora TRC
+2,Eastern Cape,2003,Wild Coast,,Elliotdale TLC
+2,Eastern Cape,2004,Stormberg,20130,Cacadu/ Glen Grey TRC
+2,Eastern Cape,2004,Stormberg,,Lady Frere TLC
+2,Eastern Cape,2004,Stormberg,20137,Cofimvaba/ St Marks TRC
+2,Eastern Cape,2004,Stormberg,,Cofimvaba TLC
+2,Eastern Cape,2004,Stormberg,20141,Cradock Rural TRC
+2,Eastern Cape,2004,Stormberg,20142,Cradock TLC
+2,Eastern Cape,2004,Stormberg,20166,Hewu TRC
+2,Eastern Cape,2004,Stormberg,20208,Middelburg Rural TRC
+2,Eastern Cape,2004,Stormberg,,Middelburg TLC
+2,Eastern Cape,2004,Stormberg,,Hofmeyer Rural TRC
+2,Eastern Cape,2004,Stormberg,,Hofmeyer TLC
+2,Eastern Cape,2004,Stormberg,20213,Molteno Rural TRC
+2,Eastern Cape,2004,Stormberg,,Sterkstroom Rural TRC
+2,Eastern Cape,2004,Stormberg,,Sterkstroom TLC
+2,Eastern Cape,2004,Stormberg,20214,Molteno TLC
+2,Eastern Cape,2004,Stormberg,20229,Nthabathemba TRC
+2,Eastern Cape,2004,Stormberg,,Tarka TRC
+2,Eastern Cape,2004,Stormberg,,Tarkastad TLC
+2,Eastern Cape,2004,Stormberg,20241,Queenstown Rural TRC
+2,Eastern Cape,2004,Stormberg,20242,Queenstown TLC
+2,Eastern Cape,2004,Stormberg,20284,Whittlesea/Sada TLC
+2,Eastern Cape,2005,Western Region,20101,Aberdeen Rural TRC
+2,Eastern Cape,2005,Western Region,,Aberdeen TLC
+2,Eastern Cape,2005,Western Region,20105,Albany TRC
+2,Eastern Cape,2005,Western Region,,Alicedale TLC
+2,Eastern Cape,2005,Western Region,,Riebeeck-East TLC
+2,Eastern Cape,2005,Western Region,20107,Alexandria Rural TRC
+2,Eastern Cape,2005,Western Region,,Alexandria TLC
+2,Eastern Cape,2005,Western Region,,Boknes/ Canon Rocks LC
+2,Eastern Cape,2005,Western Region,,Bushmans River TLC
+2,Eastern Cape,2005,Western Region,,Paterson TLC
+2,Eastern Cape,2005,Western Region,20117,Bathurst Rural TRC
+2,Eastern Cape,2005,Western Region,,Bathurst TLC
+2,Eastern Cape,2005,Western Region,,Kenton-on-Sea TLC
+2,Eastern Cape,2005,Western Region,,Seafield LC
+2,Eastern Cape,2005,Western Region,20143,Despatch TLC
+2,Eastern Cape,2005,Western Region,20158,Graaff-Reinet Rural TRC
+2,Eastern Cape,2005,Western Region,,Graaff-Reinet TLC
+2,Eastern Cape,2005,Western Region,,Nieu-Bethesda TLC
+2,Eastern Cape,2005,Western Region,20160,Grahamstown TLC
+2,Eastern Cape,2005,Western Region,20162,Hankey Rural TRC
+2,Eastern Cape,2005,Western Region,,Hankey TLC
+2,Eastern Cape,2005,Western Region,,Patensie TLC
+2,Eastern Cape,2005,Western Region,20170,Humansdorp Rural TRC
+2,Eastern Cape,2005,Western Region,,Kareedouw TLC
+2,Eastern Cape,2005,Western Region,,Oyster Bay LC
+2,Eastern Cape,2005,Western Region,,St Francis Bay TLC
+2,Eastern Cape,2005,Western Region,20171,Humansdorp TLC
+2,Eastern Cape,2005,Western Region,20177,Jansenville Rural TRC
+2,Eastern Cape,2005,Western Region,,Jansenville TLC
+2,Eastern Cape,2005,Western Region,,Klipplaat TLC
+2,Eastern Cape,2005,Western Region,,Pearston Rural TRC
+2,Eastern Cape,2005,Western Region,,Pearston TLC
+2,Eastern Cape,2005,Western Region,,Steytlerville Rural TRC
+2,Eastern Cape,2005,Western Region,,Steytlerville TLC
+2,Eastern Cape,2005,Western Region,20179,Jeffrey's Bay TLC
+2,Eastern Cape,2005,Western Region,20180,Joubertina Rural TRC
+2,Eastern Cape,2005,Western Region,,Joubertina TLC
+2,Eastern Cape,2005,Western Region,20191,Kirkwood Rural TRC
+2,Eastern Cape,2005,Western Region,,Kirkwood TLC
+2,Eastern Cape,2005,Western Region,20237,Port Alfred TLC
+2,Eastern Cape,2005,Western Region,20238,Port Elizabeth Rural TRC
+2,Eastern Cape,2005,Western Region,,Blue Horizon Bay LC
+2,Eastern Cape,2005,Western Region,,Seaview LC
+2,Eastern Cape,2005,Western Region,20239,Port Elizabeth TLC
+2,Eastern Cape,2005,Western Region,20253,Somerset East Rural TRC
+2,Eastern Cape,2005,Western Region,,Cookhouse TLC
+2,Eastern Cape,2005,Western Region,20254,Somerset East TLC
+2,Eastern Cape,2005,Western Region,20274,Uitenhage Rural TRC
+2,Eastern Cape,2005,Western Region,,Uitenhage TLC
+2,Eastern Cape,2005,Western Region,20285,Willowmore Rural TRC
+2,Eastern Cape,2005,Western Region,,Willowmore TLC
+2,Eastern Cape,2006,Kei,20121,Bizana Rural TRC
+2,Eastern Cape,2006,Kei,,Bizana TLC
+2,Eastern Cape,2006,Kei,20196,Kwabhaca TRC
+2,Eastern Cape,2006,Kei,20202,Lusikisiki Rural TRC
+2,Eastern Cape,2006,Kei,,Lusikisiki TLC
+2,Eastern Cape,2006,Kei,20206,Maluti TRC
+2,Eastern Cape,2006,Kei,20207,Maxesibeni TRC
+2,Eastern Cape,2006,Kei,,Mount Ayliff TLC
+2,Eastern Cape,2006,Kei,20216,Mount Fletcher Rural TRC
+2,Eastern Cape,2006,Kei,,Mount Fletcher TLC
+2,Eastern Cape,2006,Kei,20219,Mount Frere TLC
+2,Eastern Cape,2006,Kei,20252,Siphageni TRC
+2,Eastern Cape,2006,Kei,,Flagstaff TLC
+2,Eastern Cape,2006,Kei,20265,Tabankulu Rural TRC
+2,Eastern Cape,2006,Kei,,Tabankulu TLC
+2,Eastern Cape,2006,Kei,20278,Umzimkulu Rural TRC
+2,Eastern Cape,2006,Kei,,Umzimkulu TLC
+3,Northern Cape,3001,Diamantveld,30010,Reste of Diamantveld District
+3,Northern Cape,3001,Diamantveld,,Ulco TRC
+3,Northern Cape,3001,Diamantveld,,Windsorton TLC
+3,Northern Cape,3001,Diamantveld,30103,Barkly West TLC
+3,Northern Cape,3001,Diamantveld,30119,Delportshoop TLC
+3,Northern Cape,3001,Diamantveld,30122,Die Erwe/Bucklands TRC
+3,Northern Cape,3001,Diamantveld,,Douglas/ Herbert TLC
+3,Northern Cape,3001,Diamantveld,30137,Hay TRC
+3,Northern Cape,3001,Diamantveld,,Griekwastad/ Hay TLC
+3,Northern Cape,3001,Diamantveld,,Niekerkshoop TLC
+3,Northern Cape,3001,Diamantveld,30141,Jan Kempdorp TLC
+3,Northern Cape,3001,Diamantveld,30149,Kimberley TLC
+3,Northern Cape,3001,Diamantveld,30185,Ritchie TLC
+3,Northern Cape,3001,Diamantveld,30200,Vaalhaarts TRC
+3,Northern Cape,3001,Diamantveld,,Hartswater TLC
+3,Northern Cape,3001,Diamantveld,30201,Vaalrivier TRC
+3,Northern Cape,3001,Diamantveld,,Riet Rivier TLC
+3,Northern Cape,3001,Diamantveld,,Campbell TLC
+3,Northern Cape,3001,Diamantveld,30207,Warrenton TLC
+3,Northern Cape,3002,Hantam,30135,Hantam TRC
+3,Northern Cape,3002,Hantam,,Calvinia TLC
+3,Northern Cape,3002,Hantam,,Nieuwoudtville TLC
+3,Northern Cape,3002,Hantam,30145,Kareeberg TRC
+3,Northern Cape,3002,Hantam,,Carnarvon TLC
+3,Northern Cape,3002,Hantam,,Vanwyksvlei TLC
+3,Northern Cape,3002,Hantam,30186,Roggeveld TRC
+3,Northern Cape,3002,Hantam,,Frasersburg TLC
+3,Northern Cape,3002,Hantam,,Nuweveld TRC
+3,Northern Cape,3002,Hantam,,Sutherland TLC
+3,Northern Cape,3002,Hantam,30188,Sakrivier TRC
+3,Northern Cape,3002,Hantam,,Onderste Doorns TLC
+3,Northern Cape,3002,Hantam,,Brandvlei TLC
+3,Northern Cape,3002,Hantam,,Loeriesfontein TLC
+3,Northern Cape,3002,Hantam,,Spitsberg TRC
+3,Northern Cape,3002,Hantam,,Williston TLC
+3,Northern Cape,3003,Kalahari,30116,Danielskuil TLC
+3,Northern Cape,3003,Kalahari,30146,Kathu TLC
+3,Northern Cape,3003,Kalahari,30152,Kuruman TLC
+3,Northern Cape,3003,Kalahari,30153,Langeberg TRC
+3,Northern Cape,3003,Kalahari,,Olifantshoek TLC
+3,Northern Cape,3003,Kalahari,,Sandveld TRC
+3,Northern Cape,3003,Kalahari,,Vanzylsrus TLC
+3,Northern Cape,3003,Kalahari,30155,Beeshoek TRC
+3,Northern Cape,3003,Kalahari,,Blinkklip TRC
+3,Northern Cape,3003,Kalahari,,Lime Acres TRC
+3,Northern Cape,3003,Kalahari,30180,Postmasburg TLC
+3,Northern Cape,3003,Kalahari,30187,Rooiberg TRC
+3,Northern Cape,3003,Kalahari,,Banknara/ Bodulang TRC
+3,Northern Cape,3003,Kalahari,,Deben TLC
+3,Northern Cape,3003,Kalahari,,Hotazel TRC
+3,Northern Cape,3003,Kalahari,,Santoy TRC
+3,Northern Cape,3004,Lower Orange,30106,Boesmanland TRC
+3,Northern Cape,3004,Lower Orange,,Kenhardt TLC
+3,Northern Cape,3004,Lower Orange,,Onseepkans TRC
+3,Northern Cape,3004,Lower Orange,,Pofadder TLC
+3,Northern Cape,3004,Lower Orange,30115,Cottonfields TRC
+3,Northern Cape,3004,Lower Orange,,Groblershoop TLC
+3,Northern Cape,3004,Lower Orange,,Groenvallei TRC
+3,Northern Cape,3004,Lower Orange,30130,Gordonia TRC
+3,Northern Cape,3004,Lower Orange,,Mier TLC
+3,Northern Cape,3004,Lower Orange,30150,Kingsby TRC
+3,Northern Cape,3004,Lower Orange,,Kakamas TLC
+3,Northern Cape,3004,Lower Orange,30173,Oranje TRC
+3,Northern Cape,3004,Lower Orange,,Eksteenskuil TLC
+3,Northern Cape,3004,Lower Orange,,Kanna TRC
+3,Northern Cape,3004,Lower Orange,,Keimoes TLC
+3,Northern Cape,3004,Lower Orange,,Noodvoor TRC
+3,Northern Cape,3004,Lower Orange,30198,Upington TLC
+3,Northern Cape,3005,Namaqualand,30120,Diamantstreek TRC
+3,Northern Cape,3005,Namaqualand,,Port Nolloth TLC
+3,Northern Cape,3005,Namaqualand,30161,Namakwa TRC
+3,Northern Cape,3005,Namaqualand,,Aggeneys TRC
+3,Northern Cape,3005,Namaqualand,,Concordia TLC
+3,Northern Cape,3005,Namaqualand,,Gariep TRC
+3,Northern Cape,3005,Namaqualand,,Garies TLC
+3,Northern Cape,3005,Namaqualand,,Kamieskroon TLC
+3,Northern Cape,3005,Namaqualand,,Komaggas TLC
+3,Northern Cape,3005,Namaqualand,,Leliefontein/ Kamiesberg TLC
+3,Northern Cape,3005,Namaqualand,,Pella TLC
+3,Northern Cape,3005,Namaqualand,,Richtersveld TLC
+3,Northern Cape,3005,Namaqualand,,Hondeklip bay TLC
+3,Northern Cape,3005,Namaqualand,,Rietpoort TLC
+3,Northern Cape,3005,Namaqualand,30168,O'Kiep Copper Company TRC
+3,Northern Cape,3005,Namaqualand,,O'Kiep TLC
+3,Northern Cape,3005,Namaqualand,30193,Springbok TLC
+3,Northern Cape,3005,Namaqualand,,Steinkopf TLC
+3,Northern Cape,3006,Upper,Karoo,30113,Colesburg TLC
+3,Northern Cape,3006,Upper,Karoo,30117,De Aar TLC
+3,Northern Cape,3006,Upper,Karoo,30123,Doringberg TRC
+3,Northern Cape,3006,Upper,Karoo,,Brandboom TLC
+3,Northern Cape,3006,Upper,Karoo,,Marydale TLC
+3,Northern Cape,3006,Upper,Karoo,30125,E'Boya TRC
+3,Northern Cape,3006,Upper,Karoo,,Hanover TLC
+3,Northern Cape,3006,Upper,Karoo,,Masizakhe TRC
+3,Northern Cape,3006,Upper,Karoo,,Novelspoint TLC
+3,Northern Cape,3006,Upper,Karoo,,Reste of Upper Karoo District
+3,Northern Cape,3006,Upper,Karoo,,Noupoort TLC
+3,Northern Cape,3006,Upper,Karoo,30174,Oranje-Karoo TRC
+3,Northern Cape,3006,Upper,Karoo,,Britstown TLC
+3,Northern Cape,3006,Upper,Karoo,,Hopetown TLC
+3,Northern Cape,3006,Upper,Karoo,,Orania TRC
+3,Northern Cape,3006,Upper,Karoo,,Strydenburg TLC
+3,Northern Cape,3006,Upper,Karoo,,Griesenkraal TLC
+3,Northern Cape,3006,Upper,Karoo,30181,Prieska TLC
+3,Northern Cape,3006,Upper,Karoo,30182,Rhenosterberg TRC
+3,Northern Cape,3006,Upper,Karoo,,Petrusville TLC
+3,Northern Cape,3006,Upper,Karoo,,Philipstown TLC
+3,Northern Cape,3006,Upper,Karoo,,Van Der Kloof TLC
+3,Northern Cape,3006,Upper,Karoo,30191,Sentrale Karoo TRC
+3,Northern Cape,3006,Upper,Karoo,,Hutchinson TRC
+3,Northern Cape,3006,Upper,Karoo,,Loxton TLC
+3,Northern Cape,3006,Upper,Karoo,,Richmond TLC
+3,Northern Cape,3006,Upper,Karoo,,Victoria-West TLC
+3,Northern Cape,3006,Upper,Karoo,,Vosburg TLC
+4,Free State,4001,Bloem Area,40105,Bloemfontein RLC
+4,Free State,4001,Bloem Area,40106,Bloemfontein TLC
+4,Free State,4001,Bloem Area,40109,Botshabelo TLC
+4,Free State,4001,Bloem Area,40112,Central South FS RLC
+4,Free State,4001,Bloem Area,,Bethulie TLC
+4,Free State,4001,Bloem Area,,Edenburg TLC
+4,Free State,4001,Bloem Area,,Philippolis TLC
+4,Free State,4001,Bloem Area,,Reddersburg TLC
+4,Free State,4001,Bloem Area,,Verwoerddam TLC
+4,Free State,4001,Bloem Area,,Waterkloof TLC
+4,Free State,4001,Bloem Area,40118,Dewetsdorp TLC
+4,Free State,4001,Bloem Area,40136,Koffiefontein TLC
+4,Free State,4001,Bloem Area,40152,Oranje-West RLC
+4,Free State,4001,Bloem Area,,Fauresmith TLC
+4,Free State,4001,Bloem Area,,Jacobsdal TLC
+4,Free State,4001,Bloem Area,,Jagersfontein TLC
+4,Free State,4001,Bloem Area,,Luckhof TLC
+4,Free State,4001,Bloem Area,,Oppermansgronde TLC
+4,Free State,4001,Bloem Area,,Petrusburg TLC
+4,Free State,4001,Bloem Area,40169,South East Free State RLC
+4,Free State,4001,Bloem Area,,Rouxville TLC
+4,Free State,4001,Bloem Area,,Smithfield TLC
+4,Free State,4001,Bloem Area,,Springfontein TLC
+4,Free State,4001,Bloem Area,,Trompsburg TLC
+4,Free State,4001,Bloem Area,,Vanstadensrus TLC
+4,Free State,4001,Bloem Area,40174,Thaba Nchu RLC
+4,Free State,4001,Bloem Area,40175,Thaba Nchu TLC
+4,Free State,4001,Bloem Area,40195,Wepener TLC
+4,Free State,4001,Bloem Area,40198,Zastron TLC
+4,Free State,4002,Eastern Free State,40103,Bethlehem TLC
+4,Free State,4002,Eastern Free State,40114,Clocolan TLC
+4,Free State,4002,Eastern Free State,40119,Drakensberg RLC
+4,Free State,4002,Eastern Free State,,Clarens TLC
+4,Free State,4002,Eastern Free State,,Kestell TLC
+4,Free State,4002,Eastern Free State,,Mautsendal TLC
+4,Free State,4002,Eastern Free State,,Paul Roux TLC
+4,Free State,4002,Eastern Free State,,Warden TLC
+4,Free State,4002,Eastern Free State,40124,Ficksburg TLC
+4,Free State,4002,Eastern Free State,40126,Harrismith TLC
+4,Free State,4002,Eastern Free State,40140,Ladybrand TLC
+4,Free State,4002,Eastern Free State,40141,Lindley TLC
+4,Free State,4002,Eastern Free State,40143,Maluti RLC
+4,Free State,4002,Eastern Free State,,Excelsior TLC
+4,Free State,4002,Eastern Free State,,Hobhouse TLC
+4,Free State,4002,Eastern Free State,,Mashae Fourie TLC
+4,Free State,4002,Eastern Free State,,Thaba Patchoa TLC
+4,Free State,4002,Eastern Free State,,Tweespruit/Kopano TLC
+4,Free State,4002,Eastern Free State,40144,Marquard TLC
+4,Free State,4002,Eastern Free State,40156,Petrus Steyn TLC
+4,Free State,4002,Eastern Free State,40159,Phuthaditjhaba TLC
+4,Free State,4002,Eastern Free State,40160,Qwa Qwa RLC
+4,Free State,4002,Eastern Free State,40162,Reitz TLC
+4,Free State,4002,Eastern Free State,40163,Riemland RLC
+4,Free State,4002,Eastern Free State,,Arlington TLC
+4,Free State,4002,Eastern Free State,,Cornelia TLC
+4,Free State,4002,Eastern Free State,,Memel TLC
+4,Free State,4002,Eastern Free State,,Steynsrus TLC
+4,Free State,4002,Eastern Free State,40167,Senekal TLC
+4,Free State,4002,Eastern Free State,40190,Vrede TLC
+4,Free State,4003,Goldfields,40101,Allanridge TLC
+4,Free State,4003,Goldfields,40108,Bothaville TLC
+4,Free State,4003,Goldfields,40110,Brandfort TLC
+4,Free State,4003,Goldfields,40111,Bultfontein TLC
+4,Free State,4003,Goldfields,40128,Hennenman TLC
+4,Free State,4003,Goldfields,40131,Hoopstad TLC
+4,Free State,4003,Goldfields,40148,Moddervaal RLC
+4,Free State,4003,Goldfields,,Boshof TLC
+4,Free State,4003,Goldfields,,Dealesville TLC
+4,Free State,4003,Goldfields,,Hertzogville TLC
+4,Free State,4003,Goldfields,,Soutpan TLC
+4,Free State,4003,Goldfields,,Verkeerdevlei TLC
+4,Free State,4003,Goldfields,40149,Odendaalsrus TLC
+4,Free State,4003,Goldfields,40165,Sandrivier RLC
+4,Free State,4003,Goldfields,40177,Theunissen TLC
+4,Free State,4003,Goldfields,40183,Ventersburg TLC
+4,Free State,4003,Goldfields,40186,Vetvaal RLC
+4,Free State,4003,Goldfields,40189,Virginia TLC
+4,Free State,4003,Goldfields,40194,Welkom TLC
+4,Free State,4003,Goldfields,40196,Wesselbron TLC
+4,Free State,4003,Goldfields,40197,Winburg TLC
+4,Free State,4004,Northern Free State,40117,Deneysville TLC
+4,Free State,4004,Northern Free State,40125,Frankfort TLC
+4,Free State,4004,Northern Free State,40127,Heilbron TLC
+4,Free State,4004,Northern Free State,40135,Koepel RLC
+4,Free State,4004,Northern Free State,,Renovaal TLC
+4,Free State,4004,Northern Free State,,Vierfontein TLC
+4,Free State,4004,Northern Free State,40137,Koppies TLC
+4,Free State,4004,Northern Free State,40138,Kroonkop RLC
+4,Free State,4004,Northern Free State,,Edenville TLC
+4,Free State,4004,Northern Free State,40139,Kroonstad TLC
+4,Free State,4004,Northern Free State,40154,Parys TLC
+4,Free State,4004,Northern Free State,40166,Sasolburg TLC
+4,Free State,4004,Northern Free State,40181,Vaaldam RLC
+4,Free State,4004,Northern Free State,,Oranjeville TLC
+4,Free State,4004,Northern Free State,,Tweeling TLC
+4,Free State,4004,Northern Free State,40187,Viljoenskroon TLC
+4,Free State,4004,Northern Free State,40188,Villiers TLC
+4,Free State,4004,Northern Free State,40191,Vredefort TLC
+5,KwaZulu-Natal,5001,iLembe,50111,Dolphin Coast/Ballito TLC
+5,KwaZulu-Natal,5001,iLembe,50125,iLembe RC (Rural Area)
+5,KwaZulu-Natal,5001,iLembe,,Nkwazi/Zinkwazi Beach TLC
+5,KwaZulu-Natal,5001,iLembe,50134,KwaDukuza/Stanger TLC
+5,KwaZulu-Natal,5002,Indlovu,50118,Greytown TLC
+5,KwaZulu-Natal,5002,Indlovu,50122,Hilton TLC
+5,KwaZulu-Natal,5002,Indlovu,50124,Howick TLC
+5,KwaZulu-Natal,5002,Indlovu,50128,Indlovu RC (Rural Area)
+5,KwaZulu-Natal,5002,Indlovu,,Ashburton TLC
+5,KwaZulu-Natal,5002,Indlovu,,Camperdown TLC
+5,KwaZulu-Natal,5002,Indlovu,,Cedarville TLC
+5,KwaZulu-Natal,5002,Indlovu,,Cool Air TLC
+5,KwaZulu-Natal,5002,Indlovu,,Creighton TLC
+5,KwaZulu-Natal,5002,Indlovu,,Dalton TLC
+5,KwaZulu-Natal,5002,Indlovu,,Himeville TLC
+5,KwaZulu-Natal,5002,Indlovu,,Impendle TLC
+5,KwaZulu-Natal,5002,Indlovu,,Ixopo TLC
+5,KwaZulu-Natal,5002,Indlovu,,Kranskop TLC
+5,KwaZulu-Natal,5002,Indlovu,,Matatiele TLC
+5,KwaZulu-Natal,5002,Indlovu,,Mooi River TLC
+5,KwaZulu-Natal,5002,Indlovu,,New Hanover TLC
+5,KwaZulu-Natal,5002,Indlovu,,Underberg TLC
+5,KwaZulu-Natal,5002,Indlovu,,Wartburg TLC
+5,KwaZulu-Natal,5002,Indlovu,50132,Kokstad TLC
+5,KwaZulu-Natal,5002,Indlovu,50155,PMB/Msunduzi TLC
+5,KwaZulu-Natal,5002,Indlovu,50159,Richmond TLC
+5,KwaZulu-Natal,5003,Durban Metro,50129,Inner West Durban MLC
+5,KwaZulu-Natal,5003,Durban Metro,50149,North Central Durban MLC
+5,KwaZulu-Natal,5003,Durban Metro,50150,North Durban MLC
+5,KwaZulu-Natal,5003,Durban Metro,50152,Outer West Durban MLC
+5,KwaZulu-Natal,5003,Durban Metro,50161,South Central Durban MLC
+5,KwaZulu-Natal,5003,Durban Metro,50162,South Durban MLC
+5,KwaZulu-Natal,5004,Mzinyathi,50112,Dundee TLC
+5,KwaZulu-Natal,5004,Mzinyathi,50117,Glencoe TLC
+5,KwaZulu-Natal,5004,Mzinyathi,50144,Mzinyathi RC (Rural Area)
+5,KwaZulu-Natal,5004,Mzinyathi,,Dannhauser TLC
+5,KwaZulu-Natal,5004,Mzinyathi,,Hattingspruit TLC
+5,KwaZulu-Natal,5004,Mzinyathi,,Utrecht TLC
+5,KwaZulu-Natal,5004,Mzinyathi,50146,Newcastle TLC
+5,KwaZulu-Natal,5005,Thukela,50115,Estcourt/Wembezi TLC
+5,KwaZulu-Natal,5005,Thukela,50135,Ladysmith/Emnambithi TLC
+5,KwaZulu-Natal,5005,Thukela,50164,Thukela RC (Rural Area)
+5,KwaZulu-Natal,5005,Thukela,,Bergville TLC
+5,KwaZulu-Natal,5005,Thukela,,Cathkin Park TLC
+5,KwaZulu-Natal,5005,Thukela,,Colenso/Nkanyezi TLC
+5,KwaZulu-Natal,5005,Thukela,,Weenen TLC
+5,KwaZulu-Natal,5005,Thukela,,Winterton TLC
+5,KwaZulu-Natal,5006,Ugu,50121,Hibberdene TLC
+5,KwaZulu-Natal,5006,Ugu,,Pennington TLC
+5,KwaZulu-Natal,5006,Ugu,50138,Margate TLC
+5,KwaZulu-Natal,5006,Ugu,,Impenjati/Southbroom TLC
+5,KwaZulu-Natal,5006,Ugu,,Umtamvuma/Port Edward TLC
+5,KwaZulu-Natal,5006,Ugu,50157,Port Shepstone TLC
+5,KwaZulu-Natal,5006,Ugu,50160,Scottburgh/Umzinto North TLC
+5,KwaZulu-Natal,5006,Ugu,50165,Ugu RC (Rural Area)
+5,KwaZulu-Natal,5006,Ugu,,Harding TLC
+5,KwaZulu-Natal,5006,Ugu,50167,Umkomaas TLC
+5,KwaZulu-Natal,5007,uThungulu,50113,Empangeni/Ngwelezane TLC
+5,KwaZulu-Natal,5007,uThungulu,50114,Eshowe TLC
+5,KwaZulu-Natal,5007,uThungulu,50158,Richards Bay TLC
+5,KwaZulu-Natal,5007,uThungulu,50170,uThungulu RC (Rural Area)
+5,KwaZulu-Natal,5007,uThungulu,,Gingindlovu TLC
+5,KwaZulu-Natal,5007,uThungulu,,Inyala/Mtubatuba TLC
+5,KwaZulu-Natal,5007,uThungulu,,Mandeni TLC
+5,KwaZulu-Natal,5007,uThungulu,,Mtunzini TLC
+5,KwaZulu-Natal,5007,uThungulu,,St Lucia TLC
+5,KwaZulu-Natal,5008,Zululand,50156,Pongola TLC
+5,KwaZulu-Natal,5008,Zululand,50166,Ulundi TLC
+5,KwaZulu-Natal,5008,Zululand,50172,Vryheid TLC
+5,KwaZulu-Natal,5008,Zululand,50176,Zululand RC (Rural Area)
+5,KwaZulu-Natal,5008,Zululand,,Louwsburg TLC
+5,KwaZulu-Natal,5008,Zululand,,Melmoth TLC
+5,KwaZulu-Natal,5008,Zululand,,Nongoma TLC
+5,KwaZulu-Natal,5008,Zululand,,Paulpietersburg TLC
+6,North West,6001,Bophirima,60116,Huhudi Remaining TRC
+6,North West,6001,Bophirima,,Piet Plessis TRC
+6,North West,6001,Bophirima,,Pudimoe TRC
+6,North West,6001,Bophirima,,Reiveilo TLC
+6,North West,6001,Bophirima,,Stella TLC
+6,North West,6001,Bophirima,60129,Mothibistad TRC
+6,North West,6001,Bophirima,60133,Pampierstad TRC
+6,North West,6001,Bophirima,60148,Vryburg TLC
+6,North West,6002,Central,60105,Biesiesvlei TRC
+6,North West,6002,Central,,Central Region Remaining TRC
+6,North West,6002,Central,,Coligny TLC
+6,North West,6002,Central,,Delareyville TLC
+6,North West,6002,Central,,Groot Marico TRC
+6,North West,6002,Central,,Ottoshoop TRC
+6,North West,6002,Central,,Sannieshof TLC
+6,North West,6002,Central,60121,Lichtenburg TLC
+6,North West,6002,Central,60127,Mmabatho TLC
+6,North West,6002,Central,60131,Ottosdal TLC
+6,North West,6002,Central,60153,Zeerust TLC
+6,North West,6003,Eastern,60104,Brits TLC
+6,North West,6003,Eastern,60110,Eastern Region Remaining TRC
+6,North West,6003,Eastern,,Skeerpoort TRC
+6,North West,6003,Eastern,60112,Ga Rankuwa TRC
+6,North West,6003,Eastern,60115,Hartbeespoort TLC
+6,North West,6003,Eastern,60122,Mabopane TRC
+6,North West,6003,Eastern,60146,Temba TRC
+6,North West,6003,Eastern,60150,Winterveld TRC
+6,North West,6004,Rustenburg,60119,Koster TLC
+6,North West,6004,Rustenburg,60125,Marikana TLC
+6,North West,6004,Rustenburg,60128,Mogwase TRC
+6,North West,6004,Rustenburg,60138,Rustenburg Region TRC
+6,North West,6004,Rustenburg,,Derby TRC
+6,North West,6004,Rustenburg,,Madikwe TRC
+6,North West,6004,Rustenburg,,Monnakato
+6,North West,6004,Rustenburg,,Swartruggens TLC
+6,North West,6004,Rustenburg,60139,Rustenburg TLC
+6,North West,6005,Southern,60103,Bloemhof TLC
+6,North West,6005,Southern,60106,Christiana TLC
+6,North West,6005,Southern,60111,Fochville TLC
+6,North West,6005,Southern,60114,Hartebeesfontein TLC
+6,North West,6005,Southern,60117,Klerksdorp Remaining TRC
+6,North West,6005,Southern,,Amalia TRC
+6,North West,6005,Southern,,Makwassie TLC
+6,North West,6005,Southern,,Witpoort TRC
+6,North West,6005,Southern,60118,Klerksdorp TLC
+6,North West,6005,Southern,60120,Leeudoringstad TLC
+6,North West,6005,Southern,60130,Orkney TLC
+6,North West,6005,Southern,60135,Potchefstroom TLC
+6,North West,6005,Southern,60141,Schweizer Reneke TLC
+6,North West,6005,Southern,60144,Stilfontein TLC
+6,North West,6005,Southern,60147,Ventersdorp TLC
+6,North West,6005,Southern,60149,Wedela TLC
+6,North West,6005,Southern,60152,Wolmaranstad TLC
+7,Gauteng,7001,Eastern Council,70101,Alberton TLC
+7,Gauteng,7001,Eastern Council,,Eikenhof LAC
+7,Gauteng,7001,Eastern Council,70102,Benoni TLC
+7,Gauteng,7001,Eastern Council,70103,Blesbokspruit TRC
+7,Gauteng,7001,Eastern Council,,Devon LAC
+7,Gauteng,7001,Eastern Council,,Vischkuil LAC
+7,Gauteng,7001,Eastern Council,70104,Boksburg TLC
+7,Gauteng,7001,Eastern Council,70105,Brakpan TLC
+7,Gauteng,7001,Eastern Council,70106,Bronberg TRC
+7,Gauteng,7001,Eastern Council,70107,Bronkhorstspruit TLC
+7,Gauteng,7001,Eastern Council,70112,Cullinan/ Rayton TLC
+7,Gauteng,7001,Eastern Council,70113,De Deur/Walkerville LAC
+7,Gauteng,7001,Eastern Council,70118,Elands River TRC
+7,Gauteng,7001,Eastern Council,70120,Germiston TLC
+7,Gauteng,7001,Eastern Council,70122,Heidelberg TLC
+7,Gauteng,7001,Eastern Council,70129,Nigel TLC
+7,Gauteng,7001,Eastern Council,70132,Pienaars River TRC
+7,Gauteng,7001,Eastern Council,,Hammanskraal LAC
+7,Gauteng,7001,Eastern Council,,Roodeplaat LAC
+7,Gauteng,7001,Eastern Council,70134,Randvaal LAC
+7,Gauteng,7001,Eastern Council,70137,Springs TLC
+7,Gauteng,7001,Eastern Council,70138,Suikerbosrand River TRC
+7,Gauteng,7001,Eastern Council,,Vaal Marina LAC
+7,Gauteng,7002,Metropolitan areas,70109,Centurion MLC
+7,Gauteng,7002,Metropolitan areas,70110,City Council of Pretoria MLC
+7,Gauteng,7002,Metropolitan areas,70115,Eastern Johannesburg MLC
+7,Gauteng,7002,Metropolitan areas,70116,Edenvale/ Modderfontein MLC
+7,Gauteng,7002,Metropolitan areas,70123,Kempton Park/ Tembisa MLC
+7,Gauteng,7002,Metropolitan areas,70127,Midrand/ Rabie Ridge/ Ivory Pa
+7,Gauteng,7002,Metropolitan areas,70130,Northern Johannesburg MLC
+7,Gauteng,7002,Metropolitan areas,70131,Northern Pretoria MLC
+7,Gauteng,7002,Metropolitan areas,70136,Southern Johannesburg MLC
+7,Gauteng,7002,Metropolitan areas,70142,Vereeniging-Kopanong MLC
+7,Gauteng,7002,Metropolitan areas,70144,Western Johannesburg MLC
+7,Gauteng,7002,Metropolitan areas,70145,Western Vaal MLC
+7,Gauteng,7003,Western Council,70108,Carletonville TLC
+7,Gauteng,7003,Western Council,70111,Crocodile River TRC
+7,Gauteng,7003,Western Council,70119,Gatsrand TRC
+7,Gauteng,7003,Western Council,70124,Krugersdorp TLC
+7,Gauteng,7003,Western Council,70126,Magaliesberg TRC
+7,Gauteng,7003,Western Council,,MagaliesbergLAC
+7,Gauteng,7003,Western Council,70133,Randfontein TLC
+7,Gauteng,7003,Western Council,70141,Vaal Oewer LAC
+7,Gauteng,7003,Western Council,,VaalRiver TRC
+7,Gauteng,7003,Western Council,70146,Westonaria TLC
+8,Mpumalanga,8001,Eastvaal,80101,Amersfoort Rural TRC
+8,Mpumalanga,8001,Eastvaal,,Amersfoort TLC
+8,Mpumalanga,8001,Eastvaal,80105,Balfour Rural TRC
+8,Mpumalanga,8001,Eastvaal,,Greylingstad TLC
+8,Mpumalanga,8001,Eastvaal,,Grootvlei TLC
+8,Mpumalanga,8001,Eastvaal,80106,Balfour TLC
+8,Mpumalanga,8001,Eastvaal,80111,Bethal TRC
+8,Mpumalanga,8001,Eastvaal,,Bethal TLC
+8,Mpumalanga,8001,Eastvaal,80115,Carolina TRC
+8,Mpumalanga,8001,Eastvaal,,Carolina TLC
+8,Mpumalanga,8001,Eastvaal,80118,Delmas TLC
+8,Mpumalanga,8001,Eastvaal,80119,Delmas TRC
+8,Mpumalanga,8001,Eastvaal,80124,Empuluzi TLC
+8,Mpumalanga,8001,Eastvaal,80126,Ermelo TLC
+8,Mpumalanga,8001,Eastvaal,80127,Ermelo TRC
+8,Mpumalanga,8001,Eastvaal,,Breyton TLC
+8,Mpumalanga,8001,Eastvaal,,Amsterdam TLC
+8,Mpumalanga,8001,Eastvaal,,Chrissiesmeer TLC
+8,Mpumalanga,8001,Eastvaal,,Davel TLC
+8,Mpumalanga,8001,Eastvaal,,Lothair TLC
+8,Mpumalanga,8001,Eastvaal,,Morgenzon TLC
+8,Mpumalanga,8001,Eastvaal,80135,Highveld Ridge Rural TRC
+8,Mpumalanga,8001,Eastvaal,80136,Highveld Ridge TLC
+8,Mpumalanga,8001,Eastvaal,80138,Kriel Rural TRC
+8,Mpumalanga,8001,Eastvaal,80139,Kriel TLC
+8,Mpumalanga,8001,Eastvaal,80142,Leandra TLC
+8,Mpumalanga,8001,Eastvaal,80157,Badplaas TRC
+8,Mpumalanga,8001,Eastvaal,,Badplaas TLC
+8,Mpumalanga,8001,Eastvaal,80158,Elukwatini TRC
+8,Mpumalanga,8001,Eastvaal,,Elukwatini TLC
+8,Mpumalanga,8001,Eastvaal,,Ekulindeni TLC
+8,Mpumalanga,8001,Eastvaal,80169,Piet Retief Rural TRC
+8,Mpumalanga,8001,Eastvaal,80170,Piet Retief TLC
+8,Mpumalanga,8001,Eastvaal,80174,Standerton TLC
+8,Mpumalanga,8001,Eastvaal,80175,Standerton TRC
+8,Mpumalanga,8001,Eastvaal,80177,Volksrust TLC
+8,Mpumalanga,8001,Eastvaal,80178,Volksrust TRC
+8,Mpumalanga,8001,Eastvaal,,Perdekop TLC
+8,Mpumalanga,8001,Eastvaal,80180,Wakkerstroom TRC
+8,Mpumalanga,8001,Eastvaal,,Wakkerstroom TLC
+8,Mpumalanga,8002,Highveld,80109,Belfast Rural TRC
+8,Mpumalanga,8002,Highveld,,Belfast TLC
+8,Mpumalanga,8002,Highveld,,Dullstroom TLC
+8,Mpumalanga,8002,Highveld,,Machadodorp TLC
+8,Mpumalanga,8002,Highveld,80121,Ekangala TLC
+8,Mpumalanga,8002,Highveld,80131,Groblersdal TRC
+8,Mpumalanga,8002,Highveld,,Groblersdal TLC
+8,Mpumalanga,8002,Highveld,,Marblehall TLC
+8,Mpumalanga,8002,Highveld,80134,Hendrina TLC
+8,Mpumalanga,8002,Highveld,80141,Kwamahlanga TLC
+8,Mpumalanga,8002,Highveld,80150,Mathanjana TLC
+8,Mpumalanga,8002,Highveld,80151,Mbibane TLC
+8,Mpumalanga,8002,Highveld,80153,Mdutjana TLC
+8,Mpumalanga,8002,Highveld,80154,Middelburg TLC
+8,Mpumalanga,8002,Highveld,80155,Middelburg TRC
+8,Mpumalanga,8002,Highveld,80159,Mkobola TLC
+8,Mpumalanga,8002,Highveld,80161,Moutse TLC
+8,Mpumalanga,8002,Highveld,80182,Waterval Boven TRC
+8,Mpumalanga,8002,Highveld,,Waterval Boven TLC
+8,Mpumalanga,8002,Highveld,80185,Witbank TLC
+8,Mpumalanga,8002,Highveld,80186,Witbank TRC
+8,Mpumalanga,8002,Highveld,,Ogies/ Phola TLC
+8,Mpumalanga,8003,Lowveld Escarpment,80107,Barberton Rural TRC
+8,Mpumalanga,8003,Lowveld Escarpment,80108,Barberton TLC
+8,Mpumalanga,8003,Lowveld Escarpment,80137,Komatiepoort TLC
+8,Mpumalanga,8003,Lowveld Escarpment,80144,Lydenburg Rural TRC
+8,Mpumalanga,8003,Lowveld Escarpment,,Steelpoort/Burgersfort TLC
+8,Mpumalanga,8003,Lowveld Escarpment,80145,Lydenburg TLC
+8,Mpumalanga,8003,Lowveld Escarpment,80162,Nelspruit TLC
+8,Mpumalanga,8003,Lowveld Escarpment,80163,Nelspruit TRC
+8,Mpumalanga,8003,Lowveld Escarpment,80164,Nkomazi East TRC
+8,Mpumalanga,8003,Lowveld Escarpment,80166,Nkomazi West TRC
+8,Mpumalanga,8003,Lowveld Escarpment,,Malelane TLC
+8,Mpumalanga,8003,Lowveld Escarpment,,Marloth Park TLC
+8,Mpumalanga,8003,Lowveld Escarpment,80171,Graskop TLC
+8,Mpumalanga,8003,Lowveld Escarpment,,Pilgrims Rest TRC
+8,Mpumalanga,8003,Lowveld Escarpment,80173,Sabie TLC
+8,Mpumalanga,8003,Lowveld Escarpment,80183,White River TLC
+8,Mpumalanga,8003,Lowveld Escarpment,80184,White River TRC
+8,Mpumalanga,8003,Lowveld Escarpment,,Hazyview TLC
+8,Mpumalanga,8003,Lowveld Escarpment,,Kruger National Park TRC
+8,Mpumalanga,8003,Lowveld Escarpment,,Sabie Park TLC
+9,Limpopo,9001,Bushveld,90102,Bakenberg RLC
+9,Limpopo,9001,Bushveld,90113,Ellisras Rural RLC
+9,Limpopo,9001,Bushveld,90114,Ellisras TLC
+9,Limpopo,9001,Bushveld,90117,Greater Northam RLC
+9,Limpopo,9001,Bushveld,90121,Koedoesrand-Rebone RLC
+9,Limpopo,9001,Bushveld,90134,Naboomspruit/ Roedtan/Thusang
+9,Limpopo,9001,Bushveld,,Naboomspruit TLC
+9,Limpopo,9001,Bushveld,90137,Nylstroom TLC
+9,Limpopo,9001,Bushveld,90142,Potgietersrus TLC
+9,Limpopo,9001,Bushveld,90143,Thabazimbi TLC
+9,Limpopo,9001,Bushveld,90147,Vaalwater RLC
+9,Limpopo,9001,Bushveld,90148,Warmbad TLC
+9,Limpopo,9001,Bushveld,90149,Warmbad-Pienaarsrivier RLC
+9,Limpopo,9002,Northern,90101,Alldays/ Lt-Buysdorp RLC
+9,Limpopo,9002,Northern,90103,Bochum/ My Darling RLC
+9,Limpopo,9002,Northern,90104,Bolobedu CS/ Bolobedu Hlangana
+9,Limpopo,9002,Northern,90105,Bushbuckridge Midlands RLC
+9,Limpopo,9002,Northern,90106,Bushbuckridge North RLC
+9,Limpopo,9002,Northern,90107,Bushbuckridge South RLC
+9,Limpopo,9002,Northern,90108,Dendron RLC
+9,Limpopo,9002,Northern,90109,Dikgale/ Soekmekaar RLC
+9,Limpopo,9002,Northern,90110,Dilokong RLC
+9,Limpopo,9002,Northern,90111,Duiwelskloof TLC
+9,Limpopo,9002,Northern,90112,Elim/ Tshitale/ Hlanganani RLC
+9,Limpopo,9002,Northern,90115,Giyani RLC
+9,Limpopo,9002,Northern,90116,Greater Nebo-North RLC
+9,Limpopo,9002,Northern,90118,Haenertsburg RLC
+9,Limpopo,9002,Northern,90119,Hlogotlou/Lepele RLC
+9,Limpopo,9002,Northern,90120,Hoedspruit/ Makutswi RLC
+9,Limpopo,9002,Northern,90122,Lebowakgomo RLC
+9,Limpopo,9002,Northern,90123,Letsitele/Gravelotte RLC
+9,Limpopo,9002,Northern,90124,Levhuvhu-Shinwedzi RLC
+9,Limpopo,9002,Northern,90125,Louis Trichardt TLC
+9,Limpopo,9002,Northern,90126,Mankweng RLC
+9,Limpopo,9002,Northern,90127,Maraba-Mashashane/ Maja RLC
+9,Limpopo,9002,Northern,90128,Messina TLC
+9,Limpopo,9002,Northern,90130,Moletje/ Matlala RLC
+9,Limpopo,9002,Northern,90131,Mooketsi/ Sekgosese RLC
+9,Limpopo,9002,Northern,90132,Mutale/ Masisi/ Vhutswema RLC
+9,Limpopo,9002,Northern,90135,Ngwaritsi/ Makhudu-Thamage RLC
+9,Limpopo,9002,Northern,90136,Noko-tlou/Fetakgomo RLC
+9,Limpopo,9002,Northern,90138,Nzhelele/ Tshipise RLC
+9,Limpopo,9002,Northern,90139,Ohrigstad/Eastern Tubatse RLC
+9,Limpopo,9002,Northern,90140,Phalaborwa TLC
+9,Limpopo,9002,Northern,90141,Pietersburg TLC
+9,Limpopo,9002,Northern,90144,Thohayandou TLC
+9,Limpopo,9002,Northern,90145,Thubatse Steelpoort RLC
+9,Limpopo,9002,Northern,90146,Tzaneen TLC
+9,Limpopo,9002,Northern,90150,Zebediela RLC

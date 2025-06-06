@@ -1,0 +1,51 @@
+11,Agriculture and hunting
+12,Forestry and logging
+13,Fishing; operation of fish farms
+21,Mining of coal and lignite
+22,Extraction of crude petroleum and natural gas
+23,Mining of gold and uranium ore
+24,Mining of metal ores
+25,Other mining and quarrying
+29,Service activities incidental to mining
+30,Manufacture of food; beverages and tobacco products
+31,Manufacture of textiles; clothing and leather goods
+32,Manufacture of footwear
+33,Manufacture of fuel; petroleum; chemical and rubber products
+34,Manufacture of other non-metallic mineral products
+35,Manufacture of metal products; machinery and household appliances
+36,Manufacture of electrical machinery and apparatus
+37,Manufacture of electronic; sound/vision; medical & other appliances
+38,Manufacture of transport equipment
+39,Manufacture of furniture and other items NEC and recycling
+41,Electricity; gas; steam and hot water supply
+42,Collection; purification and distribution of water
+50,Construction
+61,Wholesale and commission trade
+62,Retail trade and repairs of goods
+63,Sale and repairs of motor vehicles; sale of fuel
+64,Hotels and restaurants
+71,Land transport
+72,Water transport
+73,Air transport
+74,Supporting transport activities (inc. storage)
+75,Post and telecommunication
+81,Financial intermediation
+82,Insurance and pension funding
+83,Activities auxiliary to financial intermediation
+84,Real estate activities
+85,Renting of machinery and equipment
+86,Computer and related activities
+87,Research and development
+88,Other business activities
+91,Public administration and defence activities
+92,Education
+93,Health and social work
+94,Other community; social and personal service activities
+95,Activities of membership organisations
+96,Recreational; cultural and sporting activities
+99,Other service activities
+02,Exterritorial organisations
+03,Representatives of foreign governments
+09,Other activities not adequately defined
+XX,Private households
+YY,Undetermined

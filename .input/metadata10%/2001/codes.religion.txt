@@ -1,0 +1,66 @@
+01,Dutch Reformed Churches
+02,Reformed Churches
+03,Nederduits Hervormde Kerk
+04,Anglican Church
+05,Church of England in Sa
+06,International Fellowship of Christian Churches
+07,Methodist Church of Sa
+08,Presbyterian Churches
+09,United Congregational Church of Sa
+10,Lutheran Church of Southern Africa
+11,Roman Catholic Church
+12,Apostolic Faith Mission of Sa
+13,Other Apostolic Churches
+14,Baptist Churches of Southern Africa
+15,Pinkster Protestante Kerk
+16,Afrikaanse Protestante Kerk
+17,Full Gospel Church of God in Southern Africa
+18,Orthodox Churches
+19,Church of Christ of Latter Day Saints
+20,Pentecostal Churches
+21,Salvation Army United Church
+22,Seventh-Day Adventist Church
+23,New Apostolic Church
+24,Assemblies of God of Sa
+25,St Engenas Zion Christian Church
+26,Zion Christian Church
+27,Bandla Lama Nazaretha
+28,African Methodist Episcopal Church
+29,St John's Apostolic Church
+30,International Pentecost Church
+31,Other African Independent Churches
+32,Other Christian Churches
+33,African Traditional Belief
+34,Judaism
+35,Buddhism
+36,Taoist
+37,Confucian
+38,Hinduism
+39,Islam
+40,Bahais
+41,Other Non-Christian Churched
+42,Jehovah’s Witnesses
+43,Other Non-Christian Religions
+44,Other Methodist Churches
+45,Other Presbyterian Churches
+46,Other Congregational Churches
+47,Other Lutheran Churches
+48,Other Catholic Churches
+49,Other Baptist Churches
+50,Other Pentecostal Churches
+51,Other Orthodox Churches
+52,Other (Seventh-Day) Adventist Churches
+53,Other African Apostolic Churches
+54,Other Assemblies
+55,Other Zionist Churches
+56,Church of the Nazarene
+57,Christian Scientist
+58,Christian Centres
+59,Ethiopian type Churches
+60,Ethnic Churches
+61,Other Evangelical Churches
+62,Other Charismatic Churches
+63,No Religion
+64,Refused
+65,Other
+99,Unspecified

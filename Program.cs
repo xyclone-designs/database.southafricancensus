@@ -30,14 +30,16 @@ namespace Database.SouthAfricanCensus
 			StreamWriters streamwriters = [];
 			SQLiteConnection sqliteconnection = _SQLiteConnection(sqlconnectionpath, false);
 
-			#region 1996
-
-			streamwriters.PathBase = Path.Combine(DirectoryOutput, "1996");
-
-			Directory.CreateDirectory(streamwriters.PathBase);
-
 			List<Code> codes = 
 			[
+				#region 1999
+				.. sqliteconnection.InsertAllAndReturn(
+					objs: DirectoryInputMetadata1996CodesArea
+						.SelectMany(_ => new TXTCodes(_).GetCodes<TXTCodes.CodeSextuplet>())
+						.Select(_ => Code.FromTXTCodeSextuplet(_, code =>
+						{
+							code.Type = CodeTypes.Area;
+						}))),
 				.. sqliteconnection.InsertAllAndReturn(
 					objs: DirectoryInputMetadata1996CodesDistrictCouncil
 						.SelectMany(_ => new TXTCodes(_).GetCodes<TXTCodes.CodeTriplet>())
@@ -66,9 +68,41 @@ namespace Database.SouthAfricanCensus
 						{
 							code.Type = CodeTypes.Occupation;
 						}))),
+				#endregion
+
+				#region 2001
+				.. sqliteconnection.InsertAllAndReturn(
+					objs: DirectoryInputMetadata2001CodesCauseOfDeath
+						.SelectMany(_ => new TXTCodes(_).GetCodes<TXTCodes.CodePair>())
+						.Select(_ => Code.FromTXTCodePair(_, code =>
+						{
+							code.Type = CodeTypes.CauseOfDeath;
+						}))),
+				.. sqliteconnection.InsertAllAndReturn(
+					objs: DirectoryInputMetadata2001CodesIndustry
+						.SelectMany(_ => new TXTCodes(_).GetCodes<TXTCodes.CodePair>())
+						.Select(_ => Code.FromTXTCodePair(_, code =>
+						{
+							code.Type = CodeTypes.Industry;
+						}))),
+				.. sqliteconnection.InsertAllAndReturn(
+					objs: DirectoryInputMetadata2001CodesOccupation
+						.SelectMany(_ => new TXTCodes(_).GetCodes<TXTCodes.CodePair>())
+						.Select(_ => Code.FromTXTCodePair(_, code =>
+						{
+							code.Type = CodeTypes.Occupation;
+						}))),
+				.. sqliteconnection.InsertAllAndReturn(
+					objs: DirectoryInputMetadata2001CodesReligion
+						.SelectMany(_ => new TXTCodes(_).GetCodes<TXTCodes.CodePair>())
+						.Select(_ => Code.FromTXTCodePair(_, code =>
+						{
+							code.Type = CodeTypes.Religion;
+						}))),
+				#endregion
 			];
 
-			return;
+			#region 1996
 
 			foreach (string directoryinputcensusall in DirectoryInputCensus1996All)
 			{
@@ -102,6 +136,39 @@ namespace Database.SouthAfricanCensus
 						{ }
 						break;
 
+					default: break;
+				}
+
+				streamwriters.Dispose(true, filename);
+			}
+
+			#endregion
+
+			#region 2001
+
+			foreach (string directoryinputcensusall in DirectoryInputCensus2001All)
+			{
+				using FileStream filestream = File.OpenRead(directoryinputcensusall);
+				using ZipArchive ziparchive = new(filestream);
+
+				Stream[] streams = ziparchive.Entries
+					.Select(_ => _.Open())
+					.ToArray();
+
+				string filename = string.Join('.', directoryinputcensusall.Split('\\').Last().Split('.')[0..^1]);
+
+				Years years = default(Years).FromFilename(filename);
+				Types types = default(Types).FromFilename(filename);
+
+				string directorypath = Path.Combine(DirectoryOutput, string.Format("{0}.{1}", years.AsString(), types));
+
+				Directory.CreateDirectory(directorypath);
+				Console.WriteLine(directorypath);
+
+				streamwriters.Add(filename, Path.Combine(directorypath, "log.txt"));
+
+				switch (years, types)
+				{
 					case (Years._2001, Types.Household):
 						foreach (CSVRow2001Household csvrow2001household in Utils.CSVs.Rows<CSVRow2001Household>(streamwriters[filename], streams))
 						{ }
@@ -115,6 +182,39 @@ namespace Database.SouthAfricanCensus
 						{ }
 						break;
 
+					default: break;
+				}
+
+				streamwriters.Dispose(true, filename);
+			}
+
+			#endregion
+
+			#region 2011
+
+			foreach (string directoryinputcensusall in DirectoryInputCensus2011All)
+			{
+				using FileStream filestream = File.OpenRead(directoryinputcensusall);
+				using ZipArchive ziparchive = new(filestream);
+
+				Stream[] streams = ziparchive.Entries
+					.Select(_ => _.Open())
+					.ToArray();
+
+				string filename = string.Join('.', directoryinputcensusall.Split('\\').Last().Split('.')[0..^1]);
+
+				Years years = default(Years).FromFilename(filename);
+				Types types = default(Types).FromFilename(filename);
+
+				string directorypath = Path.Combine(DirectoryOutput, string.Format("{0}.{1}", years.AsString(), types));
+
+				Directory.CreateDirectory(directorypath);
+				Console.WriteLine(directorypath);
+
+				streamwriters.Add(filename, Path.Combine(directorypath, "log.txt"));
+
+				switch (years, types)
+				{
 					case (Years._2011, Types.Agriculture):
 						foreach (CSVRow2011Agriculture csvrow2011agriculture in Utils.CSVs.Rows<CSVRow2011Agriculture>(streamwriters[filename], streams))
 						{ }
@@ -132,15 +232,48 @@ namespace Database.SouthAfricanCensus
 						{ }
 						break;
 
-					case (Years._2001, Types.F18):
+					default: break;
+				}
+
+				streamwriters.Dispose(true, filename);
+			}
+
+			#endregion
+
+			#region 2022
+
+			foreach (string directoryinputcensusall in DirectoryInputCensus2022All)
+			{
+				using FileStream filestream = File.OpenRead(directoryinputcensusall);
+				using ZipArchive ziparchive = new(filestream);
+
+				Stream[] streams = ziparchive.Entries
+					.Select(_ => _.Open())
+					.ToArray();
+
+				string filename = string.Join('.', directoryinputcensusall.Split('\\').Last().Split('.')[0..^1]);
+
+				Years years = default(Years).FromFilename(filename);
+				Types types = default(Types).FromFilename(filename);
+
+				string directorypath = Path.Combine(DirectoryOutput, string.Format("{0}.{1}", years.AsString(), types));
+
+				Directory.CreateDirectory(directorypath);
+				Console.WriteLine(directorypath);
+
+				streamwriters.Add(filename, Path.Combine(directorypath, "log.txt"));
+
+				switch (years, types)
+				{
+					case (Years._2022, Types.F18):
 						foreach (CSVRow2022F18 csvrow2022f18 in Utils.CSVs.Rows<CSVRow2022F18>(streamwriters[filename], streams))
 						{ }
 						break;
-					case (Years._2001, Types.F19):
+					case (Years._2022, Types.F19):
 						foreach (CSVRow2022F19 csvrow2022f19 in Utils.CSVs.Rows<CSVRow2022F19>(streamwriters[filename], streams))
 						{ }
 						break;
-					case (Years._2001, Types.F21):
+					case (Years._2022, Types.F21):
 						foreach (CSVRow2022F21 csvrow2022f21 in Utils.CSVs.Rows<CSVRow2022F21>(streamwriters[filename], streams))
 						{ }
 						break;
@@ -153,18 +286,6 @@ namespace Database.SouthAfricanCensus
 
 			#endregion
 
-			#region 2001
-
-			#endregion
-
-			#region 2011
-
-			#endregion
-
-			#region 2022
-
-			#endregion
-			
 			sqliteconnection.CommitAndClose();
 
 			string sqliteconnectionzipname = ZipFile(sqlconnectionpath).Split('\\').Last();
