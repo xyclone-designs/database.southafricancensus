@@ -1,20 +1,7 @@
 ﻿using System;
 
-namespace Database.SouthAfricanCensus.Enums
+namespace XycloneDesigns.Database.SouthAfricanCensus.Enums
 {
-	[SQLite.StoreAsText]
-	public enum Types
-	{
-		Agriculture,
-		Household,
-		Mortality,
-		Person,
-
-		F18,
-		F19,
-		F21,
-	}
-
 	public static class TypesExtensions
 	{
 		public static Types FromFilename(this Types _, string filename)
@@ -26,9 +13,8 @@ namespace Database.SouthAfricanCensus.Enums
 				true when filename.Contains("Mortality") => Types.Mortality,
 				true when filename.Contains("Person") => Types.Person,
 
-				true when filename.Contains("F18") => Types.F18,
-				true when filename.Contains("F19") => Types.F19,
-				true when filename.Contains("F21") => Types.F21,
+				true when filename.Contains("F19") => Types.Household,
+				true when filename.Contains("F21") => Types.Person,
 
 				_ => new Types?()
 

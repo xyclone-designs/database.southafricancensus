@@ -1,16 +1,7 @@
 ﻿using System;
 
-namespace Database.SouthAfricanCensus.Enums
+namespace XycloneDesigns.Database.SouthAfricanCensus.Enums
 {
-	[SQLite.StoreAsText]
-	public enum Years
-	{
-		_1996,
-		_2001,
-		_2011,
-		_2022,
-	}
-
 	public static class YearsExtensions
 	{
 		public static Years FromFilename(this Years _, string filename)

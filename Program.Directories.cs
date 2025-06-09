@@ -1,16 +1,4 @@
-﻿using Database.SouthAfricanCensus.Enums;
-using Database.SouthAfricanCensus.Inputs.CSVs;
-
-using ICSharpCode.SharpZipLib.GZip;
-
-using Newtonsoft.Json.Linq;
-
-using SQLite;
-
-using System;
-using System.IO;
-using System.IO.Compression;
-using System.Linq;
+﻿using System.IO;
 
 namespace Database.SouthAfricanCensus
 {

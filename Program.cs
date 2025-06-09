@@ -1,7 +1,6 @@
-﻿using Database.SouthAfricanCensus.Enums;
-using Database.SouthAfricanCensus.Inputs.CSVs;
+﻿using Database.SouthAfricanCensus.Inputs.CSVs;
 using Database.SouthAfricanCensus.Inputs.TXTs;
-using Database.SouthAfricanCensus.Tables;
+
 using ICSharpCode.SharpZipLib.GZip;
 
 using Newtonsoft.Json.Linq;
@@ -9,10 +8,12 @@ using Newtonsoft.Json.Linq;
 using SQLite;
 
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
+
+using XycloneDesigns.Database.SouthAfricanCensus.Enums;
+using XycloneDesigns.Database.SouthAfricanCensus.Tables;
 
 namespace Database.SouthAfricanCensus
 {
@@ -30,77 +31,108 @@ namespace Database.SouthAfricanCensus
 			StreamWriters streamwriters = [];
 			SQLiteConnection sqliteconnection = _SQLiteConnection(sqlconnectionpath, false);
 
-			List<Code> codes = 
-			[
-				#region 1999
-				.. sqliteconnection.InsertAllAndReturn(
-					objs: DirectoryInputMetadata1996CodesArea
-						.SelectMany(_ => new TXTCodes(_).GetCodes<TXTCodes.CodeSextuplet>())
-						.Select(_ => Code.FromTXTCodeSextuplet(_, code =>
-						{
-							code.Type = CodeTypes.Area;
-						}))),
-				.. sqliteconnection.InsertAllAndReturn(
-					objs: DirectoryInputMetadata1996CodesDistrictCouncil
-						.SelectMany(_ => new TXTCodes(_).GetCodes<TXTCodes.CodeTriplet>())
-						.Select(_ => Code.FromTXTCodeTriplet(_, code =>
-						{
-							code.Type = CodeTypes.DistrictCouncil;
-						}))),
-				.. sqliteconnection.InsertAllAndReturn(
-					objs: DirectoryInputMetadata1996CodesDistrictMagisterial
-						.SelectMany(_ => new TXTCodes(_).GetCodes<TXTCodes.CodePair>())
-						.Select(_ => Code.FromTXTCodePair(_, code =>
-						{
-							code.Type = CodeTypes.DistrictMagisterial;
-						}))),
-				.. sqliteconnection.InsertAllAndReturn(
-					objs: DirectoryInputMetadata1996CodesIndustry
-						.SelectMany(_ => new TXTCodes(_).GetCodes<TXTCodes.CodePair>())
-						.Select(_ => Code.FromTXTCodePair(_, code =>
-						{
-							code.Type = CodeTypes.Industry;
-						}))),
-				.. sqliteconnection.InsertAllAndReturn(
-					objs: DirectoryInputMetadata1996CodesOccupation
-						.SelectMany(_ => new TXTCodes(_).GetCodes<TXTCodes.CodePair>())
-						.Select(_ => Code.FromTXTCodePair(_, code =>
-						{
-							code.Type = CodeTypes.Occupation;
-						}))),
-				#endregion
+			#region 1999
+			sqliteconnection.InsertAllAndReturn(
+				objs: DirectoryInputMetadata1996CodesArea
+					.SelectMany(_ => new TXTCodes(_).GetCodes<TXTCodes.CodeSextuplet>())
+					.Select(_ => new CodesArea
+					{
+						ProvinceCode = int.TryParse(_.ItemOne, out int provincecode) ? provincecode : new int?(),
+						ProvinceName = _.ItemTwo,
+						DistrictCouncilCode = int.TryParse(_.ItemOne, out int districtcouncilcode) ? districtcouncilcode : new int?(),
+						DistrictCouncilName = _.ItemFour,
+						TLCTRCCode = int.TryParse(_.ItemOne, out int tlctrccode) ? tlctrccode : new int?(),
+						TLCTRCName = _.ItemSix,
+					}));
+			sqliteconnection.InsertAllAndReturn(
+				objs: DirectoryInputMetadata1996CodesDistrictCouncil
+					.SelectMany(_ => new TXTCodes(_).GetCodes<TXTCodes.CodeTriplet>())
+					.Select(_ => new CodesCouncilDistrict
+					{
+						Code = int.TryParse(_.ItemOne, out int code) ? code : new int?(),
+						ProvinceCode = int.TryParse(_.ItemTwo, out int provincecode) ? provincecode : new int?(),
+						Name = _.ItemThree,
+					}));
+			sqliteconnection.InsertAllAndReturn(
+				objs: DirectoryInputMetadata1996CodesDistrictMagisterial
+					.SelectMany(_ => new TXTCodes(_).GetCodes<TXTCodes.CodePair>())
+					.Select(_ => new CodesCouncilMagisterial
+					{
+						Code = int.TryParse(_.ItemOne, out int code) ? code : new int?(),
+						Name = _.ItemTwo,
+					}));
+			sqliteconnection.InsertAllAndReturn(
+				objs: DirectoryInputMetadata1996CodesIndustry
+					.SelectMany(_ => new TXTCodes(_).GetCodes<TXTCodes.CodePair>())
+					.Select(_ => new CodesIndustry
+					{
+						Code1Digit = _.ItemOne,
+						Code2Digit = _.ItemOne,
+						Code3Digit = _.ItemOne,
+						Value = _.ItemTwo,
+					}));
+			sqliteconnection.InsertAllAndReturn(
+				objs: DirectoryInputMetadata1996CodesOccupation
+					.SelectMany(_ => new TXTCodes(_).GetCodes<TXTCodes.CodePair>())
+					.Select(_ => new CodesOccupation
+					{
+						Code1Digit = _.ItemOne,
+						Code2Digit = _.ItemOne,
+						Code3Digit = _.ItemOne,
+						Value = _.ItemTwo,
+					}));
+			#endregion
 
-				#region 2001
-				.. sqliteconnection.InsertAllAndReturn(
-					objs: DirectoryInputMetadata2001CodesCauseOfDeath
-						.SelectMany(_ => new TXTCodes(_).GetCodes<TXTCodes.CodePair>())
-						.Select(_ => Code.FromTXTCodePair(_, code =>
+			#region 2001
+			sqliteconnection.InsertAllAndReturn(
+				objs: DirectoryInputMetadata2001CodesCauseOfDeath
+					.SelectMany(_ => new TXTCodes(_).GetCodes<TXTCodes.CodePair>())
+					.Select(_ =>
+					{
+						(string? _, string? start, string? end) code =
+							_.ItemOne?.Split('-') is not string[] split 
+								? (null, null, null)
+								: split.Length == 2
+									? (null, split[0], split[1])
+									: (split[0], null, null);
+
+						return new CodesCauseOfDeath
 						{
-							code.Type = CodeTypes.CauseOfDeath;
-						}))),
-				.. sqliteconnection.InsertAllAndReturn(
-					objs: DirectoryInputMetadata2001CodesIndustry
-						.SelectMany(_ => new TXTCodes(_).GetCodes<TXTCodes.CodePair>())
-						.Select(_ => Code.FromTXTCodePair(_, code =>
-						{
-							code.Type = CodeTypes.Industry;
-						}))),
-				.. sqliteconnection.InsertAllAndReturn(
-					objs: DirectoryInputMetadata2001CodesOccupation
-						.SelectMany(_ => new TXTCodes(_).GetCodes<TXTCodes.CodePair>())
-						.Select(_ => Code.FromTXTCodePair(_, code =>
-						{
-							code.Type = CodeTypes.Occupation;
-						}))),
-				.. sqliteconnection.InsertAllAndReturn(
-					objs: DirectoryInputMetadata2001CodesReligion
-						.SelectMany(_ => new TXTCodes(_).GetCodes<TXTCodes.CodePair>())
-						.Select(_ => Code.FromTXTCodePair(_, code =>
-						{
-							code.Type = CodeTypes.Religion;
-						}))),
-				#endregion
-			];
+							Code = code._,
+							CodeStart = code.start,
+							CodeEnd = code.end,
+							Name = _.ItemTwo,
+						};
+					}));
+			sqliteconnection.InsertAllAndReturn(
+				objs: DirectoryInputMetadata2001CodesIndustry
+					.SelectMany(_ => new TXTCodes(_).GetCodes<TXTCodes.CodePair>())
+					.Select(_ => new CodesIndustry
+					{
+						Code1Digit = _.ItemOne,
+						Code2Digit = _.ItemOne,
+						Code3Digit = _.ItemOne,
+						Value = _.ItemTwo,
+					}));
+			sqliteconnection.InsertAllAndReturn(
+				objs: DirectoryInputMetadata2001CodesOccupation
+					.SelectMany(_ => new TXTCodes(_).GetCodes<TXTCodes.CodePair>())
+					.Select(_ => new CodesOccupation
+					{
+						Code1Digit = _.ItemOne,
+						Code2Digit = _.ItemOne,
+						Code3Digit = _.ItemOne,
+						Value = _.ItemTwo,
+					}));
+			sqliteconnection.InsertAllAndReturn(
+				objs: DirectoryInputMetadata2001CodesReligion
+					.SelectMany(_ => new TXTCodes(_).GetCodes<TXTCodes.CodePair>())
+					.Select(_ => new CodesReligion
+					{
+						Code = _.ItemOne,
+						Value = _.ItemTwo,
+					}));
+			#endregion
 
 			#region 1996
 
@@ -265,15 +297,11 @@ namespace Database.SouthAfricanCensus
 
 				switch (years, types)
 				{
-					case (Years._2022, Types.F18):
-						foreach (CSVRow2022F18 csvrow2022f18 in Utils.CSVs.Rows<CSVRow2022F18>(streamwriters[filename], streams))
-						{ }
-						break;
-					case (Years._2022, Types.F19):
+					case (Years._2022, Types.Household):
 						foreach (CSVRow2022F19 csvrow2022f19 in Utils.CSVs.Rows<CSVRow2022F19>(streamwriters[filename], streams))
 						{ }
 						break;
-					case (Years._2022, Types.F21):
+					case (Years._2022, Types.Person):
 						foreach (CSVRow2022F21 csvrow2022f21 in Utils.CSVs.Rows<CSVRow2022F21>(streamwriters[filename], streams))
 						{ }
 						break;
@@ -348,7 +376,7 @@ namespace Database.SouthAfricanCensus
 			if (individual) 
 			{
 				//sqliteconnection.CreateTable<Agriculture>();
-				sqliteconnection.CreateTable<Code>();
+				sqliteconnection.CreateTable<Codes>();
 				//sqliteconnection.CreateTable<Household>();
 				//sqliteconnection.CreateTable<Mortality>();
 				//sqliteconnection.CreateTable<Person>();
@@ -356,7 +384,7 @@ namespace Database.SouthAfricanCensus
 			else 
 			{
 				//sqliteconnection.CreateTable<Agriculture.Individual>();
-				sqliteconnection.CreateTable<Code.Individual>();
+				//sqliteconnection.CreateTable<Codes.Individual>();
 				//sqliteconnection.CreateTable<Household.Individual>();
 				//sqliteconnection.CreateTable<Mortality.Individual>();
 				//sqliteconnection.CreateTable<Person.Individual>();

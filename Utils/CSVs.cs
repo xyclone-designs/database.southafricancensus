@@ -38,7 +38,6 @@ namespace Database.SouthAfricanCensus.Inputs.CSVs
 								true when typeof(TCSVRow) == typeof(CSVRow2011Mortality) => new CSVRow2011Mortality(line, log) { LineNumber = linecurrent } as TCSVRow,
 								true when typeof(TCSVRow) == typeof(CSVRow2011Person) => new CSVRow2011Person(line, log) { LineNumber = linecurrent } as TCSVRow,
 
-								true when typeof(TCSVRow) == typeof(CSVRow2022F18) => new CSVRow2022F18(line, log) { LineNumber = linecurrent } as TCSVRow,
 								true when typeof(TCSVRow) == typeof(CSVRow2022F19) => new CSVRow2022F19(line, log) { LineNumber = linecurrent } as TCSVRow,
 								true when typeof(TCSVRow) == typeof(CSVRow2022F21) => new CSVRow2022F21(line, log) { LineNumber = linecurrent } as TCSVRow,
 
