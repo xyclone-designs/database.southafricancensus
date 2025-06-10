@@ -1,6 +1,8 @@
 ﻿using System.IO;
 using System.Linq;
 
+using XycloneDesigns.Database.SouthAfricanCensus.Tables;
+
 namespace Database.SouthAfricanCensus.Inputs.CSVs
 {
 	public class CSVRow1996Household : CSVRow1996
@@ -81,5 +83,10 @@ namespace Database.SouthAfricanCensus.Inputs.CSVs
 		public uint? hinchhse;
 		public uint? hhinccat;
 		public double? peshhwei;
+
+		public RecordsHousehold AsRecord()
+		{
+			return new RecordsHousehold { };
+		}
 	}
 }

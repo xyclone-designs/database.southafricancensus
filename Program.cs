@@ -23,17 +23,17 @@ namespace Database.SouthAfricanCensus
 		{
 			_CleaningPre();
 
-			 Directory.CreateDirectory(DirectoryOutput);
+			Directory.CreateDirectory(DirectoryOutput);
 
 			string sqlconnectionpath = Path.Combine(DirectoryOutput, "southafricancensus.db");
 
 			JArray apifiles = [];
 			StreamWriters streamwriters = [];
-			SQLiteConnection sqliteconnection = _SQLiteConnection(sqlconnectionpath, false);
+			SQLiteConnection sqliteconnection = _SQLiteConnection(sqlconnectionpath);
 
 			#region 1999
-			sqliteconnection.InsertAllAndReturn(
-				objs: DirectoryInputMetadata1996CodesArea
+			sqliteconnection.InsertAll(
+				objects: DirectoryInputMetadata1996CodesArea
 					.SelectMany(_ => new TXTCodes(_).GetCodes<TXTCodes.CodeSextuplet>())
 					.Select(_ => new CodesArea
 					{
@@ -44,8 +44,8 @@ namespace Database.SouthAfricanCensus
 						TLCTRCCode = int.TryParse(_.ItemOne, out int tlctrccode) ? tlctrccode : new int?(),
 						TLCTRCName = _.ItemSix,
 					}));
-			sqliteconnection.InsertAllAndReturn(
-				objs: DirectoryInputMetadata1996CodesDistrictCouncil
+			sqliteconnection.InsertAll(
+				objects: DirectoryInputMetadata1996CodesDistrictCouncil
 					.SelectMany(_ => new TXTCodes(_).GetCodes<TXTCodes.CodeTriplet>())
 					.Select(_ => new CodesCouncilDistrict
 					{
@@ -53,16 +53,16 @@ namespace Database.SouthAfricanCensus
 						ProvinceCode = int.TryParse(_.ItemTwo, out int provincecode) ? provincecode : new int?(),
 						Name = _.ItemThree,
 					}));
-			sqliteconnection.InsertAllAndReturn(
-				objs: DirectoryInputMetadata1996CodesDistrictMagisterial
+			sqliteconnection.InsertAll(
+				objects: DirectoryInputMetadata1996CodesDistrictMagisterial
 					.SelectMany(_ => new TXTCodes(_).GetCodes<TXTCodes.CodePair>())
 					.Select(_ => new CodesCouncilMagisterial
 					{
 						Code = int.TryParse(_.ItemOne, out int code) ? code : new int?(),
 						Name = _.ItemTwo,
 					}));
-			sqliteconnection.InsertAllAndReturn(
-				objs: DirectoryInputMetadata1996CodesIndustry
+			sqliteconnection.InsertAll(
+				objects: DirectoryInputMetadata1996CodesIndustry
 					.SelectMany(_ => new TXTCodes(_).GetCodes<TXTCodes.CodePair>())
 					.Select(_ => new CodesIndustry
 					{
@@ -71,8 +71,8 @@ namespace Database.SouthAfricanCensus
 						Code3Digit = _.ItemOne,
 						Value = _.ItemTwo,
 					}));
-			sqliteconnection.InsertAllAndReturn(
-				objs: DirectoryInputMetadata1996CodesOccupation
+			sqliteconnection.InsertAll(
+				objects: DirectoryInputMetadata1996CodesOccupation
 					.SelectMany(_ => new TXTCodes(_).GetCodes<TXTCodes.CodePair>())
 					.Select(_ => new CodesOccupation
 					{
@@ -84,8 +84,8 @@ namespace Database.SouthAfricanCensus
 			#endregion
 
 			#region 2001
-			sqliteconnection.InsertAllAndReturn(
-				objs: DirectoryInputMetadata2001CodesCauseOfDeath
+			sqliteconnection.InsertAll(
+				objects: DirectoryInputMetadata2001CodesCauseOfDeath
 					.SelectMany(_ => new TXTCodes(_).GetCodes<TXTCodes.CodePair>())
 					.Select(_ =>
 					{
@@ -104,8 +104,8 @@ namespace Database.SouthAfricanCensus
 							Name = _.ItemTwo,
 						};
 					}));
-			sqliteconnection.InsertAllAndReturn(
-				objs: DirectoryInputMetadata2001CodesIndustry
+			sqliteconnection.InsertAll(
+				objects: DirectoryInputMetadata2001CodesIndustry
 					.SelectMany(_ => new TXTCodes(_).GetCodes<TXTCodes.CodePair>())
 					.Select(_ => new CodesIndustry
 					{
@@ -114,8 +114,8 @@ namespace Database.SouthAfricanCensus
 						Code3Digit = _.ItemOne,
 						Value = _.ItemTwo,
 					}));
-			sqliteconnection.InsertAllAndReturn(
-				objs: DirectoryInputMetadata2001CodesOccupation
+			sqliteconnection.InsertAll(
+				objects: DirectoryInputMetadata2001CodesOccupation
 					.SelectMany(_ => new TXTCodes(_).GetCodes<TXTCodes.CodePair>())
 					.Select(_ => new CodesOccupation
 					{
@@ -124,8 +124,8 @@ namespace Database.SouthAfricanCensus
 						Code3Digit = _.ItemOne,
 						Value = _.ItemTwo,
 					}));
-			sqliteconnection.InsertAllAndReturn(
-				objs: DirectoryInputMetadata2001CodesReligion
+			sqliteconnection.InsertAll(
+				objects: DirectoryInputMetadata2001CodesReligion
 					.SelectMany(_ => new TXTCodes(_).GetCodes<TXTCodes.CodePair>())
 					.Select(_ => new CodesReligion
 					{
@@ -160,12 +160,16 @@ namespace Database.SouthAfricanCensus
 				switch (years, types)
 				{
 					case (Years._1996, Types.Household):
-						foreach (CSVRow1996Household csvrow1996household in Utils.CSVs.Rows<CSVRow1996Household>(streamwriters[filename], streams))
-						{ }
+						sqliteconnection.InsertAll(
+							objects: Utils.CSVs
+								.Rows<CSVRow1996Household>(streamwriters[filename], streams)
+								.Select(_ => _.AsRecord()));
 						break;
 					case (Years._1996, Types.Person):
-						foreach (CSVRow1996Person csvrow1996person in Utils.CSVs.Rows<CSVRow1996Person>(streamwriters[filename], streams))
-						{ }
+						sqliteconnection.InsertAll(
+							objects: Utils.CSVs
+								.Rows<CSVRow1996Person>(streamwriters[filename], streams)
+								.Select(_ => _.AsRecord()));
 						break;
 
 					default: break;
@@ -202,16 +206,22 @@ namespace Database.SouthAfricanCensus
 				switch (years, types)
 				{
 					case (Years._2001, Types.Household):
-						foreach (CSVRow2001Household csvrow2001household in Utils.CSVs.Rows<CSVRow2001Household>(streamwriters[filename], streams))
-						{ }
+						sqliteconnection.InsertAll(
+							objects: Utils.CSVs
+								.Rows<CSVRow2001Household>(streamwriters[filename], streams)
+								.Select(_ => _.AsRecord()));
 						break;
 					case (Years._2001, Types.Mortality):
-						foreach (CSVRow2001Mortality csvrow2001mortality in Utils.CSVs.Rows<CSVRow2001Mortality>(streamwriters[filename], streams))
-						{ }
+						sqliteconnection.InsertAll(
+							objects: Utils.CSVs
+								.Rows<CSVRow2001Mortality>(streamwriters[filename], streams)
+								.Select(_ => _.AsRecord()));
 						break;
 					case (Years._2001, Types.Person):
-						foreach (CSVRow2001Person csvrow2001person in Utils.CSVs.Rows<CSVRow2001Person>(streamwriters[filename], streams))
-						{ }
+						sqliteconnection.InsertAll(
+							objects: Utils.CSVs
+								.Rows<CSVRow2001Person>(streamwriters[filename], streams)
+								.Select(_ => _.AsRecord()));
 						break;
 
 					default: break;
@@ -248,20 +258,28 @@ namespace Database.SouthAfricanCensus
 				switch (years, types)
 				{
 					case (Years._2011, Types.Agriculture):
-						foreach (CSVRow2011Agriculture csvrow2011agriculture in Utils.CSVs.Rows<CSVRow2011Agriculture>(streamwriters[filename], streams))
-						{ }
+						sqliteconnection.InsertAll(
+							objects: Utils.CSVs
+								.Rows<CSVRow2011HouseholdAgricultural>(streamwriters[filename], streams)
+								.Select(_ => _.AsRecord()));
 						break;
 					case (Years._2011, Types.Household):
-						foreach (CSVRow2011Household csvrow2011household in Utils.CSVs.Rows<CSVRow2011Household>(streamwriters[filename], streams))
-						{ }
+						sqliteconnection.InsertAll(
+							objects: Utils.CSVs
+								.Rows<CSVRow2011Household>(streamwriters[filename], streams)
+								.Select(_ => _.AsRecord()));
 						break;
 					case (Years._2011, Types.Mortality):
-						foreach (CSVRow2011Mortality csvrow2011mortality in Utils.CSVs.Rows<CSVRow2011Mortality>(streamwriters[filename], streams))
-						{ }
+						sqliteconnection.InsertAll(
+							objects: Utils.CSVs
+								.Rows<CSVRow2022F21>(streamwriters[filename], streams)
+								.Select(_ => _.AsRecord()));
 						break;
 					case (Years._2011, Types.Person):
-						foreach (CSVRow2011Person csvrow2011person in Utils.CSVs.Rows<CSVRow2011Person>(streamwriters[filename], streams))
-						{ }
+						sqliteconnection.InsertAll(
+							objects: Utils.CSVs
+								.Rows<CSVRow2011Person>(streamwriters[filename], streams)
+								.Select(_ => _.AsRecord()));
 						break;
 
 					default: break;
@@ -298,12 +316,16 @@ namespace Database.SouthAfricanCensus
 				switch (years, types)
 				{
 					case (Years._2022, Types.Household):
-						foreach (CSVRow2022F19 csvrow2022f19 in Utils.CSVs.Rows<CSVRow2022F19>(streamwriters[filename], streams))
-						{ }
+						sqliteconnection.InsertAll(
+							objects: Utils.CSVs
+								.Rows<CSVRow2022F19>(streamwriters[filename], streams)
+								.Select(_ => _.AsRecord()));
 						break;
 					case (Years._2022, Types.Person):
-						foreach (CSVRow2022F21 csvrow2022f21 in Utils.CSVs.Rows<CSVRow2022F21>(streamwriters[filename], streams))
-						{ }
+						sqliteconnection.InsertAll(
+							objects: Utils.CSVs
+								.Rows<CSVRow2022F21>(streamwriters[filename], streams)
+								.Select(_ => _.AsRecord()));
 						break;
 
 					default: break;
@@ -369,26 +391,22 @@ namespace Database.SouthAfricanCensus
 
 			return gzipfilepath;
 		}
-		static SQLiteConnection _SQLiteConnection(string path, bool individual)
+		static SQLiteConnection _SQLiteConnection(string path)
 		{
 			SQLiteConnection sqliteconnection = new(path);
 
-			if (individual) 
-			{
-				//sqliteconnection.CreateTable<Agriculture>();
-				sqliteconnection.CreateTable<Codes>();
-				//sqliteconnection.CreateTable<Household>();
-				//sqliteconnection.CreateTable<Mortality>();
-				//sqliteconnection.CreateTable<Person>();
-			} 
-			else 
-			{
-				//sqliteconnection.CreateTable<Agriculture.Individual>();
-				//sqliteconnection.CreateTable<Codes.Individual>();
-				//sqliteconnection.CreateTable<Household.Individual>();
-				//sqliteconnection.CreateTable<Mortality.Individual>();
-				//sqliteconnection.CreateTable<Person.Individual>();
-			}
+			sqliteconnection.CreateTable<CodesArea>();
+			sqliteconnection.CreateTable<CodesCouncilDistrict>();
+			sqliteconnection.CreateTable<CodesCouncilMagisterial>();
+			sqliteconnection.CreateTable<CodesIndustry>();
+			sqliteconnection.CreateTable<CodesOccupation>();
+			sqliteconnection.CreateTable<CodesCauseOfDeath>();
+			sqliteconnection.CreateTable<CodesReligion>();
+
+			sqliteconnection.CreateTable<RecordsHousehold>();
+			sqliteconnection.CreateTable<RecordsHouseholdAgricultural>();
+			sqliteconnection.CreateTable<RecordsMortality>();
+			sqliteconnection.CreateTable<RecordsPerson>();
 
 			return sqliteconnection;
 		}

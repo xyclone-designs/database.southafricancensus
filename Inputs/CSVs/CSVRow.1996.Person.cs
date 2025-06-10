@@ -1,5 +1,6 @@
 ﻿using System.IO;
 using System.Linq;
+using XycloneDesigns.Database.SouthAfricanCensus.Tables;
 
 namespace Database.SouthAfricanCensus.Inputs.CSVs
 {
@@ -115,5 +116,10 @@ namespace Database.SouthAfricanCensus.Inputs.CSVs
 		public uint? workingd;
 		public uint? income;
 		public double? pespweig;
+
+		public RecordsPerson AsRecord()
+		{
+			return new RecordsPerson { };
+		}
 	}
 }

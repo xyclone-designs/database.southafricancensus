@@ -1,11 +1,13 @@
 ﻿using System.IO;
 using System.Linq;
 
+using XycloneDesigns.Database.SouthAfricanCensus.Tables;
+
 namespace Database.SouthAfricanCensus.Inputs.CSVs
 {
-	public class CSVRow2011Agriculture : CSVRow2011
+	public class CSVRow2011HouseholdAgricultural : CSVRow2011
 	{
-        public CSVRow2011Agriculture(string line, StreamWriter logger) : base(line)
+        public CSVRow2011HouseholdAgricultural(string line, StreamWriter logger) : base(line)
 		{
 			if (new bool[]
 			{
@@ -156,5 +158,10 @@ namespace Database.SouthAfricanCensus.Inputs.CSVs
 		public double? H_DISTRICT;
 		public double? H_MUNIC;
 		public double? AGRICULTURE_10PERCENT_WEIGHT;
+
+		public RecordsHouseholdAgricultural AsRecord()
+		{
+			return new RecordsHouseholdAgricultural { };
+		}
 	}
 }

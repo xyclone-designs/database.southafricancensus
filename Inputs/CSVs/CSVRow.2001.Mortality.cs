@@ -1,6 +1,8 @@
 ﻿using System.IO;
 using System.Linq;
 
+using XycloneDesigns.Database.SouthAfricanCensus.Tables;
+
 namespace Database.SouthAfricanCensus.Inputs.CSVs
 {
 	public class CSVRow2001Mortality : CSVRow2001
@@ -29,5 +31,10 @@ namespace Database.SouthAfricanCensus.Inputs.CSVs
 		public uint? H31Acc;
 		public uint? H31Pr;
 		public double? MMwgt;
+
+		public RecordsMortality AsRecord()
+		{
+			return new RecordsMortality { };
+		}
 	}
 }

@@ -1,6 +1,8 @@
 ﻿using System.IO;
 using System.Linq;
 
+using XycloneDesigns.Database.SouthAfricanCensus.Tables;
+
 namespace Database.SouthAfricanCensus.Inputs.CSVs
 {
 	public class CSVRow2001Household : CSVRow2001
@@ -81,5 +83,10 @@ namespace Database.SouthAfricanCensus.Inputs.CSVs
 		public uint? der52_ma;
 		public uint? der16_hh;
 		public double? weight;
+
+		public RecordsHousehold AsRecord()
+		{
+			return new RecordsHousehold { };
+		}
 	}
 }

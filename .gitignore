@@ -3,3 +3,4 @@ obj
 .vs
 .input/census10%
 .output
+*.csproj

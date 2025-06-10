@@ -1,5 +1,6 @@
 ﻿using System.IO;
 using System.Linq;
+using XycloneDesigns.Database.SouthAfricanCensus.Tables;
 
 namespace Database.SouthAfricanCensus.Inputs.CSVs
 {
@@ -125,5 +126,10 @@ namespace Database.SouthAfricanCensus.Inputs.CSVs
 		public uint? H_DISTRICT;
 		public uint? H_MUNIC;
 		public double? HHLD_10PERCENT_WGT;
+
+		public RecordsHousehold AsRecord()
+		{
+			return new RecordsHousehold { };
+		}
 	}
 }
