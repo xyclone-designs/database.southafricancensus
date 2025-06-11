@@ -23,13 +23,13 @@ namespace Database.SouthAfricanCensus.Inputs.CSVs
 			}.Any(_ => _ == false)) logger.WriteLine();
 		}
 
-		public uint? SN;
-		public uint? H31Mo;
-		public uint? H31Yr;
-		public uint? H31Sx;
-		public uint? H31Age;
-		public uint? H31Acc;
-		public uint? H31Pr;
+		public int? SN;
+		public int? H31Mo;
+		public int? H31Yr;
+		public int? H31Sx;
+		public int? H31Age;
+		public int? H31Acc;
+		public int? H31Pr;
 		public double? MMwgt;
 
 		public RecordsMortality AsRecord()

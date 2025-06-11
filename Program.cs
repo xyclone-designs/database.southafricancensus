@@ -150,6 +150,8 @@ namespace Database.SouthAfricanCensus
 				Years years = default(Years).FromFilename(filename);
 				Types types = default(Types).FromFilename(filename);
 
+				apifiles.Add(filename, years, types);
+
 				string directorypath = Path.Combine(DirectoryOutput, string.Format("{0}.{1}", years.AsString(), types));
 
 				Directory.CreateDirectory(directorypath);
@@ -195,6 +197,8 @@ namespace Database.SouthAfricanCensus
 
 				Years years = default(Years).FromFilename(filename);
 				Types types = default(Types).FromFilename(filename);
+
+				apifiles.Add(filename, years, types);
 
 				string directorypath = Path.Combine(DirectoryOutput, string.Format("{0}.{1}", years.AsString(), types));
 
@@ -247,6 +251,8 @@ namespace Database.SouthAfricanCensus
 
 				Years years = default(Years).FromFilename(filename);
 				Types types = default(Types).FromFilename(filename);
+
+				apifiles.Add(filename, years, types);
 
 				string directorypath = Path.Combine(DirectoryOutput, string.Format("{0}.{1}", years.AsString(), types));
 
@@ -306,6 +312,8 @@ namespace Database.SouthAfricanCensus
 				Years years = default(Years).FromFilename(filename);
 				Types types = default(Types).FromFilename(filename);
 
+				apifiles.Add(filename, years, types);
+
 				string directorypath = Path.Combine(DirectoryOutput, string.Format("{0}.{1}", years.AsString(), types));
 
 				Directory.CreateDirectory(directorypath);
@@ -345,6 +353,16 @@ namespace Database.SouthAfricanCensus
 			apifiles.Add(sqliteconnectiongzipname);
 
 			File.Delete(sqlconnectionpath);
+
+			string apifilesjson = apifiles.ToString();
+			string apifilespath = Path.Combine(DirectoryOutput, "index.json");
+
+			using FileStream apifilesfilestream = File.OpenWrite(apifilespath);
+			using StreamWriter apifilesstreamwriter = new(apifilesfilestream);
+
+			apifilesstreamwriter.Write(apifilesjson);
+			apifilesstreamwriter.Close();
+			apifilesfilestream.Close();
 
 			_CleaningPost();
 		}
@@ -409,6 +427,29 @@ namespace Database.SouthAfricanCensus
 			sqliteconnection.CreateTable<RecordsPerson>();
 
 			return sqliteconnection;
+		}
+	}
+
+	public static class Extensions
+	{
+		public static void Add(this JArray jarray, string filename, Years year, Types type)
+		{
+			string description = filename.Split('.').Last() switch
+			{
+				"zip" => "zipped ",
+				"gz" => "g-zipped ",
+
+				_ => string.Empty
+			};
+
+			jarray.Add(new JObject
+			{
+				{ "DateCreated", DateTime.Now.ToString("dd-MM-yyyy") },
+				{ "DateEdited", DateTime.Now.ToString("dd-MM-yyyy") },
+				{ "Name", filename.Split('/').Last() },
+				{ "Url", string.Format("https://raw.githubusercontent.com/xyclone-designs/database.southafricancensus/refs/heads/main/.output/{0}", filename) },
+				{ "Description", string.Format("individual {0}database of {1} records taken in {2}", description, type, year) }
+			});
 		}
 	}
 }

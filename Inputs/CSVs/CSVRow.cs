@@ -14,21 +14,9 @@ namespace Database.SouthAfricanCensus.Inputs.CSVs
         public int LineNumber { get; set; }
         public string[] LineSplit { get; set; }
 
-        public static bool ProcessInt(string? value, StreamWriter logger, string? loggerkey, out int? processed) 
-        {
-            processed = int.TryParse(value, out int _processed) ? _processed : new int?();
-
-            if (processed is null)
-            {
-				if (loggerkey is null) logger.Write(" {0} ", value);
-				else logger.Write("{0}: {1} ", loggerkey, value);
-			}
-
-			return processed is not null;
-		}
-		public static bool ProcessInt(string? value, StreamWriter logger, string? loggerkey, out uint? processed)
+		public static bool ProcessInt(string? value, StreamWriter logger, string? loggerkey, out int? processed)
 		{
-			processed = uint.TryParse(value, out uint _processed) ? _processed : new uint?();
+			processed = int.TryParse(value, out int _processed) ? _processed : new int?();
 
 			if (processed is null)
 			{

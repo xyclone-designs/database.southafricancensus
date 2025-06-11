@@ -1,6 +1,8 @@
 ﻿using System.IO;
 using System.Linq;
 
+using XycloneDesigns.Database.SouthAfricanCensus.Enums;
+using XycloneDesigns.Database.SouthAfricanCensus.Structs;
 using XycloneDesigns.Database.SouthAfricanCensus.Tables;
 
 namespace Database.SouthAfricanCensus.Inputs.CSVs
@@ -49,44 +51,134 @@ namespace Database.SouthAfricanCensus.Inputs.CSVs
 			}.Any(_ => _ == false)) logger.WriteLine();
 		}
 
-		public uint? province;
-		public uint? district;
-		public uint? dccode;
-		public uint? newla;
-		public uint? hhnumber;
+		public int? province;
+		public int? district;
+		public int? dccode;
+		public int? newla;
+		public int? hhnumber;
 		public string? questype;
-		public uint? urban;
-		public uint? addmon2;
-		public uint? payment2;
-		public uint? migrant;
-		public uint? hhmigran;
-		public uint? dwelling;
-		public uint? rooms;
-		public uint? nsharedh;
-		public uint? owend;
-		public uint? fuelcook;
-		public uint? fuelheat;
-		public uint? fuelligh;
-		public uint? water;
-		public uint? toilet;
-		public uint? refuse;
-		public uint? telephon;
-		public uint? hohrace;
-		public uint? hohsex;
-		public uint? hohage;
-		public uint? hoheduca;
-		public uint? hohocp1;
-		public uint? hohecona;
-		public uint? hhsize;
-		public uint? hinchh;
-		public uint? hinchhra; 
-		public uint? hinchhse;
-		public uint? hhinccat;
+		public int? urban;
+		public int? addmon2;
+		public int? payment2;
+		public int? migrant;
+		public int? hhmigran;
+		public int? dwelling;
+		public int? rooms;
+		public int? nsharedh;
+		public int? owend;
+		public int? fuelcook;
+		public int? fuelheat;
+		public int? fuelligh;
+		public int? water;
+		public int? toilet;
+		public int? refuse;
+		public int? telephon;
+		public int? hohrace;
+		public int? hohsex;
+		public int? hohage;
+		public int? hoheduca;
+		public int? hohocp1;
+		public int? hohecona;
+		public int? hhsize;
+		public int? hinchh;
+		public int? hinchhra; 
+		public int? hinchhse;
+		public int? hhinccat;
 		public double? peshhwei;
 
 		public RecordsHousehold AsRecord()
 		{
-			return new RecordsHousehold { };
+			return new RecordsHousehold
+			{
+				TenPercentWeight = peshhwei,
+
+				Number = hhnumber,
+				Province = default(Provinces).FromInt(province, Years._1996)?.ToString() ?? null,
+				CouncilCodeDistrict = district,
+				CouncilCodeMagisterial = dccode,
+				//CouncilCodeTransitionalLocalRural
+				Dwelling = default(TypeDwelling).FromInt(dwelling, Years._1996, out NotAvailables? _dwelling)?.ToString() ?? _dwelling?.ToString() ?? null,
+				DwellingsOwned = default(SourceOfFuel).FromInt(owend, Years._1996, out NotAvailables? _owend)?.ToString() ?? _owend?.ToString() ?? null,
+				FacilitiesToilet = default(FacilitiesToilet).FromInt(toilet, Years._1996, out NotAvailables? _toilet)?.ToString() ?? _toilet?.ToString() ?? null,
+				FacilitiesTelephone = default(FacilitiesTelephone).FromInt(telephon, Years._1996, out NotAvailables? _telephon)?.ToString() ?? _telephon?.ToString() ?? null,
+				FacilitiesRefuseDisposal = default(FacilitiesRefuseDisposal).FromInt(refuse, Years._1996, out NotAvailables? _refuse)?.ToString() ?? _refuse?.ToString() ?? null,
+				_HeadOf_Age = Uncertain.From<int>(hohage.ToString()),
+				HeadOf_Education = default(EducationFields).FromInt(hoheduca, Years._1996, out NotAvailables? _hoheduca)?.ToString() ?? _hoheduca?.ToString() ?? null,
+				HeadOf_EmploymentStatus = default(EmploymentStatuses).FromInt(hohecona, Years._1996, out NotAvailables? _hohecona)?.ToString() ?? _hohecona?.ToString() ?? null,
+				HeadOf_IncomeLevel = default(IncomeLevelsMonthly).FromInt(hhinccat, Years._1996, out NotAvailables? _hhinccat)?.ToString() ?? _hhinccat?.ToString() ?? null,
+				HeadOf_Occupation = hohocp1,
+				HeadOf_Race = default(PopulationGroups).FromInt(hohrace, Years._1996, out NotAvailables? _hohrace)?.ToString() ?? _hohrace?.ToString() ?? null,
+				HeadOf_Sex = default(Sexes).FromInt(hohsex, Years._1996, out NotAvailables? _hohsex)?.ToString() ?? _hohsex?.ToString() ?? null,
+				HighestIncomeIn_Gender = default(Sexes).FromInt(hinchhse, Years._1996, out NotAvailables? _hinchhse)?.ToString() ?? _hinchhse?.ToString() ?? null,
+				HighestIncomeIn_Race = default(PopulationGroups).FromInt(hinchhra, Years._1996, out NotAvailables? _hinchhra)?.ToString() ?? _hinchhra?.ToString() ?? null,
+				HouseholdSize = default(SourceOfFuel).FromInt(hhsize, Years._1996, out NotAvailables? _hhsize)?.ToString() ?? _hhsize?.ToString() ?? null,
+				//Income
+				//IncomeAdditional
+				//IncomeReceivedRemittances
+				_Migrant = Uncertain.From<bool>(migrant.ToString()),
+				_NumberOf_MigrantWorkers = Uncertain.From<int>(hhmigran.ToString()), 
+				_NumberOf_HouseholdsSharingOneRoom = Uncertain.From<int>(nsharedh.ToString()), 
+				QuestionType = questype,
+				_Rooms = Uncertain.From<int>(rooms.ToString()), 
+				SourceOfWater = default(SourceOfWater).FromInt(water, Years._1996, out NotAvailables? _water)?.ToString() ?? _water?.ToString() ?? null, 
+				SourceOfFuelCooking = default(SourceOfFuel).FromInt(fuelcook, Years._1996, out NotAvailables? _fuelcook)?.ToString() ?? _fuelcook?.ToString() ?? null,
+				SourceOfFuelHeating = default(SourceOfFuel).FromInt(fuelheat, Years._1996, out NotAvailables? _fuelheat)?.ToString() ?? _fuelheat?.ToString() ?? null, 
+				SourceOfFuelLighting = default(SourceOfFuel).FromInt(fuelligh, Years._1996, out NotAvailables? _fuelligh)?.ToString() ?? _fuelligh?.ToString() ?? null, 
+				_Urban = Uncertain.From<bool>(urban.ToString()),
+			};
 		}
+
+		//public int? newla;
+		//public int? addmon2;
+		//public int? payment2;
+		//public int? hinchh;
+
+		public Uncertain<Provinces>? _Province;
+
+		public Uncertain<bool>? _DwellingsOwned;
+
+		public Uncertain<TypeDwelling>? _Dwelling;
+
+		public Uncertain<FacilitiesToilet>? _FacilitiesToilet;
+
+		public Uncertain<FacilitiesTelephone>? _FacilitiesTelephone;
+
+		public Uncertain<FacilitiesRefuseDisposal>? _FacilitiesRefuseDisposal;
+
+		public Uncertain<int>? _HeadOf_Age;
+
+		public Uncertain<EducationLevels>? _HeadOf_Education;
+
+		public Uncertain<EmploymentStatuses>? _HeadOf_EmploymentStatus;
+
+		public Uncertain<IncomeLevelsMonthly>? _HeadOf_IncomeLevel;
+
+		public Uncertain<PopulationGroups>? _HeadOf_Race;
+
+		public Uncertain<Sexes>? _HeadOf_Sex;
+
+		public Uncertain<Sexes>? _HighestIncomeIn_Gender;
+
+		public Uncertain<PopulationGroups>? _HighestIncomeIn_Race;
+
+		public Uncertain<int>? _HouseholdSize;
+
+		public Uncertain<IncomeLevelsMonthlyHousehold>? _Income;
+
+		public Uncertain<IncomeLevelsMonthlyHousehold>? _IncomeAdditional;
+
+		public Uncertain<IncomeLevelsMonthlyHousehold>? _IncomeReceivedRemittances;
+
+		public Uncertain<bool>? _Migrant;
+
+		public Uncertain<int>? _NumberOf_MigrantWorkers;
+
+		public Uncertain<int>? _NumberOf_HouseholdsSharingOneRoom;
+
+		public Uncertain<TypeQuestionnaireHouseholds>? _QuestionType;
+
+		public Uncertain<int>? _Rooms;
+
+		public Uncertain<bool>? _Urban;
 	}
 }

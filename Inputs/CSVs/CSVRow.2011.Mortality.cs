@@ -27,16 +27,16 @@ namespace Database.SouthAfricanCensus.Inputs.CSVs
 		}
 
 		public long? SN;
-		public uint? M02_MONTH;
-		public uint? M02_YEAR;
-		public uint? M03_SEX;
-		public uint? M04_AGE;
-		public uint? M05_CAUSE;
+		public int? M02_MONTH;
+		public int? M02_YEAR;
+		public int? M03_SEX;
+		public int? M04_AGE;
+		public int? M05_CAUSE;
 		public double? M_MX_POP_GROUP;
-		public uint? M_GEOTYPE;
-		public uint? M_PROVINCE;
-		public uint? M_DISTRICT;
-		public uint? M_MUNIC;
+		public int? M_GEOTYPE;
+		public int? M_PROVINCE;
+		public int? M_DISTRICT;
+		public int? M_MUNIC;
 		public double? MORTALITY_10PERCENT_WEIGHT;
 
 		public RecordsMortality AsRecord()
