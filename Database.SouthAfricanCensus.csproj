@@ -8,12 +8,96 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Include=".input\metadata10%25\1996\codes.area.txt" />
+    <Content Include=".input\metadata10%25\1996\codes.district.council.txt" />
+    <Content Include=".input\metadata10%25\1996\codes.district.magisterial.txt" />
+    <Content Include=".input\metadata10%25\1996\codes.industry.1.txt" />
+    <Content Include=".input\metadata10%25\1996\codes.industry.2.txt" />
+    <Content Include=".input\metadata10%25\1996\codes.industry.3.txt" />
+    <Content Include=".input\metadata10%25\1996\codes.occupation.1.txt" />
+    <Content Include=".input\metadata10%25\1996\codes.occupation.2.txt" />
+    <Content Include=".input\metadata10%25\1996\codes.occupation.3.txt" />
+    <Content Include=".input\metadata10%25\2001\codes.causeofdeath.txt" />
+    <Content Include=".input\metadata10%25\2001\codes.industry.1.txt" />
+    <Content Include=".input\metadata10%25\2001\codes.industry.2.txt" />
+    <Content Include=".input\metadata10%25\2001\codes.industry.3.txt" />
+    <Content Include=".input\metadata10%25\2001\codes.occupation.1.txt" />
+    <Content Include=".input\metadata10%25\2001\codes.occupation.2.txt" />
+    <Content Include=".input\metadata10%25\2001\codes.occupation.3.txt" />
+    <Content Include=".input\metadata10%25\2001\codes.religion.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include=".input\census10%25\1996\1996.Household.zip" />
+    <None Include=".input\census10%25\1996\1996.Person.zip" />
+    <None Include=".input\census10%25\2001\2001.Household.zip" />
+    <None Include=".input\census10%25\2001\2001.Mortality.zip" />
+    <None Include=".input\census10%25\2001\2001.Person.zip" />
+    <None Include=".input\census10%25\2011\2011.Agriculture.zip" />
+    <None Include=".input\census10%25\2011\2011.Household.zip" />
+    <None Include=".input\census10%25\2011\2011.Mortality.zip" />
+    <None Include=".input\census10%25\2011\2011.Person.zip" />
+    <None Include=".input\census10%25\2022\2022.sample_F19.zip" />
+    <None Include=".input\census10%25\2022\2022.sample_F21.zip" />
+    <None Include=".input\_extras\1996\ddi-documentation-english-255.pdf" />
+    <None Include=".input\_extras\1996\Q_SA Census 1996.pdf" />
+    <None Include=".input\_extras\1996\SA Census 1996 10_ Ind Codes1.pdf" />
+    <None Include=".input\_extras\1996\SA Census 1996 10_ Ind Codes2.pdf" />
+    <None Include=".input\_extras\1996\SA Census 1996 10_ IndCodes3.pdf" />
+    <None Include=".input\_extras\1996\SA Census 1996 10_ Occ Codes1.pdf" />
+    <None Include=".input\_extras\1996\SA Census 1996 10_ Occ Codes2.pdf" />
+    <None Include=".input\_extras\1996\SA Census 1996 10_ Occ Codes3.pdf" />
+    <None Include=".input\_extras\1996\SA Census 1996 Area Codes.pdf" />
+    <None Include=".input\_extras\1996\SA Census 1996 Data Quality Issues.pdf" />
+    <None Include=".input\_extras\1996\SA Census 1996 District Council Codes.pdf" />
+    <None Include=".input\_extras\1996\SA Census 1996 Hhold Metadata.pdf" />
+    <None Include=".input\_extras\1996\SA Census 1996 Md Codes.pdf" />
+    <None Include=".input\_extras\1996\SA Census 1996 Newnames.pdf" />
+    <None Include=".input\_extras\1996\SA Census 1996 Overview.pdf" />
+    <None Include=".input\_extras\1996\SA Census 1996 Person Metadata.pdf" />
+    <None Include=".input\_extras\1996\SA Census 1996 Sample.pdf" />
+    <None Include=".input\_extras\2001\Manual_Statistical Classification of Causes of Death.pdf" />
+    <None Include=".input\_extras\2001\Q_SA Census 2001 Household.pdf" />
+    <None Include=".input\_extras\2001\Q_SA Census 2001 Ind in Institutions.pdf" />
+    <None Include=".input\_extras\2001\SA Census 2001 10%25 Ind Codes1.pdf" />
+    <None Include=".input\_extras\2001\SA Census 2001 10%25 Ind Codes2.pdf" />
+    <None Include=".input\_extras\2001\SA Census 2001 10%25 Ind Codes3.pdf" />
+    <None Include=".input\_extras\2001\SA Census 2001 10%25 Occ Codes1.pdf" />
+    <None Include=".input\_extras\2001\SA Census 2001 10%25 Occ Codes2.pdf" />
+    <None Include=".input\_extras\2001\SA Census 2001 10%25 Occ Codes3.pdf" />
+    <None Include=".input\_extras\2001\SA Census 2001 Geography Metadata.pdf" />
+    <None Include=".input\_extras\2001\SA Census 2001 Hhold Metadata.pdf" />
+    <None Include=".input\_extras\2001\SA Census 2001 Imputation Flags_Hholds_Persons%281%29.pdf" />
+    <None Include=".input\_extras\2001\SA Census 2001 Imputation Flags_Hholds_Persons.pdf" />
+    <None Include=".input\_extras\2001\SA Census 2001 Introduction.pdf" />
+    <None Include=".input\_extras\2001\SA Census 2001 Mortality Metadata.pdf" />
+    <None Include=".input\_extras\2001\SA Census 2001 Persons Metadata.pdf" />
+    <None Include=".input\_extras\2001\SA Census 2001 Religion Codes.pdf" />
+    <None Include=".input\_extras\2001\SA Census 2001 Standard Class Occ.pdf" />
+    <None Include=".input\_extras\2011\census-2011-10_ sample-metadata.pdf" />
+    <None Include=".input\_extras\2011\census-2011-10_-geography.pdf" />
+    <None Include=".input\_extras\2011\census-2011-geography-codes.xlsx" />
+    <None Include=".input\_extras\2011\census-2011-geography-datafirst.xlsx" />
+    <None Include=".input\_extras\2011\ddi-documentation-english-485.pdf" />
+    <None Include=".input\_extras\2011\q-census-2011-a-hhold.pdf" />
+    <None Include=".input\_extras\2011\q-census-2011-b-transient.pdf" />
+    <None Include=".input\_extras\2011\q-census-2011-c-institutions.pdf" />
+    <None Include=".input\_extras\2022\census-2022-metadata-geography.pdf" />
+    <None Include=".input\_extras\2022\census-2022-metadata-household.pdf" />
+    <None Include=".input\_extras\2022\census-2022-metadata-person.pdf" />
+    <None Include=".input\_extras\2022\census-2022-provincial.zip" />
+    <None Include=".input\_extras\2022\census-2022-sample-information.pdf" />
+    <None Include=".input\_extras\2022\ddi-documentation-english-982.pdf" />
+    <None Include=".input\_extras\2022\q-census-2022-household.pdf" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="PdfPig" Version="0.1.10" />
     <PackageReference Include="SharpZipLib" Version="1.4.2" />
     <PackageReference Include="XycloneDesigns.Extensions.CSharp" Version="1.0.2" />
     <PackageReference Include="XycloneDesigns.Extensions.SQLite" Version="1.0.0" />
-    <PackageReference Include="XycloneDesigns.Database.SouthAfricanCensus" Version="0.9.5.7" />
+    <PackageReference Include="XycloneDesigns.Database.SouthAfricanCensus" Version="0.9.6" />
   </ItemGroup>
 
 </Project>

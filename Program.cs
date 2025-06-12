@@ -31,7 +31,7 @@ namespace Database.SouthAfricanCensus
 			StreamWriters streamwriters = [];
 			SQLiteConnection sqliteconnection = _SQLiteConnection(sqlconnectionpath);
 
-			#region 1999
+			// Codes 1999
 			sqliteconnection.InsertAll(
 				objects: DirectoryInputMetadata1996CodesArea
 					.SelectMany(_ => new TXTCodes(_).GetCodes<TXTCodes.CodeSextuplet>())
@@ -81,9 +81,8 @@ namespace Database.SouthAfricanCensus
 						Code3Digit = _.ItemOne,
 						Value = _.ItemTwo,
 					}));
-			#endregion
 
-			#region 2001
+			// Codes 2001
 			sqliteconnection.InsertAll(
 				objects: DirectoryInputMetadata2001CodesCauseOfDeath
 					.SelectMany(_ => new TXTCodes(_).GetCodes<TXTCodes.CodePair>())
@@ -132,7 +131,6 @@ namespace Database.SouthAfricanCensus
 						Code = _.ItemOne,
 						Value = _.ItemTwo,
 					}));
-			#endregion
 
 			#region 1996
 
@@ -165,9 +163,10 @@ namespace Database.SouthAfricanCensus
 						sqliteconnection.InsertAll(
 							objects: Utils.CSVs
 								.Rows<CSVRow1996Household>(streamwriters[filename], streams)
-								.Select(_ => _.AsRecord()));
+								.Select(_ => _.AsRecord(streamwriters[filename])));
 						break;
 					case (Years._1996, Types.Person):
+						return;
 						sqliteconnection.InsertAll(
 							objects: Utils.CSVs
 								.Rows<CSVRow1996Person>(streamwriters[filename], streams)
@@ -179,7 +178,7 @@ namespace Database.SouthAfricanCensus
 
 				streamwriters.Dispose(true, filename);
 			}
-
+			return;
 			#endregion
 
 			#region 2001
@@ -278,7 +277,7 @@ namespace Database.SouthAfricanCensus
 					case (Years._2011, Types.Mortality):
 						sqliteconnection.InsertAll(
 							objects: Utils.CSVs
-								.Rows<CSVRow2022F21>(streamwriters[filename], streams)
+								.Rows<CSVRow2011Mortality>(streamwriters[filename], streams)
 								.Select(_ => _.AsRecord()));
 						break;
 					case (Years._2011, Types.Person):

@@ -1,4 +1,4 @@
-A90-A99,Certain infectious and parasitic diseases
+A00-A99,Certain infectious and parasitic diseases
 A00-A09,Intestinal infectious diseases
 A00,Cholera
 A01,Typhoid and paratyphoid fevers
