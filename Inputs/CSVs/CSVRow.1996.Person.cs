@@ -147,7 +147,7 @@ namespace Database.SouthAfricanCensus.Inputs.CSVs
 					CouncilCodeMagisterial = dccode,
 					CouncilCodeTransitionalLocalRural = newla,
 
-					Urban = Uncertain.From<bool>(urban ? 2 : 1),
+					Urban = Uncertain.From<int>(urban),
 				},
 				Metadata = new Metadata { },
 				Motherhood = new Motherhood 
@@ -157,13 +157,21 @@ namespace Database.SouthAfricanCensus.Inputs.CSVs
 					AgeAtFirstBorn = Uncertain.From<int>(agefrstb),
 					NumberBirthsLast12Months = Uncertain.From<int>(bornlast),
 				},
-				Occupation = new Occupation { },
+				Occupation = new Occupation
+				{
+					Code = industr,
+					CodeIndustry = industr,
+					CodePrevious = lstwrk1,
+					CodeEmploymentMagisterial = workingd,
+					FullOrPartTime = Uncertain.From<bool>(worktime),
+					IsMigrantWorker = Uncertain.From<bool>(migworke),
+				},
 				Personhood = new Personhood
 				{
 					Age = Uncertain.From<int>(age),
 					IsAliveFather = Uncertain.From<bool>(fatheral),
 					IsAliveMother = Uncertain.From<bool>(motheral),
-					Occupation = occupat
+					Occupation = occupat,
 				},
 				Residence = new Residence 
 				{
@@ -182,7 +190,7 @@ namespace Database.SouthAfricanCensus.Inputs.CSVs
 			if (hhrecord is not null)
 			{
 				if (default(TypeQuestionnaireHouseholds).From(hhrecord, Years._1996, out TypeQuestionnaireHouseholds? _hhrecord, out NotAvailables? _hhrecordna))
-					model.Household. = Uncertain.From<TypeQuestionnaireHouseholds>((int?)_hhrecord ?? (int?)_hhrecordna);
+					model.Metadata.TypeQuestionnaire = Uncertain.From<TypeQuestionnaireHouseholds>((int?)_hhrecord ?? (int?)_hhrecordna);
 				else errors.Add(nameof(hhrecord), hhrecord);
 			}
 			if (insttype is not null)
@@ -241,8 +249,8 @@ namespace Database.SouthAfricanCensus.Inputs.CSVs
 			}
 			if (citizenc is not null)
 			{
-				if (default(CitizenshipStatus).FromInt(citizenc.Value, Years._1996, out CitizenshipStatus? _citizenc, out NotAvailables? _citizencna))
-					model.Personhood.Citizenship = Uncertain.From<CitizenshipStatus>((int?)_citizenc ?? (int?)_citizencna);
+				if (default(Countries).FromInt(citizenc.Value, Years._1996, out Countries? _citizenc, out NotAvailables? _citizencna))
+					model.Personhood.CountryCitizenSouthAfrica = Uncertain.From<Countries>((int?)_citizenc ?? (int?)_citizencna);
 				else errors.Add(nameof(citizenc), citizenc);
 			}			
 			if (citizeno is not null)
@@ -253,16 +261,9 @@ namespace Database.SouthAfricanCensus.Inputs.CSVs
 			}
 			if (citizenr is not null)
 			{
-				if (default(Countries).FromInt(citizenr.Value, Years._1996, out Countries? _citizenr, out NotAvailables? _citizenrna))
-					model.Personhood.CountryCitizenSouthAfrica = Uncertain.From<Countries>((int?)_citizenr ?? (int?)_citizenrna);
+				if (default(CitizenshipStatus).FromInt(citizenr.Value, Years._1996, out CitizenshipStatus? _citizenr, out NotAvailables? _citizenrna))
+					model.Personhood.Citizenship = Uncertain.From<CitizenshipStatus>((int?)_citizenr ?? (int?)_citizenrna);
 				else errors.Add(nameof(citizenr), citizenr);
-			}
-			
-			if (migworke is not null)
-			{
-				if (default(TypeDisability).FromInt(migworke.Value, Years._1996, out TypeDisability? _migworke, out NotAvailables? _migworkena))
-					model.P.Type = Uncertain.From<TypeDisability>((int?)_migworke ?? (int?)_migworkena);
-				else errors.Add(nameof(migworke), migworke);
 			}
 			
 			if (tempresi is not null)
@@ -277,8 +278,6 @@ namespace Database.SouthAfricanCensus.Inputs.CSVs
 					model.Disabilities.Type = Uncertain.From<TypeDisability>((int?)_disablec ?? (int?)_disablecna);
 				else errors.Add(nameof(disablec), disablec);
 			}
-
-
 			if (school is not null)
 			{
 				if (default(EducationLevels).FromInt(school.Value, Years._1996, out EducationLevels? _school, out NotAvailables? _schoolna))
@@ -291,70 +290,36 @@ namespace Database.SouthAfricanCensus.Inputs.CSVs
 					model.Personhood.HighestQualification1 = Uncertain.From<EducationFields>((int?)_qualfld ?? (int?)_qualfldna);
 				else errors.Add(nameof(qualfld), qualfld);
 			}
-			
 			if (study is not null)
 			{
 				if (default(StatusStudying).FromInt(study.Value, Years._1996, out StatusStudying? _study, out NotAvailables? _studyna))
 					model.Personhood.StatusStudying = Uncertain.From<StatusStudying>((int?)_study ?? (int?)_studyna);
 				else errors.Add(nameof(study), study);
 			}
-			
 			if (quallev is not null)
 			{
 				if (default(EducationLevels).FromInt(quallev.Value, Years._1996, out EducationLevels? _quallev, out NotAvailables? _quallevna))
 					model.Personhood.HighestSchoolClass2 = Uncertain.From<EducationLevels>((int?)_quallev ?? (int?)_quallevna);
 				else errors.Add(nameof(quallev), quallev);
 			}
-			
 			if (deducode is not null)
-			{
+			{ 
 				if (default(EducationLevels).FromInt(deducode.Value, Years._1996, out EducationLevels? _deducode, out NotAvailables? _deducodena))
-					model.Personhood.HighestQualification2 = Uncertain.From<EducationLevels>((int?)_deducode ?? (int?)_deducodena);
+					model.Personhood.HighestSchoolClass1 = Uncertain.From<EducationLevels>((int?)_deducode ?? (int?)_deducodena);
 				else errors.Add(nameof(deducode), deducode);
 			}
-			
 			if (econactt is not null)
 			{
 				if (default(EmploymentStatuses).FromInt(econactt.Value, Years._1996, out EmploymentStatuses? _econactt, out NotAvailables? _econacttna))
 					model.Personhood.StatusEmployment = Uncertain.From<EmploymentStatuses>((int?)_econactt ?? (int?)_econacttna);
 				else errors.Add(nameof(econactt), econactt);
 			}
-			
-			if (worktime is not null)
-			{
-				if (default(TypeDisability).FromInt(worktime.Value, Years._1996, out TypeDisability? _worktime, out NotAvailables? _worktimena))
-					model.Disabilities.Type = Uncertain.From<TypeDisability>((int?)_worktime ?? (int?)_worktimena);
-				else errors.Add(nameof(disablec), disablec);
-			}
-			
 			if (wmployme is not null)
 			{
-				if (default(EmploymentStatuses).FromInt(wmployme.Value, Years._1996, out EmploymentStatuses? _wmployme, out NotAvailables? _wmploymena))
-					model.Personhood.StatusEmployment = Uncertain.From<EmploymentStatuses>((int?)_wmployme ?? (int?)_wmploymena);
-				else errors.Add(nameof(disablec), disablec);
+				if (default(StatusWork).FromInt(wmployme.Value, Years._1996, out StatusWork? _wmployme, out NotAvailables? _wmploymena))
+					model.Personhood.StatusWork = Uncertain.From<StatusWork>((int?)_wmployme ?? (int?)_wmploymena);
+				else errors.Add(nameof(wmployme), wmployme);
 			}
-			
-			if (lstwrk1 is not null)
-			{
-				if (default(TypeDisability).FromInt(lstwrk1.Value, Years._1996, out TypeDisability? _lstwrk1, out NotAvailables? _lstwrk1na))
-					model.Personhood.La = Uncertain.From<TypeDisability>((int?)_lstwrk1 ?? (int?)_lstwrk1na);
-				else errors.Add(nameof(disablec), disablec);
-			}
-			
-			if (industr is not null)
-			{
-				if (default(TypeDisability).FromInt(industr.Value, Years._1996, out TypeDisability? _industr, out NotAvailables? _industrna))
-					model.Type = Uncertain.From<TypeDisability>((int?)_industr ?? (int?)_industrna);
-				else errors.Add(nameof(disablec), disablec);
-			}
-			
-			if (workingd is not null)
-			{
-				if (default(TypeDisability).FromInt(workingd.Value, Years._1996, out TypeDisability? _workingd, out NotAvailables? _workingdna))
-					model.Personhood.Type = Uncertain.From<TypeDisability>((int?)_workingd ?? (int?)_workingdna);
-				else errors.Add(nameof(workingd), workingd);
-			}
-			
 			if (income is not null)
 			{
 				if (default(IncomeLevelsMonthly).FromInt(income.Value, Years._1996, out IncomeLevelsMonthly? _income, out NotAvailables? _incomena))
@@ -363,18 +328,9 @@ namespace Database.SouthAfricanCensus.Inputs.CSVs
 			}
 			
 			if (errors.Count > 0)
-				logger?.WriteLine("[{0}]: {1}", LineNumber, string.Join(", ", errors.Select(_ => string.Format("[{0} {1}]", _.Key, _.Value))na);
+				logger?.WriteLine("[{0}]: {1}", LineNumber, string.Join(", ", errors.Select(_ => string.Format("[{0} {1}]", _.Key, _.Value))));
 
 			return model;
-		}
-		public RecordsPerson AsRecord(StreamWriter logger)
-		{
-			RecordsPerson records = new ()
-			{ 
-
-			};
-
-			return records;
 		}
 	}
 }

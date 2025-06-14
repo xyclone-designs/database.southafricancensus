@@ -14,6 +14,7 @@ using System.IO.Compression;
 using System.Linq;
 
 using XycloneDesigns.Database.SouthAfricanCensus.Enums;
+using XycloneDesigns.Database.SouthAfricanCensus.Models;
 using XycloneDesigns.Database.SouthAfricanCensus.Tables;
 
 namespace Database.SouthAfricanCensus
@@ -32,7 +33,7 @@ namespace Database.SouthAfricanCensus
 			StreamWriters streamwriters = [];
 			SQLiteConnection sqliteconnection = _SQLiteConnection(sqlconnectionpath);
 
-			// Codes 1999
+			#region Codes 1999
 			sqliteconnection.InsertAll(
 				objects: DirectoryInputMetadata1996CodesArea
 					.SelectMany(_ => new TXTCodes(_).GetCodes<TXTCodes.CodeSextuplet>())
@@ -82,15 +83,16 @@ namespace Database.SouthAfricanCensus
 						Code3Digit = _.ItemOne,
 						Value = _.ItemTwo,
 					}));
+			#endregion
 
-			// Codes 2001
+			#region Codes 2001
 			sqliteconnection.InsertAll(
 				objects: DirectoryInputMetadata2001CodesCauseOfDeath
 					.SelectMany(_ => new TXTCodes(_).GetCodes<TXTCodes.CodePair>())
 					.Select(_ =>
 					{
 						(string? _, string? start, string? end) code =
-							_.ItemOne?.Split('-') is not string[] split 
+							_.ItemOne?.Split('-') is not string[] split
 								? (null, null, null)
 								: split.Length == 2
 									? (null, split[0], split[1])
@@ -132,10 +134,9 @@ namespace Database.SouthAfricanCensus
 						Code = _.ItemOne,
 						Value = _.ItemTwo,
 					}));
+			#endregion
 
-			#region 1996
-
-			foreach (string directoryinputcensusall in DirectoryInputCensus1996All)
+			foreach (string directoryinputcensusall in DirectoryInputCensusAll)
 			{
 				using FileStream filestream = File.OpenRead(directoryinputcensusall);
 				using ZipArchive ziparchive = new(filestream);
@@ -166,8 +167,14 @@ namespace Database.SouthAfricanCensus
 							SQLiteConnection sqliteconnectionn = _SQLiteConnection(_sqliteconnectionpath);
 							List<RecordsHousehold> records = Utils.CSVs
 								.Rows<CSVRow1996Household>(streamwriters[filename], streams)
-								.Select(_ => _.AsRecord(streamwriters[filename]))
-								.ToList();
+								.Select(_ =>
+								{
+									RecordHousehold model = _.AsModel(streamwriters[filename]);
+									RecordsHousehold record = new(); record.FromModel(model);
+
+									return record;
+
+								}).ToList();
 
 							sqliteconnection.InsertAll(records);
 							sqliteconnectionn.InsertAll(records);
@@ -180,8 +187,14 @@ namespace Database.SouthAfricanCensus
 							SQLiteConnection sqliteconnectionn = _SQLiteConnection(_sqliteconnectionpath);
 							List<RecordsPerson> records = Utils.CSVs
 								.Rows<CSVRow1996Person>(streamwriters[filename], streams)
-								.Select(_ => _.AsRecord(streamwriters[filename]))
-								.ToList();
+								.Select(_ =>
+								{
+									RecordPerson model = _.AsModel(streamwriters[filename]);
+									RecordsPerson record = new(); record.FromModel(model);
+
+									return record;
+
+								}).ToList();
 
 							sqliteconnection.InsertAll(records);
 							sqliteconnectionn.InsertAll(records);
@@ -190,166 +203,79 @@ namespace Database.SouthAfricanCensus
 						}
 						break;
 
-					default: break;
-				}
-
-				streamwriters.Dispose(true, filename);
-			}
-			return;
-			#endregion
-
-			#region 2001
-
-			foreach (string directoryinputcensusall in DirectoryInputCensus2001All)
-			{
-				using FileStream filestream = File.OpenRead(directoryinputcensusall);
-				using ZipArchive ziparchive = new(filestream);
-
-				Stream[] streams = ziparchive.Entries
-					.Select(_ => _.Open())
-					.ToArray();
-
-				string filename = string.Join('.', directoryinputcensusall.Split('\\').Last().Split('.')[0..^1]);
-
-				Years years = default(Years).FromFilename(filename);
-				Types types = default(Types).FromFilename(filename);
-
-				apifiles.Add(filename, years, types);
-
-				string directorypath = Path.Combine(DirectoryOutput, string.Format("{0}.{1}", years.AsString(), types));
-
-				Directory.CreateDirectory(directorypath);
-				Console.WriteLine(directorypath);
-
-				streamwriters.Add(filename, Path.Combine(directorypath, "log.txt"));
-
-				switch (years, types)
-				{
 					case (Years._2001, Types.Household):
-						sqliteconnection.InsertAll(
-							objects: Utils.CSVs
-								.Rows<CSVRow2001Household>(streamwriters[filename], streams)
-								.Select(_ => _.AsRecord()));
+						{
+							sqliteconnection.InsertAll(
+								objects: Utils.CSVs
+									.Rows<CSVRow2001Household>(streamwriters[filename], streams)
+									.Select(_ => _.AsRecord()));
+						}
 						break;
 					case (Years._2001, Types.Mortality):
-						sqliteconnection.InsertAll(
-							objects: Utils.CSVs
-								.Rows<CSVRow2001Mortality>(streamwriters[filename], streams)
-								.Select(_ => _.AsRecord()));
+						{
+							sqliteconnection.InsertAll(
+								objects: Utils.CSVs
+									.Rows<CSVRow2001Mortality>(streamwriters[filename], streams)
+									.Select(_ => _.AsRecord()));
+						}
 						break;
 					case (Years._2001, Types.Person):
-						sqliteconnection.InsertAll(
-							objects: Utils.CSVs
-								.Rows<CSVRow2001Person>(streamwriters[filename], streams)
-								.Select(_ => _.AsRecord()));
+						{
+							sqliteconnection.InsertAll(
+								objects: Utils.CSVs
+									.Rows<CSVRow2001Person>(streamwriters[filename], streams)
+									.Select(_ => _.AsRecord()));
+						}
 						break;
 
-					default: break;
-				}
-
-				streamwriters.Dispose(true, filename);
-			}
-
-			#endregion
-
-			#region 2011
-
-			foreach (string directoryinputcensusall in DirectoryInputCensus2011All)
-			{
-				using FileStream filestream = File.OpenRead(directoryinputcensusall);
-				using ZipArchive ziparchive = new(filestream);
-
-				Stream[] streams = ziparchive.Entries
-					.Select(_ => _.Open())
-					.ToArray();
-
-				string filename = string.Join('.', directoryinputcensusall.Split('\\').Last().Split('.')[0..^1]);
-
-				Years years = default(Years).FromFilename(filename);
-				Types types = default(Types).FromFilename(filename);
-
-				apifiles.Add(filename, years, types);
-
-				string directorypath = Path.Combine(DirectoryOutput, string.Format("{0}.{1}", years.AsString(), types));
-
-				Directory.CreateDirectory(directorypath);
-				Console.WriteLine(directorypath);
-
-				streamwriters.Add(filename, Path.Combine(directorypath, "log.txt"));
-
-				switch (years, types)
-				{
 					case (Years._2011, Types.Agriculture):
-						sqliteconnection.InsertAll(
-							objects: Utils.CSVs
-								.Rows<CSVRow2011HouseholdAgricultural>(streamwriters[filename], streams)
-								.Select(_ => _.AsRecord()));
+						{
+								sqliteconnection.InsertAll(
+								objects: Utils.CSVs
+									.Rows<CSVRow2011HouseholdAgricultural>(streamwriters[filename], streams)
+									.Select(_ => _.AsRecord()));
+						}
 						break;
 					case (Years._2011, Types.Household):
-						sqliteconnection.InsertAll(
+						{
+							sqliteconnection.InsertAll(
 							objects: Utils.CSVs
 								.Rows<CSVRow2011Household>(streamwriters[filename], streams)
 								.Select(_ => _.AsRecord()));
+						}
 						break;
 					case (Years._2011, Types.Mortality):
-						sqliteconnection.InsertAll(
-							objects: Utils.CSVs
-								.Rows<CSVRow2011Mortality>(streamwriters[filename], streams)
-								.Select(_ => _.AsRecord()));
+						{
+							sqliteconnection.InsertAll(
+								objects: Utils.CSVs
+									.Rows<CSVRow2011Mortality>(streamwriters[filename], streams)
+									.Select(_ => _.AsRecord()));
+						}
 						break;
 					case (Years._2011, Types.Person):
-						sqliteconnection.InsertAll(
-							objects: Utils.CSVs
-								.Rows<CSVRow2011Person>(streamwriters[filename], streams)
-								.Select(_ => _.AsRecord()));
+						{
+							sqliteconnection.InsertAll(
+								objects: Utils.CSVs
+									.Rows<CSVRow2011Person>(streamwriters[filename], streams)
+									.Select(_ => _.AsRecord()));
+						}
 						break;
 
-					default: break;
-				}
-
-				streamwriters.Dispose(true, filename);
-			}
-
-			#endregion
-
-			#region 2022
-
-			foreach (string directoryinputcensusall in DirectoryInputCensus2022All)
-			{
-				using FileStream filestream = File.OpenRead(directoryinputcensusall);
-				using ZipArchive ziparchive = new(filestream);
-
-				Stream[] streams = ziparchive.Entries
-					.Select(_ => _.Open())
-					.ToArray();
-
-				string filename = string.Join('.', directoryinputcensusall.Split('\\').Last().Split('.')[0..^1]);
-
-				Years years = default(Years).FromFilename(filename);
-				Types types = default(Types).FromFilename(filename);
-
-				apifiles.Add(filename, years, types);
-
-				string directorypath = Path.Combine(DirectoryOutput, string.Format("{0}.{1}", years.AsString(), types));
-
-				Directory.CreateDirectory(directorypath);
-				Console.WriteLine(directorypath);
-
-				streamwriters.Add(filename, Path.Combine(directorypath, "log.txt"));
-
-				switch (years, types)
-				{
 					case (Years._2022, Types.Household):
-						sqliteconnection.InsertAll(
-							objects: Utils.CSVs
-								.Rows<CSVRow2022F19>(streamwriters[filename], streams)
-								.Select(_ => _.AsRecord()));
+						{
+							sqliteconnection.InsertAll(
+								objects: Utils.CSVs
+									.Rows<CSVRow2022F19>(streamwriters[filename], streams)
+									.Select(_ => _.AsRecord()));
+						}
 						break;
 					case (Years._2022, Types.Person):
-						sqliteconnection.InsertAll(
-							objects: Utils.CSVs
-								.Rows<CSVRow2022F21>(streamwriters[filename], streams)
-								.Select(_ => _.AsRecord()));
+						{
+							sqliteconnection.InsertAll(
+								objects: Utils.CSVs
+									.Rows<CSVRow2022F21>(streamwriters[filename], streams)
+									.Select(_ => _.AsRecord()));
+						}
 						break;
 
 					default: break;
@@ -357,8 +283,6 @@ namespace Database.SouthAfricanCensus
 
 				streamwriters.Dispose(true, filename);
 			}
-
-			#endregion
 
 			ApiFilesAdd(apifiles, sqliteconnection);
 			ApiFilesIndex(apifiles);

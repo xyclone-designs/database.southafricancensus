@@ -97,7 +97,7 @@
     <PackageReference Include="SharpZipLib" Version="1.4.2" />
     <PackageReference Include="XycloneDesigns.Extensions.CSharp" Version="1.0.2" />
     <PackageReference Include="XycloneDesigns.Extensions.SQLite" Version="1.0.0" />
-    <PackageReference Include="XycloneDesigns.Database.SouthAfricanCensus" Version="0.9.7.1" />
+    <PackageReference Include="XycloneDesigns.Database.SouthAfricanCensus" Version="0.9.7.2" />
   </ItemGroup>
 
 </Project>

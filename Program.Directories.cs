@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using System.Linq;
 
 namespace Database.SouthAfricanCensus
 {
@@ -15,32 +16,25 @@ namespace Database.SouthAfricanCensus
 		
 		static readonly string DirectoryInputCensus = Path.Combine(DirectoryInput, "census10%");
 		static readonly string DirectoryInputCensus1996 = Path.Combine(DirectoryInputCensus, "1996");
-		static readonly string[] DirectoryInputCensus1996All = new string[]
+		static readonly string DirectoryInputCensus2001 = Path.Combine(DirectoryInputCensus, "2001");
+		static readonly string DirectoryInputCensus2011 = Path.Combine(DirectoryInputCensus, "2011");
+		static readonly string DirectoryInputCensus2022 = Path.Combine(DirectoryInputCensus, "2022");
+		static readonly string[] DirectoryInputCensusAll = new string[]
 		{
 			Path.Combine(DirectoryInputCensus1996, "1996.Household.zip"),
 			Path.Combine(DirectoryInputCensus1996, "1996.Person.zip"),
-		};
-		static readonly string DirectoryInputCensus2001 = Path.Combine(DirectoryInputCensus, "2001");
-		static readonly string[] DirectoryInputCensus2001All = new string[]
-		{
-			Path.Combine(DirectoryInputCensus2001, "2001.Household.zip"),
-			Path.Combine(DirectoryInputCensus2001, "2001.Mortality.zip"),
-			Path.Combine(DirectoryInputCensus2001, "2001.Person.zip"),
-		};
-		static readonly string DirectoryInputCensus2011 = Path.Combine(DirectoryInputCensus, "2011");
-		static readonly string[] DirectoryInputCensus2011All = new string[]
-		{
-			Path.Combine(DirectoryInputCensus2011, "2011.Agriculture.zip"),
-			Path.Combine(DirectoryInputCensus2011, "2011.Household.zip"),
-			Path.Combine(DirectoryInputCensus2011, "2011.Mortality.zip"),
-			Path.Combine(DirectoryInputCensus2011, "2011.Person.zip"),
-		};
-		static readonly string DirectoryInputCensus2022 = Path.Combine(DirectoryInputCensus, "2022");
-		static readonly string[] DirectoryInputCensus2022All = new string[] 
-		{
-			Path.Combine(DirectoryInputCensus2022, "2022.sample_F18.zip"),
-			Path.Combine(DirectoryInputCensus2022, "2022.sample_F19.zip"),
-			Path.Combine(DirectoryInputCensus2022, "2022.sample_F21.zip"),
+
+			//Path.Combine(DirectoryInputCensus2001, "2001.Household.zip"),
+			//Path.Combine(DirectoryInputCensus2001, "2001.Mortality.zip"),
+			//Path.Combine(DirectoryInputCensus2001, "2001.Person.zip"),
+
+			//Path.Combine(DirectoryInputCensus2011, "2011.Agriculture.zip"),
+			//Path.Combine(DirectoryInputCensus2011, "2011.Household.zip"),
+			//Path.Combine(DirectoryInputCensus2011, "2011.Mortality.zip"),
+			//Path.Combine(DirectoryInputCensus2011, "2011.Person.zip"),
+
+			//Path.Combine(DirectoryInputCensus2022, "2022.sample_F19.zip"),
+			//Path.Combine(DirectoryInputCensus2022, "2022.sample_F21.zip"),
 		};
 
 		static readonly string DirectoryInputMetadata = Path.Combine(DirectoryInput, "metadata10%");

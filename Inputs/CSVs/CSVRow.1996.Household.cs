@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 
 using XycloneDesigns.Database.SouthAfricanCensus.Enums;
+using XycloneDesigns.Database.SouthAfricanCensus.Models;
 using XycloneDesigns.Database.SouthAfricanCensus.Structs;
 using XycloneDesigns.Database.SouthAfricanCensus.Tables;
 
@@ -126,139 +127,167 @@ namespace Database.SouthAfricanCensus.Inputs.CSVs
 		public int? hhinccat;
 		public double? peshhwei;
 
-		public RecordsHousehold AsRecord(StreamWriter? logger)
+		public RecordHousehold AsModel(StreamWriter? logger)
 		{
 			Dictionary<string, object> errors = [];
-			RecordsHousehold record = new()
+			RecordHousehold model = new()
 			{
-				CouncilCodeDistrict = district,
-				CouncilCodeMagisterial = dccode,
-				CouncilCodeTransitionalLocalRural = newla,
-				Number = hhnumber,
 				TenPercentWeight = peshhwei,
 
-				_DwellingsOwned = Uncertain.From<bool>(hohage),
-				_HeadOf_Age = Uncertain.From<int>(hohage),
-				_Migrant = Uncertain.From<bool>(migrant),
-				_NumberOf_MigrantWorkers = Uncertain.From<int>(hhmigran),
-				_NumberOf_HouseholdsSharingOneRoom = Uncertain.From<int>(nsharedh),
-				_Rooms = Uncertain.From<int>(rooms),
-				_Urban = Uncertain.From<bool>(urban),
+				Dwelling = new Dwellings
+				{
+					Owned = Uncertain.From<bool>(hohage),
+					Migrants = Uncertain.From<bool>(migrant),
+
+					NumberOf_MigrantWorkers = Uncertain.From<int>(hhmigran),
+					NumberOf_HouseholdsSharingOneRoom = Uncertain.From<int>(nsharedh),
+					
+				},
+				Household = new Household
+				{
+					Number = hhnumber,
+					Rooms = Uncertain.From<int>(rooms),
+
+					HeadOf = new Personhood
+					{
+						Age = Uncertain.From<int>(hohage),
+					},
+				},
+				HouseholdIncome = new HouseholdIncome 
+				{
+					
+				},
+				Land = new Land 
+				{
+					
+				},
+				Location = new Location
+				{
+					CouncilCodeDistrict = district,
+					CouncilCodeMagisterial = dccode,
+					CouncilCodeTransitionalLocalRural = newla,
+
+					Urban = Uncertain.From<int>(urban),
+				},
+				Metadata = new Metadata 
+				{
+					
+				},
 			};
 
 			if (toilet is not null)
 			{
 				if (default(FacilitiesToilet).FromInt(toilet.Value, Years._1996, out FacilitiesToilet? _toilet, out NotAvailables? _toiletna))
-					record.FacilitiesToilet = ((int?)_toilet) ?? (-(int?)_toiletna);
+					model.Household.FacilitiesToilet = Uncertain.From<FacilitiesToilet>((int?)_toilet ?? (int?)_toiletna);
 				else errors.Add(nameof(toilet), toilet);
 			}
 			if (telephon is not null)
 			{
 				if (default(FacilitiesTelephone).FromInt(telephon.Value, Years._1996, out FacilitiesTelephone? _telephon, out NotAvailables? _telephonna))
-					record.FacilitiesTelephone = ((int?)_telephon) ?? (-(int?)_telephonna);
+					model.Household.FacilitiesTelephone = Uncertain.From<FacilitiesTelephone>((int?)_telephon ?? (int?)_telephonna);
 				else errors.Add(nameof(telephon), telephon);
 			}
 			if (refuse is not null)
 			{
 				if (default(FacilitiesRefuseDisposal).FromInt(refuse.Value, Years._1996, out FacilitiesRefuseDisposal? _refuse, out NotAvailables? _refusena))
-					record.FacilitiesRefuseDisposal = ((int?)_refuse) ?? (-(int?)_refusena);
+					model.Household.FacilitiesRefuseDisposal = Uncertain.From<FacilitiesRefuseDisposal>((int?)_refuse ?? (int?)_refusena);
 				else errors.Add(nameof(refuse), refuse);
 			}
 			if (dwelling is not null)
 			{
 				if (default(TypeDwelling).FromInt(dwelling.Value, Years._1996, out TypeDwelling? _dwelling, out NotAvailables? _dwellingna))
-					record.Dwelling = ((int?)_dwelling) ?? (-(int?)_dwellingna);
+					model.Dwelling.Dwelling = Uncertain.From<TypeDwelling>((int?)_dwelling ?? (int?)_dwellingna);
 				else errors.Add(nameof(dwelling), dwelling);
 			}
 			if (hoheduca is not null)
 			{
 				if (default(EducationLevels).FromInt(hoheduca.Value, Years._1996, out EducationLevels? _hoheduca, out NotAvailables? _hoheducana))
-					record.HeadOf_Education = ((int?)_hoheduca) ?? (-(int?)_hoheducana);
+					model.Household.HeadOf.Education = Uncertain.From<EducationLevels>((int?)_hoheduca ?? (int?)_hoheducana);
 				else errors.Add(nameof(hoheduca), hoheduca);
 			}
 			if (hohecona is not null)
 			{
 				if (default(EmploymentStatuses).FromInt(hohecona.Value, Years._1996, out EmploymentStatuses? _hohecona, out NotAvailables? _hoheconana))
-					record.HeadOf_EmploymentStatus = ((int?)_hohecona) ?? (-(int?)_hoheconana);
+					model.Household.HeadOf.StatusEmployment = Uncertain.From<EmploymentStatuses>((int?)_hohecona ?? (int?)_hoheconana);
 				else errors.Add(nameof(hohecona), hohecona);
 			}
 			if (hhinccat is not null)
 			{
 				if (default(IncomeLevelsMonthly).FromInt(hhinccat.Value, Years._1996, out IncomeLevelsMonthly? _hhinccat, out NotAvailables? _hhinccatna))
-					record.HeadOf_IncomeLevel = ((int?)_hhinccat) ?? (-(int?)_hhinccatna);
+					model.Household.HeadOf.IncomeLevel = Uncertain.From<IncomeLevelsMonthly>((int?)_hhinccat ?? (int?)_hhinccatna);
 				else errors.Add(nameof(hhinccat), hhinccat);
 			}
 			if (hohrace is not null)
 			{
 				if (default(PopulationGroups).FromInt(hohrace.Value, Years._1996, out PopulationGroups? _hohrace, out NotAvailables? _hohracena))
-					record.HeadOf_Race = ((int?)_hohrace) ?? (-(int?)_hohracena);
+					model.Household.HeadOf.Race = Uncertain.From<PopulationGroups>((int?)_hohrace ?? (int?)_hohracena);
 				else errors.Add(nameof(hohrace), hohrace);
 			}
 			if (hohsex is not null)
 			{
 				if (default(Sexes).FromInt(hohsex.Value, Years._1996, out Sexes? _hohsex, out NotAvailables? _hohsexna))
-					record.HeadOf_Sex = ((int?)_hohsex) ?? (-(int?)_hohsexna);
+					model.Household.HeadOf.Gender = Uncertain.From<Sexes>((int?)_hohsex ?? (int?)_hohsexna);
 				else errors.Add(nameof(hohsex), hohsex);
 			}
 			if (hinchh is not null)
 			{
 				if (default(IncomeLevelsMonthly).FromInt(hinchh.Value, Years._1996, out IncomeLevelsMonthly? _hinchh, out NotAvailables? _hinchhna))
-					record.HighestIncomeIn = ((int?)_hinchh) ?? (-(int?)_hinchhna);
+					model.HouseholdIncome.HighestIncomeIn = Uncertain.From<IncomeLevelsMonthly>((int?)_hinchh ?? (int?)_hinchhna);
 				else errors.Add(nameof(hinchh), hinchh);
 			}
 			if (hinchhse is not null)
 			{
 				if (default(Sexes).FromInt(hinchhse.Value, Years._1996, out Sexes? _hinchhse, out NotAvailables? _hinchhsena))
-					record.HighestIncomeIn_Gender = ((int?)_hinchhse) ?? (-(int?)_hinchhsena);
+					model.HouseholdIncome.HighestIncomeIn_Gender = Uncertain.From<Sexes>((int?)_hinchhse ?? (int?)_hinchhsena);
 				else errors.Add(nameof(hinchhse), hinchhse);
 			}
 			if (hinchhra is not null)
 			{
 				if (default(PopulationGroups).FromInt(hinchhra.Value, Years._1996, out PopulationGroups? _hinchhra, out NotAvailables? _hinchhrana))
-					record.HighestIncomeIn_Race = ((int?)_hinchhra) ?? (-(int?)_hinchhrana);
+					model.HouseholdIncome.HighestIncomeIn_Race = Uncertain.From<PopulationGroups>((int?)_hinchhra ?? (int?)_hinchhrana);
 				else errors.Add(nameof(hinchhra), hinchhra);
 			}
 			if (fuelcook is not null)
 			{
 				if (default(SourceOfFuel).FromInt(fuelcook.Value, Years._1996, out SourceOfFuel? _fuelcook, out NotAvailables? _fuelcookna))
-					record.SourceOfFuelCooking = ((int?)_fuelcook) ?? (-(int?)_fuelcookna);
+					model.Household.SourceOfFuelCooking = Uncertain.From<SourceOfFuel>((int?)_fuelcook ?? (int?)_fuelcookna);
 				else errors.Add(nameof(fuelcook), fuelcook);
 			}
 			if (fuelheat is not null)
 			{
 				if (default(SourceOfFuel).FromInt(fuelheat.Value, Years._1996, out SourceOfFuel? _fuelheat, out NotAvailables? _fuelheatna))
-					record.SourceOfFuelHeating = ((int?)_fuelheat) ?? (-(int?)_fuelheatna);
+					model.Household.SourceOfFuelHeating = Uncertain.From<SourceOfFuel>((int?)_fuelheat ?? (int?)_fuelheatna);
 				else errors.Add(nameof(fuelheat), fuelheat);
 			}
 			if (fuelligh is not null)
 			{
 				if (default(SourceOfFuel).FromInt(fuelligh.Value, Years._1996, out SourceOfFuel? _fuelligh, out NotAvailables? _fuellighna))
-					record.SourceOfFuelLighting = ((int?)_fuelligh) ?? (-(int?)_fuellighna);
+					model.Household.SourceOfFuelLighting = Uncertain.From<SourceOfFuel>((int?)_fuelligh ?? (int?)_fuellighna);
 				else errors.Add(nameof(fuelligh), fuelligh);
 			}
 			if (water is not null)
 			{
 				if (default(SourceOfWater).FromInt(water.Value, Years._1996, out SourceOfWater? _water, out NotAvailables? _waterna))
-					record.SourceOfWater = ((int?)_water) ?? (-(int?)_waterna);
+					model.Household.SourceOfWater = Uncertain.From<SourceOfWater>((int?)_water ?? (int?)_waterna);
 				else errors.Add(nameof(water), water);
 			}
 			if (addmon2 is not null)
 			{
 				if (default(IncomeLevelsMonthlyHousehold).FromInt(addmon2.Value, Years._1996, out IncomeLevelsMonthlyHousehold? _addmon2, out NotAvailables? _addmon2na))
-					record.IncomeAdditional = ((int?)_addmon2) ?? (-(int?)_addmon2na);
+					model.HouseholdIncome.IncomeAdditional = Uncertain.From<IncomeLevelsMonthlyHousehold>((int?)_addmon2 ?? (int?)_addmon2na);
 				else errors.Add(nameof(addmon2), addmon2);
 			}
 			if (payment2 is not null)
 			{
 				if (default(IncomeLevelsMonthlyHousehold).FromInt(payment2.Value, Years._1996, out IncomeLevelsMonthlyHousehold? _payment2, out NotAvailables? _payment2na))
-					record.IncomeReceivedRemittances = ((int?)_payment2) ?? (-(int?)_payment2na);
+					model.HouseholdIncome.IncomeReceivedRemittances = Uncertain.From<IncomeLevelsMonthlyHousehold>((int?)_payment2 ?? (int?)_payment2na);
 				else errors.Add(nameof(payment2), payment2);
 			}
-			
+
 			if (errors.Count > 0)
 				logger?.WriteLine("[{0}]: {1}", LineNumber, string.Join(", ", errors.Select(_ => string.Format("[{0} {1}]", _.Key, _.Value))));
 
-			return record;
+			return model;
 		}
 	}
 }
