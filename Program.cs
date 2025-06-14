@@ -8,6 +8,7 @@ using Newtonsoft.Json.Linq;
 using SQLite;
 
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
@@ -151,6 +152,7 @@ namespace Database.SouthAfricanCensus
 				apifiles.Add(filename, years, types);
 
 				string directorypath = Path.Combine(DirectoryOutput, string.Format("{0}.{1}", years.AsString(), types));
+				string _sqliteconnectionpath = Path.Combine(DirectoryOutput, string.Format("southafricancensus.{0}.{1}.db", years.AsString(), types));
 
 				Directory.CreateDirectory(directorypath);
 				Console.WriteLine(directorypath);
@@ -160,17 +162,32 @@ namespace Database.SouthAfricanCensus
 				switch (years, types)
 				{
 					case (Years._1996, Types.Household):
-						sqliteconnection.InsertAll(
-							objects: Utils.CSVs
+						{
+							SQLiteConnection sqliteconnectionn = _SQLiteConnection(_sqliteconnectionpath);
+							List<RecordsHousehold> records = Utils.CSVs
 								.Rows<CSVRow1996Household>(streamwriters[filename], streams)
-								.Select(_ => _.AsRecord(streamwriters[filename])));
+								.Select(_ => _.AsRecord(streamwriters[filename]))
+								.ToList();
+
+							sqliteconnection.InsertAll(records);
+							sqliteconnectionn.InsertAll(records);
+
+							ApiFilesAdd(apifiles, sqliteconnectionn);
+						}
 						break;
 					case (Years._1996, Types.Person):
-						return;
-						sqliteconnection.InsertAll(
-							objects: Utils.CSVs
+						{
+							SQLiteConnection sqliteconnectionn = _SQLiteConnection(_sqliteconnectionpath);
+							List<RecordsPerson> records = Utils.CSVs
 								.Rows<CSVRow1996Person>(streamwriters[filename], streams)
-								.Select(_ => _.AsRecord()));
+								.Select(_ => _.AsRecord(streamwriters[filename]))
+								.ToList();
+
+							sqliteconnection.InsertAll(records);
+							sqliteconnectionn.InsertAll(records);
+
+							ApiFilesAdd(apifiles, sqliteconnectionn);
+						}
 						break;
 
 					default: break;
@@ -343,25 +360,8 @@ namespace Database.SouthAfricanCensus
 
 			#endregion
 
-			sqliteconnection.CommitAndClose();
-
-			string sqliteconnectionzipname = ZipFile(sqlconnectionpath).Split('\\').Last();
-			string sqliteconnectiongzipname = GZipFile(sqlconnectionpath).Split('\\').Last();
-
-			apifiles.Add(sqliteconnectionzipname);
-			apifiles.Add(sqliteconnectiongzipname);
-
-			File.Delete(sqlconnectionpath);
-
-			string apifilesjson = apifiles.ToString();
-			string apifilespath = Path.Combine(DirectoryOutput, "index.json");
-
-			using FileStream apifilesfilestream = File.OpenWrite(apifilespath);
-			using StreamWriter apifilesstreamwriter = new(apifilesfilestream);
-
-			apifilesstreamwriter.Write(apifilesjson);
-			apifilesstreamwriter.Close();
-			apifilesfilestream.Close();
+			ApiFilesAdd(apifiles, sqliteconnection);
+			ApiFilesIndex(apifiles);
 
 			_CleaningPost();
 		}
@@ -379,6 +379,30 @@ namespace Database.SouthAfricanCensus
 		static void _CleaningPost()
 		{
 			Console.WriteLine("Cleaning Up...");
+		}
+		static void ApiFilesAdd(JArray apifiles, SQLiteConnection sqliteconnection)
+		{
+			sqliteconnection.CommitAndClose();
+
+			string sqliteconnectionzipname = ZipFile(sqliteconnection.DatabasePath).Split('\\').Last();
+			string sqliteconnectiongzipname = GZipFile(sqliteconnection.DatabasePath).Split('\\').Last();
+
+			apifiles.Add(sqliteconnectionzipname);
+			apifiles.Add(sqliteconnectiongzipname);
+
+			File.Delete(sqliteconnection.DatabasePath);
+		}
+		static void ApiFilesIndex(JArray apifiles)
+		{
+			string apifilesjson = apifiles.ToString();
+			string apifilespath = Path.Combine(DirectoryOutput, "index.json");
+
+			using FileStream apifilesfilestream = File.OpenWrite(apifilespath);
+			using StreamWriter apifilesstreamwriter = new(apifilesfilestream);
+
+			apifilesstreamwriter.Write(apifilesjson);
+			apifilesstreamwriter.Close();
+			apifilesfilestream.Close();
 		}
 		static string ZipFile(string filepath)
 		{

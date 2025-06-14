@@ -133,6 +133,7 @@ namespace Database.SouthAfricanCensus.Inputs.CSVs
 			{
 				CouncilCodeDistrict = district,
 				CouncilCodeMagisterial = dccode,
+				CouncilCodeTransitionalLocalRural = newla,
 				Number = hhnumber,
 				TenPercentWeight = peshhwei,
 
@@ -148,119 +149,116 @@ namespace Database.SouthAfricanCensus.Inputs.CSVs
 			if (toilet is not null)
 			{
 				if (default(FacilitiesToilet).FromInt(toilet.Value, Years._1996, out FacilitiesToilet? _toilet, out NotAvailables? _toiletna))
-					record.FacilitiesToilet = ((int?)_toilet)?.ToString() ?? (-(int?)_toiletna)?.ToString();
+					record.FacilitiesToilet = ((int?)_toilet) ?? (-(int?)_toiletna);
 				else errors.Add(nameof(toilet), toilet);
 			}
 			if (telephon is not null)
 			{
 				if (default(FacilitiesTelephone).FromInt(telephon.Value, Years._1996, out FacilitiesTelephone? _telephon, out NotAvailables? _telephonna))
-					record.FacilitiesTelephone = ((int?)_telephon)?.ToString() ?? (-(int?)_telephonna)?.ToString();
+					record.FacilitiesTelephone = ((int?)_telephon) ?? (-(int?)_telephonna);
 				else errors.Add(nameof(telephon), telephon);
 			}
 			if (refuse is not null)
 			{
 				if (default(FacilitiesRefuseDisposal).FromInt(refuse.Value, Years._1996, out FacilitiesRefuseDisposal? _refuse, out NotAvailables? _refusena))
-					record.FacilitiesRefuseDisposal = ((int?)_refuse)?.ToString() ?? (-(int?)_refusena)?.ToString();
+					record.FacilitiesRefuseDisposal = ((int?)_refuse) ?? (-(int?)_refusena);
 				else errors.Add(nameof(refuse), refuse);
 			}
 			if (dwelling is not null)
 			{
 				if (default(TypeDwelling).FromInt(dwelling.Value, Years._1996, out TypeDwelling? _dwelling, out NotAvailables? _dwellingna))
-					record.Dwelling = ((int?)_dwelling)?.ToString() ?? (-(int?)_dwellingna)?.ToString();
+					record.Dwelling = ((int?)_dwelling) ?? (-(int?)_dwellingna);
 				else errors.Add(nameof(dwelling), dwelling);
 			}
 			if (hoheduca is not null)
 			{
 				if (default(EducationLevels).FromInt(hoheduca.Value, Years._1996, out EducationLevels? _hoheduca, out NotAvailables? _hoheducana))
-					record.HeadOf_Education = ((int?)_hoheduca)?.ToString() ?? (-(int?)_hoheducana)?.ToString();
+					record.HeadOf_Education = ((int?)_hoheduca) ?? (-(int?)_hoheducana);
 				else errors.Add(nameof(hoheduca), hoheduca);
 			}
 			if (hohecona is not null)
 			{
 				if (default(EmploymentStatuses).FromInt(hohecona.Value, Years._1996, out EmploymentStatuses? _hohecona, out NotAvailables? _hoheconana))
-					record.HeadOf_EmploymentStatus = ((int?)_hohecona)?.ToString() ?? (-(int?)_hoheconana)?.ToString();
+					record.HeadOf_EmploymentStatus = ((int?)_hohecona) ?? (-(int?)_hoheconana);
 				else errors.Add(nameof(hohecona), hohecona);
 			}
 			if (hhinccat is not null)
 			{
 				if (default(IncomeLevelsMonthly).FromInt(hhinccat.Value, Years._1996, out IncomeLevelsMonthly? _hhinccat, out NotAvailables? _hhinccatna))
-					record.HeadOf_IncomeLevel = ((int?)_hhinccat)?.ToString() ?? (-(int?)_hhinccatna)?.ToString();
+					record.HeadOf_IncomeLevel = ((int?)_hhinccat) ?? (-(int?)_hhinccatna);
 				else errors.Add(nameof(hhinccat), hhinccat);
 			}
 			if (hohrace is not null)
 			{
 				if (default(PopulationGroups).FromInt(hohrace.Value, Years._1996, out PopulationGroups? _hohrace, out NotAvailables? _hohracena))
-					record.HeadOf_Race = ((int?)_hohrace)?.ToString() ?? (-(int?)_hohracena)?.ToString();
+					record.HeadOf_Race = ((int?)_hohrace) ?? (-(int?)_hohracena);
 				else errors.Add(nameof(hohrace), hohrace);
 			}
 			if (hohsex is not null)
 			{
 				if (default(Sexes).FromInt(hohsex.Value, Years._1996, out Sexes? _hohsex, out NotAvailables? _hohsexna))
-					record.HeadOf_Sex = ((int?)_hohsex)?.ToString() ?? (-(int?)_hohsexna)?.ToString();
+					record.HeadOf_Sex = ((int?)_hohsex) ?? (-(int?)_hohsexna);
 				else errors.Add(nameof(hohsex), hohsex);
+			}
+			if (hinchh is not null)
+			{
+				if (default(IncomeLevelsMonthly).FromInt(hinchh.Value, Years._1996, out IncomeLevelsMonthly? _hinchh, out NotAvailables? _hinchhna))
+					record.HighestIncomeIn = ((int?)_hinchh) ?? (-(int?)_hinchhna);
+				else errors.Add(nameof(hinchh), hinchh);
 			}
 			if (hinchhse is not null)
 			{
 				if (default(Sexes).FromInt(hinchhse.Value, Years._1996, out Sexes? _hinchhse, out NotAvailables? _hinchhsena))
-					record.HighestIncomeIn_Gender = ((int?)_hinchhse)?.ToString() ?? (-(int?)_hinchhsena)?.ToString();
+					record.HighestIncomeIn_Gender = ((int?)_hinchhse) ?? (-(int?)_hinchhsena);
 				else errors.Add(nameof(hinchhse), hinchhse);
 			}
 			if (hinchhra is not null)
 			{
 				if (default(PopulationGroups).FromInt(hinchhra.Value, Years._1996, out PopulationGroups? _hinchhra, out NotAvailables? _hinchhrana))
-					record.HighestIncomeIn_Race = ((int?)_hinchhra)?.ToString() ?? (-(int?)_hinchhrana)?.ToString();
+					record.HighestIncomeIn_Race = ((int?)_hinchhra) ?? (-(int?)_hinchhrana);
 				else errors.Add(nameof(hinchhra), hinchhra);
 			}
 			if (fuelcook is not null)
 			{
 				if (default(SourceOfFuel).FromInt(fuelcook.Value, Years._1996, out SourceOfFuel? _fuelcook, out NotAvailables? _fuelcookna))
-					record.SourceOfFuelCooking = ((int?)_fuelcook)?.ToString() ?? (-(int?)_fuelcookna)?.ToString();
+					record.SourceOfFuelCooking = ((int?)_fuelcook) ?? (-(int?)_fuelcookna);
 				else errors.Add(nameof(fuelcook), fuelcook);
 			}
 			if (fuelheat is not null)
 			{
 				if (default(SourceOfFuel).FromInt(fuelheat.Value, Years._1996, out SourceOfFuel? _fuelheat, out NotAvailables? _fuelheatna))
-					record.SourceOfFuelHeating = ((int?)_fuelheat)?.ToString() ?? (-(int?)_fuelheatna)?.ToString();
+					record.SourceOfFuelHeating = ((int?)_fuelheat) ?? (-(int?)_fuelheatna);
 				else errors.Add(nameof(fuelheat), fuelheat);
 			}
 			if (fuelligh is not null)
 			{
 				if (default(SourceOfFuel).FromInt(fuelligh.Value, Years._1996, out SourceOfFuel? _fuelligh, out NotAvailables? _fuellighna))
-					record.SourceOfFuelLighting = ((int?)_fuelligh)?.ToString() ?? (-(int?)_fuellighna)?.ToString();
+					record.SourceOfFuelLighting = ((int?)_fuelligh) ?? (-(int?)_fuellighna);
 				else errors.Add(nameof(fuelligh), fuelligh);
 			}
 			if (water is not null)
 			{
 				if (default(SourceOfWater).FromInt(water.Value, Years._1996, out SourceOfWater? _water, out NotAvailables? _waterna))
-					record.SourceOfWater = ((int?)_water)?.ToString() ?? (-(int?)_waterna)?.ToString();
+					record.SourceOfWater = ((int?)_water) ?? (-(int?)_waterna);
 				else errors.Add(nameof(water), water);
 			}
-
+			if (addmon2 is not null)
+			{
+				if (default(IncomeLevelsMonthlyHousehold).FromInt(addmon2.Value, Years._1996, out IncomeLevelsMonthlyHousehold? _addmon2, out NotAvailables? _addmon2na))
+					record.IncomeAdditional = ((int?)_addmon2) ?? (-(int?)_addmon2na);
+				else errors.Add(nameof(addmon2), addmon2);
+			}
+			if (payment2 is not null)
+			{
+				if (default(IncomeLevelsMonthlyHousehold).FromInt(payment2.Value, Years._1996, out IncomeLevelsMonthlyHousehold? _payment2, out NotAvailables? _payment2na))
+					record.IncomeReceivedRemittances = ((int?)_payment2) ?? (-(int?)_payment2na);
+				else errors.Add(nameof(payment2), payment2);
+			}
+			
 			if (errors.Count > 0)
 				logger?.WriteLine("[{0}]: {1}", LineNumber, string.Join(", ", errors.Select(_ => string.Format("[{0} {1}]", _.Key, _.Value))));
 
 			return record;
-
-			return new RecordsHousehold
-			{
-				Province = default(Provinces).FromInt(province, Years._1996)?.ToString() ?? null,
-
-
-				//CouncilCodeTransitionalLocalRural
-				
-				HeadOf_Occupation = hohocp1,
-				
-				//Income
-				//IncomeAdditional
-				//IncomeReceivedRemittances
-				QuestionType = questype,
-				
-			};
 		}
-
-		//public int? newla;
-		//public int? addmon2;
-		//public int? payment2;
-		//public int? hinchh;
 	}
 }
