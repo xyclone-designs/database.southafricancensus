@@ -1,5 +1,5 @@
 # Database.SouthAfricanCensus
-South African Cansus database built from various data sources and used for the api found at https://api.xyclonedesigns.co.za/southafricancensus/rest
+South African Cansus database built from various data sources 
 
 # * DATABASE CREATION IN PROGRESS *
 

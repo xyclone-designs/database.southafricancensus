@@ -1,6 +1,5 @@
 ﻿using System.IO;
 using System.Linq;
-
 using XycloneDesigns.Database.SouthAfricanCensus.Tables;
 
 namespace Database.SouthAfricanCensus.Inputs.CSVs
@@ -34,7 +33,9 @@ namespace Database.SouthAfricanCensus.Inputs.CSVs
 
 		public RecordsMortality AsRecord()
 		{
-			return new RecordsMortality { };
+			return new RecordsMortality
+			{
+			};
 		}
 	}
 }
