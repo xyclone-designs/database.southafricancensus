@@ -1,6 +1,6 @@
 ﻿using System.IO;
 using System.Linq;
-using XycloneDesigns.Database.SouthAfricanCensus.Tables;
+using XycloneDesigns.Apis.STATSSA.Tables;
 
 namespace Database.SouthAfricanCensus.Inputs.CSVs
 {

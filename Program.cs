@@ -13,9 +13,9 @@ using System.IO;
 using System.IO.Compression;
 using System.Linq;
 
-using XycloneDesigns.Database.SouthAfricanCensus.Enums;
-using XycloneDesigns.Database.SouthAfricanCensus.Models;
-using XycloneDesigns.Database.SouthAfricanCensus.Tables;
+using XycloneDesigns.Apis.STATSSA.Enums;
+using XycloneDesigns.Apis.STATSSA.Models;
+using XycloneDesigns.Apis.STATSSA.Tables;
 
 namespace Database.SouthAfricanCensus
 {
@@ -308,8 +308,10 @@ namespace Database.SouthAfricanCensus
 		{
 			sqliteconnection.CommitAndClose();
 
-			string sqliteconnectionzipname = ZipFile(sqliteconnection.DatabasePath).Split('\\').Last();
-			string sqliteconnectiongzipname = GZipFile(sqliteconnection.DatabasePath).Split('\\').Last();
+			FileInfo fileinfo = new(sqliteconnection.DatabasePath);
+
+			string sqliteconnectionzipname = fileinfo.ZipFile();
+			string sqliteconnectiongzipname = fileinfo.GZipFile();
 
 			apifiles.Add(sqliteconnectionzipname);
 			apifiles.Add(sqliteconnectiongzipname);
@@ -327,34 +329,6 @@ namespace Database.SouthAfricanCensus
 			apifilesstreamwriter.Write(apifilesjson);
 			apifilesstreamwriter.Close();
 			apifilesfilestream.Close();
-		}
-		static string ZipFile(string filepath)
-		{
-			string name = filepath.Split("\\").Last();
-			string zipfilepath = filepath + ".zip";
-
-			using FileStream filestream = File.OpenRead(filepath);
-			using FileStream filestreamzip = File.Create(zipfilepath);
-			using ZipArchive ziparchive = new(filestreamzip, ZipArchiveMode.Create, true);
-			using Stream stream = ziparchive
-				.CreateEntry(name)
-				.Open();
-
-			filestream.CopyTo(stream);
-			filestream.Close();
-
-			return zipfilepath;
-		}
-		static string GZipFile(string filepath)
-		{
-			string gzipfilepath = filepath + ".gz";
-
-			using FileStream filestream = File.OpenRead(filepath);
-			using FileStream filestreamgzip = File.Create(gzipfilepath);
-
-			GZip.Compress(filestream, filestreamgzip, true, 512, 6);
-
-			return gzipfilepath;
 		}
 		static SQLiteConnection _SQLiteConnection(string path)
 		{

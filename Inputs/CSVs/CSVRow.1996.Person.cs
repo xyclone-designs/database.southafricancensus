@@ -2,10 +2,10 @@
 using System.IO;
 using System.Linq;
 
-using XycloneDesigns.Database.SouthAfricanCensus.Enums;
-using XycloneDesigns.Database.SouthAfricanCensus.Models;
-using XycloneDesigns.Database.SouthAfricanCensus.Structs;
-using XycloneDesigns.Database.SouthAfricanCensus.Tables;
+using XycloneDesigns.Apis.STATSSA.Enums;
+using XycloneDesigns.Apis.STATSSA.Models;
+using XycloneDesigns.Apis.STATSSA.Structs;
+using XycloneDesigns.Apis.STATSSA.Tables;
 
 namespace Database.SouthAfricanCensus.Inputs.CSVs
 {

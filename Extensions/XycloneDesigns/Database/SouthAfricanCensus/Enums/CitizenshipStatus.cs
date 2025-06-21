@@ -1,6 +1,6 @@
-﻿using XycloneDesigns.Database.SouthAfricanCensus.Structs;
+﻿using XycloneDesigns.Apis.STATSSA.Structs;
 
-namespace XycloneDesigns.Database.SouthAfricanCensus.Enums
+namespace XycloneDesigns.Apis.STATSSA.Enums
 {
 	public static class CitizenshipStatussExtensions
 	{
